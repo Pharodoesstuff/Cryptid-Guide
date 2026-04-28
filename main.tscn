@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dpxmw1emc12l1"]
 
 [ext_resource type="Texture2D" uid="uid://c4lexjy6jyf6r" path="res://Background Assets/Cabin/Furniture .png" id="1_0xm2m"]
+[ext_resource type="VideoStream" uid="uid://dhsocrtm1leug" path="res://Background Assets/Animation/Sparkle Overlay.ogv" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://d0yxv4ku3ijqo" path="res://Background Assets/Cabin/Updates Furniture.png" id="2_h2yge"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1bvp3"]
@@ -8065,6 +8066,7 @@ offset_top = -0.99999976
 offset_right = 411.0737
 offset_bottom = 251.77768
 scale = Vector2(1.5542018, 1.4400004)
+stream = ExtResource("1_h2yge")
 autoplay = true
 expand = true
 loop = true
