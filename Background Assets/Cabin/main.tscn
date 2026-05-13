@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://dpxmw1emc12l1"]
 
-[ext_resource type="Texture2D" uid="uid://c4lexjy6jyf6r" path="res://Background Assets/Cabin/Furniture .png" id="1_0xm2m"]
-[ext_resource type="VideoStream" uid="uid://dhsocrtm1leug" path="res://Background Assets/Animation/Sparkle Overlay.ogv" id="1_h2yge"]
-[ext_resource type="Texture2D" uid="uid://d0yxv4ku3ijqo" path="res://Background Assets/Cabin/Updates Furniture.png" id="2_h2yge"]
+[ext_resource type="VideoStream" uid="uid://dhsocrtm1leug" path="res://Background Assets/Animation/Sparkle Overlay.ogv" id="1_utrjk"]
+[ext_resource type="Texture2D" uid="uid://c4lexjy6jyf6r" path="res://Background Assets/Cabin/Furniture .png" id="2_8uu3j"]
+[ext_resource type="Texture2D" uid="uid://d0yxv4ku3ijqo" path="res://Background Assets/Cabin/Updates Furniture.png" id="3_c6wnk"]
+[ext_resource type="Script" uid="uid://b123rf1rdpyxf" path="res://Player.gd" id="5_utrjk"]
+[ext_resource type="Texture2D" uid="uid://dvovywjn1gc1w" path="res://Player Assets/Player 2/Player 2 Idle.png" id="6_72h8w"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1bvp3"]
 load_path = "res://.godot/imported/New cabin.png-a35a71e6f36e3809345e270fd764a06a.ctex"
@@ -5330,7 +5332,7 @@ physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_ig7tw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
-texture = ExtResource("1_0xm2m")
+texture = ExtResource("2_8uu3j")
 72:1/0 = 0
 71:2/0 = 0
 72:2/0 = 0
@@ -6058,7 +6060,7 @@ texture = ExtResource("1_0xm2m")
 41:53/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
-texture = ExtResource("2_h2yge")
+texture = ExtResource("3_c6wnk")
 38:26/0 = 0
 39:26/0 = 0
 37:27/0 = 0
@@ -6168,7 +6170,7 @@ sources/1 = SubResource("TileSetAtlasSource_lquwl")
 sources/2 = SubResource("TileSetAtlasSource_7mycd")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
-texture = ExtResource("1_0xm2m")
+texture = ExtResource("2_8uu3j")
 72:1/0 = 0
 71:2/0 = 0
 72:2/0 = 0
@@ -6784,7 +6786,7 @@ texture = ExtResource("1_0xm2m")
 41:53/0/texture_origin = Vector2i(-3, 9)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
-texture = ExtResource("2_h2yge")
+texture = ExtResource("3_c6wnk")
 38:26/0 = 0
 39:26/0 = 0
 37:27/0 = 0
@@ -6858,7 +6860,7 @@ sources/0 = SubResource("TileSetAtlasSource_272bh")
 sources/2 = SubResource("TileSetAtlasSource_5vw27")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4c57u"]
-texture = ExtResource("1_0xm2m")
+texture = ExtResource("2_8uu3j")
 72:1/0 = 0
 71:2/0 = 0
 72:2/0 = 0
@@ -7433,7 +7435,7 @@ texture = ExtResource("1_0xm2m")
 41:53/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_efxa6"]
-texture = ExtResource("2_h2yge")
+texture = ExtResource("3_c6wnk")
 38:26/0 = 0
 39:26/0 = 0
 37:27/0 = 0
@@ -7517,7 +7519,7 @@ sources/0 = SubResource("TileSetAtlasSource_4c57u")
 sources/1 = SubResource("TileSetAtlasSource_efxa6")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycdy4"]
-texture = ExtResource("1_0xm2m")
+texture = ExtResource("2_8uu3j")
 72:1/0 = 0
 71:2/0 = 0
 72:2/0 = 0
@@ -8058,6 +8060,9 @@ texture = ExtResource("1_0xm2m")
 [sub_resource type="TileSet" id="TileSet_w48qg"]
 sources/0 = SubResource("TileSetAtlasSource_ycdy4")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fw5fr"]
+size = Vector2(33, 64)
+
 [node name="Cabin" type="Node2D" unique_id=415258001]
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=633963970]
@@ -8066,7 +8071,7 @@ offset_top = -0.99999976
 offset_right = 411.0737
 offset_bottom = 251.77768
 scale = Vector2(1.5542018, 1.4400004)
-stream = ExtResource("1_h2yge")
+stream = ExtResource("1_utrjk")
 autoplay = true
 expand = true
 loop = true
@@ -8100,3 +8105,16 @@ tile_set = SubResource("TileSet_dg77c")
 modulate = Color(0.35612807, 0.35612807, 0.35612807, 1)
 tile_map_data = PackedByteArray("AAAWAAUAAAAJABgAAAAXAAIAAAAKABUAAAAXAAMAAAAKABYAAAAXAAQAAAAKABcAAAAXAAUAAAAKABgAAAAYAAIAAAALABUAAAAYAAMAAAALABYAAAAYAAQAAAALABcAAAAYAAUAAAALABgAAAAYAAYAAAALABkAAAAZAAEAAAAMABQAAAAZAAIAAAAMABUAAAAZAAMAAAAMABYAAAAZAAQAAAAMABcAAAAaAAMAAAANABYAAAAaAAQAAAANABcAAAAbAAIAAAAOABUAAAAbAAMAAAAOABYAAAAbAAQAAAAOABcAAAAcAAMAAAAPABYAAAAcAAQAAAAPABcAAAAUAAIAAAAHABUAAAAUAAMAAAAHABYAAAAVAAIAAAAIABUAAAAVAAMAAAAIABYAAAAWAAAAAAAJABMAAAAWAAEAAAAJABQAAAAWAAIAAAAJABUAAAAWAAMAAAAJABYAAAAWAAYAAAAJABkAAAAXAAAAAAAKABMAAAAXAAEAAAAKABQAAAAXAAYAAAAKABkAAAAYAP7/AAALABEAAAAYAP//AAALABIAAAAYAAAAAAALABMAAAAYAAEAAAALABQAAAAaAAAAAAANABMAAAAaAAEAAAANABQAAAAaAAIAAAANABUAAAAbAAAAAAAOABMAAAAbAAEAAAAOABQAAAAcAAAAAAAPABMAAAAcAAEAAAAPABQAAAA=")
 tile_set = SubResource("TileSet_w48qg")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=930898735]
+position = Vector2(140, 172)
+script = ExtResource("5_utrjk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1264773734]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_fw5fr")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1057056321]
+position = Vector2(-4, -3)
+texture = ExtResource("6_72h8w")
+hframes = 2

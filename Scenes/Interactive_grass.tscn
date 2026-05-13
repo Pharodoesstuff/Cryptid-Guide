@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dk0kirb30br5m"]
+
+[ext_resource type="Script" uid="uid://cjx0vm1fds1p" path="res://interactive_grass.gd" id="1_on7uj"]
+[ext_resource type="Shader" uid="uid://72we6sve7eaw" path="res://Interactive_grass.gdshader" id="1_wndaa"]
+[ext_resource type="Texture2D" uid="uid://c8ckbaln5xpqq" path="res://Background Assets/Forest/Interactive Grass/Left.png" id="3_uo8tq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vywmp"]
+resource_local_to_scene = true
+shader = ExtResource("1_wndaa")
+shader_parameter/skew = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vywmp"]
+size = Vector2(12, 20)
+
+[node name="Interactive Grass1" type="Area2D" unique_id=1038387061]
+script = ExtResource("1_on7uj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=959378223]
+material = SubResource("ShaderMaterial_vywmp")
+position = Vector2(1, 0)
+texture = ExtResource("3_uo8tq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=279537949]
+position = Vector2(-4, -2)
+shape = SubResource("RectangleShape2D_vywmp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
