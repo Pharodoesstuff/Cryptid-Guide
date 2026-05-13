@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cekqxs72rbv0h"
-path="res://.godot/imported/Sprite_Tiles_GreenGrass-1.png-1.png.png-f354cc0fc5894ad9533b382dc822a4d8.ctex"
+uid="uid://wf443a7mbs2v"
+path="res://.godot/imported/Grass tiles.png-57a37ab569b3ca6f598e6a338c24e461.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Assets/Forest/grass_tileset_16x16/Sprite_Tiles_GreenGrass-1.png-1.png.png"
-dest_files=["res://.godot/imported/Sprite_Tiles_GreenGrass-1.png-1.png.png-f354cc0fc5894ad9533b382dc822a4d8.ctex"]
+source_file="res://Background Assets/Forest/Grass&credits/Grass tiles.png"
+dest_files=["res://.godot/imported/Grass tiles.png-57a37ab569b3ca6f598e6a338c24e461.ctex"]
 
 [params]
 
