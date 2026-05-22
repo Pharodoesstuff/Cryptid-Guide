@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://ba6rgcg61ditk"]
 
 [ext_resource type="Texture2D" uid="uid://ipb55kmhc4cy" path="res://Background Assets/Forest/Dirt.png" id="1_703hy"]
-[ext_resource type="PackedScene" uid="uid://dpxmw1emc12l1" path="res://Background Assets/Cabin/main.tscn" id="2_4ue0o"]
 [ext_resource type="Texture2D" uid="uid://cd7q1yba8naey" path="res://Background Assets/Forest/Grass&credits/Grass Layout.png" id="2_j5ecf"]
 [ext_resource type="Texture2D" uid="uid://dyn6qyel5ang6" path="res://Background Assets/Forest/Grass&credits/Grass tiles.png" id="3_trpvt"]
 [ext_resource type="Texture2D" uid="uid://qbv02kewhsxe" path="res://Background Assets/Forest/Plant's and stuff.png" id="4_lyyxt"]
+[ext_resource type="Texture2D" uid="uid://5hai1y2n6rdf" path="res://Background Assets/Cabin/Cabin Roof.png" id="5_j5ecf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_npy6b"]
 texture = ExtResource("3_trpvt")
@@ -730,12 +730,6 @@ tile_set = SubResource("TileSet_npy6b")
 [node name="Grass Texture" type="TileMapLayer" parent="." unique_id=1278099229]
 tile_set = SubResource("TileSet_703hy")
 
-[node name="Cabin" parent="." unique_id=415258001 instance=ExtResource("2_4ue0o")]
-position = Vector2(-120, 968)
-
-[node name="CharacterBody2D" parent="Cabin" index="7" unique_id=930898735]
-position = Vector2(-209, 160)
-
-[node name="Camera2D" type="Camera2D" parent="Cabin/CharacterBody2D" index="2" unique_id=658010915]
-
-[editable path="Cabin"]
+[node name="CabinRoof" type="Sprite2D" parent="." unique_id=188737436]
+position = Vector2(200, 1128)
+texture = ExtResource("5_j5ecf")
