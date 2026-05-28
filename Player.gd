@@ -3,7 +3,7 @@ class_name Player extends CharacterBody2D
 var move_speed : float = 200.0
 
 func _ready():
-	add_to_group("player")
+	add_to_group("Player")
 	pass
 
 func _process( delta ):
