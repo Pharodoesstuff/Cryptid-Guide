@@ -707,6 +707,7 @@ texture = ExtResource("4_lyyxt")
 132:39/size_in_atlas = Vector2i(3, 2)
 132:39/0 = 0
 133:31/0 = 0
+98:65/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_703hy"]
 sources/0 = SubResource("TileSetAtlasSource_c56ah")
