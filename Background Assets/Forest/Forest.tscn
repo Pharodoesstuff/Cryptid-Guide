@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dyn6qyel5ang6" path="res://Background Assets/Forest/Grass&credits/Grass tiles.png" id="3_trpvt"]
 [ext_resource type="Texture2D" uid="uid://qbv02kewhsxe" path="res://Background Assets/Forest/Plant's and stuff.png" id="4_lyyxt"]
 [ext_resource type="Texture2D" uid="uid://5hai1y2n6rdf" path="res://Background Assets/Cabin/Cabin Roof.png" id="5_j5ecf"]
+[ext_resource type="PackedScene" uid="uid://cop15662dn8op" path="res://Characters/Main Character/Main Character.tscn" id="6_trpvt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_npy6b"]
 texture = ExtResource("3_trpvt")
@@ -734,3 +735,6 @@ tile_set = SubResource("TileSet_703hy")
 [node name="CabinRoof" type="Sprite2D" parent="." unique_id=188737436]
 position = Vector2(200, 1128)
 texture = ExtResource("5_j5ecf")
+
+[node name="CharacterBody2D" parent="." unique_id=1999503061 instance=ExtResource("6_trpvt")]
+position = Vector2(40, 496)
