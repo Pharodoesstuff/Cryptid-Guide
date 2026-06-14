@@ -10,11 +10,18 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	ChangeState(current_state.Process(delta))
 	pass
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta: float) -> void:
+	ChangeState(current_state.Physics( delta))
+	pass
+
+func _unhandled_input(event) -> void:
+		ChangeState( current_state.HandleInput( event ))
+		pass
 
 func Intialize( _player : Player) -> void:
 	states = []

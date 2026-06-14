@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bciddynybredy"
-path="res://.godot/imported/Shadow.png-96a7db71ce508fc6b46128ef61267d15.ctex"
+uid="uid://bohp7v53dccxp"
+path="res://.godot/imported/Pond.png-0cee103a6c3a490095a87c563d1753b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player Assets/Shadow.png"
-dest_files=["res://.godot/imported/Shadow.png-96a7db71ce508fc6b46128ef61267d15.ctex"]
+source_file="res://Background Assets/Pond.png"
+dest_files=["res://.godot/imported/Pond.png-0cee103a6c3a490095a87c563d1753b2.ctex"]
 
 [params]
 

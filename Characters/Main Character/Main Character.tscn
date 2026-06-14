@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cop15662dn8op"]
 
-[ext_resource type="Script" uid="uid://b123rf1rdpyxf" path="res://Player.gd" id="1_gea4v"]
+[ext_resource type="Script" uid="uid://b123rf1rdpyxf" path="res://player.gd" id="1_gea4v"]
 [ext_resource type="Texture2D" uid="uid://blj4el15od3j0" path="res://Characters/Main Character/MC Movement.png" id="2_88u02"]
+[ext_resource type="Texture2D" uid="uid://bciddynybredy" path="res://Characters/Main Character/Shadow.png" id="2_o60yy"]
+[ext_resource type="Script" uid="uid://c57ohcp6ivyd6" path="res://Player Assets/Player/player_state_machine.gd" id="4_k4pqc"]
+[ext_resource type="Script" uid="uid://b7ro2lrabif1e" path="res://Player Assets/Player/state_idle.gd" id="5_vf8ew"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_88u02"]
 radius = 9.000204
@@ -131,14 +134,20 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1999503061]
-y_sort_enabled = true
+z_as_relative = false
 collision_mask = 3
 script = ExtResource("1_gea4v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=222089415]
-position = Vector2(1, 14.000001)
+position = Vector2(-1, 14.000001)
 rotation = -1.5705919
 shape = SubResource("CapsuleShape2D_88u02")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=821183083]
+modulate = Color(0.30905873, 0.12095664, 0.014519472, 1)
+position = Vector2(-1.3749998, 20.000002)
+scale = Vector2(1.0234375, 0.48437497)
+texture = ExtResource("2_o60yy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1321552498]
 y_sort_enabled = true
@@ -149,3 +158,11 @@ vframes = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1309186295]
 libraries/ = SubResource("AnimationLibrary_06c34")
+
+[node name="State Machine" type="Node" parent="." unique_id=662603767]
+script = ExtResource("4_k4pqc")
+
+[node name="Idle" type="Node" parent="State Machine" unique_id=328383809]
+script = ExtResource("5_vf8ew")
+
+[node name="Walk" type="Node" parent="State Machine" unique_id=475874730]
