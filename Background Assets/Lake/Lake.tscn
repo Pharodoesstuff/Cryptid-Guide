@@ -1,3 +1,125 @@
 [gd_scene format=3 uid="uid://ck1hyv06k08fv"]
 
+[ext_resource type="Texture2D" uid="uid://cmbqeyhv8lok" path="res://Test/Beach -1.png.png" id="1_58xi2"]
+[ext_resource type="Texture2D" uid="uid://n4h82t50qyrh" path="res://Test/Lake Waves.png" id="2_ylitp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58xi2"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(0, 0, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylitp"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(744, 0, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1j1t"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(0, 300, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujair"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(744, 300, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5a4w"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(0, 600, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cre3q"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(744, 600, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpydg"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(0, 900, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e3e7"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(744, 900, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2qyh"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(0, 1200, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu1kv"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(744, 1200, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x8at"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(0, 1500, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3exm"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(744, 1500, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtfdg"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(0, 1800, 744, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1k2w"]
+atlas = ExtResource("2_ylitp")
+region = Rect2(744, 1800, 744, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lep6e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58xi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylitp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1j1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujair")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5a4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cre3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpydg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e3e7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2qyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu1kv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x8at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3exm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtfdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1k2w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Lake" type="Node2D" unique_id=1912421607]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=424187384]
+position = Vector2(0, -8)
+scale = Vector2(0.120000005, 1)
+zoom = Vector2(1.495, 1.335)
+
+[node name="Beach1_png" type="Sprite2D" parent="." unique_id=2043433009]
+texture = ExtResource("1_58xi2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=17027124]
+position = Vector2(8, -160)
+sprite_frames = SubResource("SpriteFrames_lep6e")
+autoplay = "default"

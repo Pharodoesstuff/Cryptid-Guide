@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://b123rf1rdpyxf" path="res://player.gd" id="1_gea4v"]
 [ext_resource type="Texture2D" uid="uid://blj4el15od3j0" path="res://Characters/Main Character/MC Movement.png" id="2_88u02"]
 [ext_resource type="Texture2D" uid="uid://bciddynybredy" path="res://Characters/Main Character/Shadow.png" id="2_o60yy"]
-[ext_resource type="Script" uid="uid://c57ohcp6ivyd6" path="res://Player Assets/Player/player_state_machine.gd" id="4_k4pqc"]
-[ext_resource type="Script" uid="uid://b7ro2lrabif1e" path="res://Player Assets/Player/state_idle.gd" id="5_vf8ew"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_88u02"]
 radius = 9.000204
@@ -159,10 +157,4 @@ vframes = 8
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1309186295]
 libraries/ = SubResource("AnimationLibrary_06c34")
 
-[node name="State Machine" type="Node" parent="." unique_id=662603767]
-script = ExtResource("4_k4pqc")
-
-[node name="Idle" type="Node" parent="State Machine" unique_id=328383809]
-script = ExtResource("5_vf8ew")
-
-[node name="Walk" type="Node" parent="State Machine" unique_id=475874730]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2082629439]
