@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c6iyxgfwp2cyw" path="res://Background Assets/Forest/Leaves.png" id="4_q7p02"]
 [ext_resource type="Texture2D" uid="uid://qbv02kewhsxe" path="res://Background Assets/Forest/Plant's and stuff.png" id="5_k6wxh"]
 [ext_resource type="PackedScene" uid="uid://cop15662dn8op" path="res://Characters/Main Character/Main Character.tscn" id="5_mhfmy"]
+[ext_resource type="Texture2D" uid="uid://u0830yev5gxu" path="res://Test/Clouds.png" id="8_mhfmy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6wxh"]
 texture = ExtResource("1_eqc7w")
@@ -896,3 +897,14 @@ tile_set = SubResource("TileSet_vfbpg")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AADb/9b/AAA/AFkAAADh/9z/AAA/AFkAAADo/9f/AAA/AFkAAADy/9z/AAA/AFkAAAD5/9f/AAA/AFkAAAAAAN3/AAA/AFkAAAAJANf/AAA/AFkAAAARAOD/AAA/AFkAAAAWANj/AAA/AFkAAAAeAN7/AAA/AFkAAAAmANf/AAA/AFkAAAAtAN//AAA/AFkAAADT/yIAAAA/AFkAAADd/x4AAAA/AFkAAADj/yQAAAA/AFkAAADq/x8AAAA/AFkAAAD0/yQAAAA/AFkAAAD7/x8AAAA/AFkAAAACACUAAAA/AFkAAAALAB8AAAA/AFkAAAATACgAAAA/AFkAAAAYACAAAAA/AFkAAAAgACYAAAA/AFkAAAAoAB8AAAA/AFkAAAAvACcAAAA/AFkAAADS/9n/AAA/AFkAAAA=")
 tile_set = SubResource("TileSet_t8ips")
+
+[node name="Clouds" type="Sprite2D" parent="." unique_id=1922663215]
+modulate = Color(0.096204735, 0.09620475, 0.096204735, 0.19215687)
+position = Vector2(96, 464)
+scale = Vector2(4.800001, 4.28)
+texture = ExtResource("8_mhfmy")
+
+[node name="Clouds2" type="Sprite2D" parent="Clouds" unique_id=1667368382]
+position = Vector2(111.66664, -241.12148)
+scale = Vector2(-0.983386, 1.0600213)
+texture = ExtResource("8_mhfmy")
