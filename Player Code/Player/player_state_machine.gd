@@ -1,27 +1,33 @@
 class_name PlayerStateMachine extends Node
 
-var states : Array[ State]
+var states : Array[State]
 var prev_state : State
 var current_state : State
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
-	pass # Replace with function body.
+	pass
 
 
 func _process(delta: float) -> void:
-	ChangeState(current_state.Process(delta))
+	if current_state:
+		ChangeState(current_state.Process(delta))
 	pass
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	ChangeState(current_state.Physics( delta))
+	if current_state:
+		ChangeState(current_state.Physics(delta))
 	pass
 
+
 func _unhandled_input(event) -> void:
-		ChangeState( current_state.HandleInput( event ))
-		pass
+	if current_state:
+		ChangeState(current_state.HandleInput(event))
+	pass
+
 
 func Intialize( _player : Player) -> void:
 	states = []
@@ -29,11 +35,12 @@ func Intialize( _player : Player) -> void:
 	for c in get_children():
 		if c is State:
 			states.append(c)
+			c.player = _player # FIXED: Gives ALL child states access to the player reference
+			
 	if states.size() > 0:
-		states[0].player = _player
-		ChangeState( states[0])
+		ChangeState(states[0])
 		process_mode = Node.PROCESS_MODE_INHERIT
-		
+
 
 func ChangeState( new_state : State) -> void:
 	if new_state == null || new_state == current_state:
