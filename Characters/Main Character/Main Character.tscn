@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cop15662dn8op"]
 
-[ext_resource type="Script" uid="uid://b123rf1rdpyxf" path="res://player.gd" id="1_gea4v"]
+[ext_resource type="Script" uid="uid://b123rf1rdpyxf" path="res://Player.gd" id="1_gea4v"]
 [ext_resource type="Texture2D" uid="uid://blj4el15od3j0" path="res://Characters/Main Character/MC Movement.png" id="2_88u02"]
 [ext_resource type="Texture2D" uid="uid://bciddynybredy" path="res://Characters/Main Character/Shadow.png" id="2_o60yy"]
+[ext_resource type="Script" uid="uid://c57ohcp6ivyd6" path="res://Player Code/Player/player_state_machine.gd" id="4_k4pqc"]
+[ext_resource type="Script" uid="uid://b7ro2lrabif1e" path="res://Player Code/Player/state_idle.gd" id="5_vf8ew"]
+[ext_resource type="Script" path="res://walk.gd" id="6_1xq48"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_88u02"]
 radius = 9.000204
@@ -133,6 +136,7 @@ _data = {
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1999503061]
 z_as_relative = false
+position = Vector2(324, 239)
 collision_mask = 3
 script = ExtResource("1_gea4v")
 
@@ -158,3 +162,14 @@ vframes = 8
 libraries/ = SubResource("AnimationLibrary_06c34")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2082629439]
+
+[node name="State Machine" type="Node" parent="." unique_id=872177249]
+script = ExtResource("4_k4pqc")
+metadata/_custom_type_script = "uid://c57ohcp6ivyd6"
+
+[node name="Idle" type="Node" parent="State Machine" unique_id=681155040]
+script = ExtResource("5_vf8ew")
+
+[node name="Walk" type="Node" parent="State Machine" unique_id=2105088920 node_paths=PackedStringArray("idle_state")]
+script = ExtResource("6_1xq48")
+idle_state = NodePath("../Idle")
