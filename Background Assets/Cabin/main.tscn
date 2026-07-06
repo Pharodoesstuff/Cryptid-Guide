@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cop15662dn8op" path="res://Characters/Main Character/Main Character.tscn" id="4_uduy2"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1bvp3"]
+load_path = "res://.godot/imported/New cabin.png-a35a71e6f36e3809345e270fd764a06a.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = SubResource("CompressedTexture2D_1bvp3")
@@ -1852,9 +1853,6 @@ sources/0 = SubResource("TileSetAtlasSource_ycdy4")
 [node name="Cabin" type="Node2D" unique_id=415258001]
 y_sort_enabled = true
 
-[node name="CharacterBody2D2" parent="." unique_id=1999503061 instance=ExtResource("4_uduy2")]
-position = Vector2(9, 20)
-
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=633963970]
 z_index = -3
 offset_left = -688.0
@@ -1906,3 +1904,7 @@ tile_set = SubResource("TileSet_w48qg")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1676381489]
 position = Vector2(35, 2)
 zoom = Vector2(1.5, 1.5)
+
+[node name="CharacterBody2D" parent="." unique_id=1999503061 instance=ExtResource("4_uduy2")]
+position = Vector2(304, -104)
+script = null
