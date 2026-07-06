@@ -1,26 +1,16 @@
-class_name State_Idle extends State
+class_name PlayerIdleState extends State
 
-@onready var walk : State = $"../Walk"
-#What happens when the player enters this State?
+# Creates a slot in the Godot Inspector to link the Walk state
+@export var walk_state: State
+
 func Enter() -> void:
+	# As soon as the player stops and enters this state, play the idle animation
 	player.UpdateAnimation("idle")
-	pass
-	
-#What happens when the player exits this State?
-func Exit() -> void:
-	pass
-# What happens during the process update in this State?
-func Process( _delta : float ) -> State:
+
+func Process(_delta: float) -> State:
+	# If the player pushes a movement key, switch to the Walk state
 	if player.direction != Vector2.ZERO:
-		return walk
-		
-	player.velocity = Vector2.ZERO
-	return null
+		return walk_state
 	
-#What happens during the _physics_process update in this State?
-func Physical( _delta : float ) -> State:
-	return null
-	
-#What happens with input events in this State?
-func HandleInput( _event: InputEvent ) -> State:
+	# Returning null tells the State Machine to stay in the Idle state
 	return null
