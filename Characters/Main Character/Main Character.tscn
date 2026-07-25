@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cop15662dn8op"]
 
-[ext_resource type="Script" uid="uid://b123rf1rdpyxf" path="res://player.gd" id="1_gea4v"]
+[ext_resource type="Script" uid="uid://b123rf1rdpyxf" path="res://Player Code/Player/player.gd" id="1_gea4v"]
 [ext_resource type="Texture2D" uid="uid://blj4el15od3j0" path="res://Characters/Main Character/MC Movement.png" id="2_88u02"]
 [ext_resource type="Texture2D" uid="uid://bciddynybredy" path="res://Characters/Main Character/Shadow.png" id="2_o60yy"]
+[ext_resource type="Script" uid="uid://c57ohcp6ivyd6" path="res://Player Code/Player/player_state_machine.gd" id="4_k4pqc"]
+[ext_resource type="Script" uid="uid://b7ro2lrabif1e" path="res://Player Code/Player/state_idle.gd" id="5_vf8ew"]
+[ext_resource type="Script" uid="uid://c3c14hwny82y2" path="res://Player Code/Player/state_walk.gd" id="6_1xq48"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_88u02"]
 radius = 9.000204
@@ -74,7 +77,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vf8ew"]
 resource_name = "walk_down"
-loop_mode = 2
+length = 0.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -82,42 +86,43 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.23333333, 0.43333334, 0.73333335, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.23333333, 0.43333334, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [12, 24, 28, 24, 12]
+"values": [12, 24, 28, 24]
 }
 
 [sub_resource type="Animation" id="Animation_88u02"]
 resource_name = "walk_side"
-length = 0.8
-loop_mode = 2
+length = 0.73333335
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
-tracks/0/loop_wrap = true
+tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.76666665),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [3, 15, 3, 31, 3]
+"values": [3, 15, 3, 31]
 }
 
 [sub_resource type="Animation" id="Animation_06c34"]
-loop_mode = 2
+length = 0.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
-tracks/0/loop_wrap = true
+tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.23333333, 0.5, 0.8, 0.96666664),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.43333334, 0.6666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [9, 13, 9, 29, 9]
+"values": [9, 13, 9, 29]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_06c34"]
@@ -133,6 +138,7 @@ _data = {
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1999503061]
 z_as_relative = false
+y_sort_enabled = true
 collision_mask = 3
 script = ExtResource("1_gea4v")
 
@@ -141,12 +147,6 @@ position = Vector2(-1, 14.000001)
 rotation = -1.5705919
 shape = SubResource("CapsuleShape2D_88u02")
 
-[node name="Shadow" type="Sprite2D" parent="." unique_id=821183083]
-modulate = Color(0.30905873, 0.12095664, 0.014519472, 1)
-position = Vector2(-1.3749998, 20.000002)
-scale = Vector2(1.0234375, 0.48437497)
-texture = ExtResource("2_o60yy")
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1321552498]
 y_sort_enabled = true
 position = Vector2(0, -3)
@@ -154,7 +154,25 @@ texture = ExtResource("2_88u02")
 hframes = 8
 vframes = 8
 
+[node name="Shadow" type="Sprite2D" parent="." unique_id=821183083]
+modulate = Color(0.30905873, 0.12095664, 0.014519472, 1)
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-1.3749998, 20.000002)
+scale = Vector2(1.0234375, 0.48437497)
+texture = ExtResource("2_o60yy")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1309186295]
 libraries/ = SubResource("AnimationLibrary_06c34")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2082629439]
+zoom = Vector2(1.5, 1.5)
+
+[node name="State Machine" type="Node" parent="." unique_id=1942385052]
+script = ExtResource("4_k4pqc")
+
+[node name="Idle" type="Node" parent="State Machine" unique_id=487328474]
+script = ExtResource("5_vf8ew")
+
+[node name="Walk" type="Node" parent="State Machine" unique_id=439028647]
+script = ExtResource("6_1xq48")

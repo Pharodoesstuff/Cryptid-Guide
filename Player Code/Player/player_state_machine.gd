@@ -1,6 +1,6 @@
 class_name PlayerStateMachine extends Node
 
-var states : Array[ State]
+var states : Array[ State ]
 var prev_state : State
 var current_state : State
 
@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func Physics(delta: float) -> void:
 	ChangeState(current_state.Physics( delta))
 	pass
 

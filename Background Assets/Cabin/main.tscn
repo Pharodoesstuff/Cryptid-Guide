@@ -1018,7 +1018,7 @@ texture = SubResource("CompressedTexture2D_1bvp3")
 11:66/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_h2yge"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_0xm2m")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ig7tw"]
@@ -1728,7 +1728,7 @@ texture = SubResource("CompressedTexture2D_1bvp3")
 11:66/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0xm2m"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 sources/3 = SubResource("TileSetAtlasSource_ig7tw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
@@ -1901,10 +1901,5 @@ position = Vector2(-296, -176)
 tile_map_data = PackedByteArray("AAAYAAEAAAAHABEAAAA=")
 tile_set = SubResource("TileSet_w48qg")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1676381489]
-position = Vector2(35, 2)
-zoom = Vector2(1.5, 1.5)
-
 [node name="CharacterBody2D" parent="." unique_id=1999503061 instance=ExtResource("4_uduy2")]
-position = Vector2(304, -104)
-script = null
+position = Vector2(112, 48)

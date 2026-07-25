@@ -22,7 +22,7 @@ func Process( _delta : float ) -> State:
 		player.UpdateAnimation("walk")
 	return null
 #What happens during the _physics_process update in this State?
-func Physical( _delta : float ) -> State:
+func Physics( _delta : float ) -> State:
 	return null
 	
 #What happens with input events in this State?
