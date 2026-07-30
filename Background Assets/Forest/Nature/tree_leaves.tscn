@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cxrwp6l6vnn8t"]
+
+[ext_resource type="Texture2D" uid="uid://iyli1qhrbtls" path="res://Background Assets/Forest/Nature/Tree Leaves.png" id="1_nd5ay"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qb54y"]
+texture = ExtResource("1_nd5ay")
+3:0/size_in_atlas = Vector2i(13, 12)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 5)
+
+[sub_resource type="TileSet" id="TileSet_hicyq"]
+sources/0 = SubResource("TileSetAtlasSource_qb54y")
+
+[node name="TreeLeaves" type="TileMapLayer" unique_id=995512479]
+z_index = 1
+z_as_relative = false
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 3, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_hicyq")

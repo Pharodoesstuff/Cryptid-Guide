@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6uupoygu46ga"
-path="res://.godot/imported/Old Cabin.png-85831fe73344a49d3e8a139e64f124a3.ctex"
+uid="uid://u0830yev5gxu"
+path="res://.godot/imported/Clouds.png-2c15dcfd4525fc9f759b763ca3ac1246.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Assets/Forest/Old Cabin.png"
-dest_files=["res://.godot/imported/Old Cabin.png-85831fe73344a49d3e8a139e64f124a3.ctex"]
+source_file="res://Background Assets/Clouds.png"
+dest_files=["res://.godot/imported/Clouds.png-2c15dcfd4525fc9f759b763ca3ac1246.ctex"]
 
 [params]
 

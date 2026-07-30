@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0q0wdf1468k5"
-path="res://.godot/imported/Dirt 2.png-f1f3db26718f0eb8c8e36e2ba2c9fcff.ctex"
+uid="uid://dmyivq4ry3av8"
+path="res://.godot/imported/Tiling-Grass-Texture-Main.jpg-4020b15532f9ccafa234c32f51a90a1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Assets/Forest/Dirt 2.png"
-dest_files=["res://.godot/imported/Dirt 2.png-f1f3db26718f0eb8c8e36e2ba2c9fcff.ctex"]
+source_file="res://Test/Tiling-Grass-Texture-Main.jpg"
+dest_files=["res://.godot/imported/Tiling-Grass-Texture-Main.jpg-4020b15532f9ccafa234c32f51a90a1d.ctex"]
 
 [params]
 

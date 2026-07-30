@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dqtj7f0balf5o"]
+
+[ext_resource type="Texture2D" uid="uid://eg4yamxt8412" path="res://Background Assets/Cave Scene/Cave Path.png" id="1_e8m3c"]
+[ext_resource type="PackedScene" uid="uid://cop15662dn8op" path="res://Characters/Main Character/Main Character.tscn" id="2_2gj68"]
+[ext_resource type="Texture2D" uid="uid://dd0lj6afs2w7w" path="res://Background Assets/Cave Scene/BF living entrance/Ladder1.png" id="3_vvppj"]
+[ext_resource type="Texture2D" uid="uid://wisg70x4dnk3" path="res://Background Assets/Cave Scene/BF living entrance/Living Entrance.png" id="4_2hiyy"]
+[ext_resource type="VideoStream" uid="uid://dhsocrtm1leug" path="res://Background Assets/Animation/Sparkle Overlay.ogv" id="5_2hiyy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvppj"]
+size = Vector2(69.08836, 89.02722)
+
+[node name="CaveEntrance" type="Node2D" unique_id=581330394]
+y_sort_enabled = true
+
+[node name="CavePath" type="Sprite2D" parent="." unique_id=628165230]
+z_index = -2
+z_as_relative = false
+texture_filter = 1
+position = Vector2(-1208, 0)
+texture = ExtResource("1_e8m3c")
+
+[node name="Scene Border" type="StaticBody2D" parent="." unique_id=1932731807]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Scene Border" unique_id=1384079702]
+build_mode = 1
+polygon = PackedVector2Array(0, -96, -1944, -104, -1944, 64, 0, 80)
+
+[node name="CharacterBody2D" parent="." unique_id=1999503061 instance=ExtResource("2_2gj68")]
+position = Vector2(-1720, -24)
+
+[node name="LivingEntrance" type="Sprite2D" parent="." unique_id=734830245]
+z_index = -1
+position = Vector2(-1840, 24)
+texture = ExtResource("4_2hiyy")
+
+[node name="Ladder1" type="Sprite2D" parent="LivingEntrance" unique_id=1404962910]
+z_as_relative = false
+y_sort_enabled = true
+texture = ExtResource("3_vvppj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="LivingEntrance/Ladder1" unique_id=856536383]
+position = Vector2(25, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LivingEntrance/Ladder1/StaticBody2D" unique_id=1097784974]
+position = Vector2(-24.052856, 0.005886078)
+rotation = -1.5576284
+scale = Vector2(0.9260789, -1.2567508)
+shape = SubResource("RectangleShape2D_vvppj")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=810960345]
+z_index = -3
+offset_left = -1496.0
+offset_top = -328.0
+offset_right = -757.3573
+offset_bottom = 120.61096
+scale = Vector2(2.0342019, 1.4400004)
+stream = ExtResource("5_2hiyy")
+autoplay = true
+expand = true
+loop = true

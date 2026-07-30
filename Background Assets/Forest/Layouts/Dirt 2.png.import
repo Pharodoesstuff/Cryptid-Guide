@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctjvcqsnjvyvu"
-path="res://.godot/imported/NeighborCabin.png-d8de798d0a2b18391fe035024396bf06.ctex"
+uid="uid://d0q0wdf1468k5"
+path="res://.godot/imported/Dirt 2.png-6ed4fc62ddaa7359ea17b6b1b90993cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Assets/Forest/NeighborCabin.png"
-dest_files=["res://.godot/imported/NeighborCabin.png-d8de798d0a2b18391fe035024396bf06.ctex"]
+source_file="res://Background Assets/Forest/Layouts/Dirt 2.png"
+dest_files=["res://.godot/imported/Dirt 2.png-6ed4fc62ddaa7359ea17b6b1b90993cf.ctex"]
 
 [params]
 

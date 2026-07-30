@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u0830yev5gxu"
-path="res://.godot/imported/Clouds.png-eb1a394ae5cc708b70a66ae06ed89829.ctex"
+uid="uid://ipb55kmhc4cy"
+path="res://.godot/imported/Dirt.png-75610a957499a8c87afb9d05ecdb0b42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Test/Clouds.png"
-dest_files=["res://.godot/imported/Clouds.png-eb1a394ae5cc708b70a66ae06ed89829.ctex"]
+source_file="res://Background Assets/Forest/Layouts/Dirt.png"
+dest_files=["res://.godot/imported/Dirt.png-75610a957499a8c87afb9d05ecdb0b42.ctex"]
 
 [params]
 

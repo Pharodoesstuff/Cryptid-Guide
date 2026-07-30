@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj6204tfuht60"
-path="res://.godot/imported/Grass Layout 2.png-06144f0c9f5d6057dab196bb74dc6a66.ctex"
+uid="uid://blcraor3h78pb"
+path="res://.godot/imported/lake Scene.png-4beaf487017324bc9b1daf501a8a9062.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Assets/Forest/Grass Layout 2.png"
-dest_files=["res://.godot/imported/Grass Layout 2.png-06144f0c9f5d6057dab196bb74dc6a66.ctex"]
+source_file="res://Background Assets/Lake/lake Scene.png"
+dest_files=["res://.godot/imported/lake Scene.png-4beaf487017324bc9b1daf501a8a9062.ctex"]
 
 [params]
 

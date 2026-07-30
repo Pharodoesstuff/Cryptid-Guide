@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd7q1yba8naey"
-path="res://.godot/imported/Grass Layout.png-cbd3e37fdd14172188a1f9c179e5544d.ctex"
+uid="uid://psjid83nd4xo"
+path="res://.godot/imported/Rocky.png-bc7ba00c14ed278a708a1eb786e26a0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Assets/Forest/Grass&credits/Grass Layout.png"
-dest_files=["res://.godot/imported/Grass Layout.png-cbd3e37fdd14172188a1f9c179e5544d.ctex"]
+source_file="res://Background Assets/Forest/Nature/Rocky.png"
+dest_files=["res://.godot/imported/Rocky.png-bc7ba00c14ed278a708a1eb786e26a0e.ctex"]
 
 [params]
 
