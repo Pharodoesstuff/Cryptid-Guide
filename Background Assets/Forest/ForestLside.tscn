@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cxrwp6l6vnn8t" path="res://Background Assets/Forest/Nature/tree_leaves.tscn" id="8_kli57"]
 [ext_resource type="Texture2D" uid="uid://q8cw64epbkxs" path="res://Background Assets/Forest/Nature/Large Plant Life.png" id="8_orusn"]
 [ext_resource type="Texture2D" uid="uid://bcw0nwmatjw71" path="res://Background Assets/Forest/Nature/Plant Life.png" id="9_16gj1"]
+[ext_resource type="Texture2D" uid="uid://cmbqeyhv8lok" path="res://Test/Beach -1.png.png" id="10_kli57"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_orusn"]
 
@@ -873,3 +874,15 @@ z_as_relative = false
 position = Vector2(1, 0)
 tile_map_data = PackedByteArray("AADZ//n/AgANAA0AAADf/xAAAgARAAoAAADh//f/AgAVAAYAAADi//n/AgAVAA0AAADj/+X/AgAVAA0AAADk//f/AgANAA0AAADk/xQAAgAHAAcAAADl/wgAAgAOAAcAAADl/x0AAgAVAA0AAADm//j/AgANAA0AAADo//D/AgARAAoAAADq/xUAAgAVAA0AAADq/xYAAgARAA0AAADr//j/AgAVAAgAAADr/xMAAgANAA0AAADr/yMAAgAHAAcAAADt/+7/AgARAA0AAADt/xkAAgAKAAYAAADt/x0AAgARAAoAAADu/+v/AgAOAAcAAADu/yEAAgANAA0AAADv/+T/AgAVAA0AAADw/wgAAgARAA0AAADw/xQAAgARAAoAAADx/+j/AgARAAoAAADx//3/AgARAA0AAADx/yMAAgAKAAYAAADy/+//AgAVAAgAAADy/xQAAgANAAoAAADz/+v/AgAVAA0AAADz/wMAAgAVAAgAAAD0/+//AgAVAA0AAAD1/+r/AgAVAAgAAAD3/97/AgAUAAsAAAD5/+v/AgAHAAcAAAD7////AgANAAoAAAD8/xgAAgAUAAsAAAD9////AgAVAAYAAAD+//P/AgAVAA0AAAAHAA8AAgAOAAcAAAAIABwAAgAHAAcAAAAKAO7/AgAOAAcAAAAKAPH/AgANAAoAAAAKACAAAgARAA0AAAALAAEAAgARAAoAAAALAAQAAgARAAoAAAALACEAAgARAAoAAAAPAAEAAgAKAAYAAAARAOD/AgAUAAsAAAASAP7/AgANAA0AAAASAA8AAgAHAAcAAAAVAOn/AgAOAAcAAAAVABwAAgARAAoAAAAXAPb/AgAVAAYAAAAXAP//AgANAA0AAAAXAAcAAgAUAAsAAAAZAP7/AgANAAoAAAAZABoAAgAVAAgAAAAaAP7/AgANAAoAAAAbAB8AAgANAA0AAAAcAOD/AgAVAAgAAAAcAAkAAgAOAAcAAAAeAPb/AgANAA0AAAAeACIAAgAUAAsAAAAfAPz/AgAHAAcAAAAfABEAAgAVAA0AAAAgAOb/AgAUAAsAAAAgAAgAAgAVAA0AAAAgAA8AAgANAAoAAAAgACAAAgAKAAYAAAAhAN3/AgAOAAcAAAAhABwAAgAUAAsAAAAiAOb/AgAOAAcAAAAiAPz/AgAUAAsAAAAjAPH/AgAVAA0AAAAjAAcAAgAHAAcAAAAmAAMAAgARAA0AAAAmAAgAAgAKAAYAAAAnABAAAgARAAoAAAAnABEAAgANAAoAAAApAOv/AgAUAAsAAAApAAIAAgAVAAgAAAAqAOH/AgAUAAsAAAArAOH/AgANAAoAAAAtAPL/AgAVAA0AAAA=")
 tile_set = SubResource("TileSet_rvvyb")
+
+[node name="Entrance to forest" type="Sprite2D" parent="." unique_id=307601400]
+modulate = Color(1, 0.27450982, 0.27450982, 1)
+position = Vector2(823, 3.1874943)
+scale = Vector2(0.088709675, 0.44096637)
+texture = ExtResource("10_kli57")
+
+[node name="Entrance to this side" type="Sprite2D" parent="." unique_id=1561759555]
+modulate = Color(1, 0.27450982, 0.27450982, 1)
+position = Vector2(-624.754, -8)
+scale = Vector2(0.04503766, 0.19445133)
+texture = ExtResource("10_kli57")

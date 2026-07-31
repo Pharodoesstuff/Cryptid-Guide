@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://q8cw64epbkxs" path="res://Background Assets/Forest/Nature/Large Plant Life.png" id="9_2gl3i"]
 [ext_resource type="PackedScene" uid="uid://cxrwp6l6vnn8t" path="res://Background Assets/Forest/Nature/tree_leaves.tscn" id="9_t8k7e"]
 [ext_resource type="Texture2D" uid="uid://bcw0nwmatjw71" path="res://Background Assets/Forest/Nature/Plant Life.png" id="10_e2jgm"]
+[ext_resource type="Texture2D" uid="uid://cmbqeyhv8lok" path="res://Test/Beach -1.png.png" id="11_e2jgm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6wxh"]
 texture = ExtResource("1_eqc7w")
@@ -1822,7 +1823,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_mhfmy")
 
 [node name="GrassLayout2" type="Sprite2D" parent="." unique_id=1375907782]
-visible = false
 modulate = Color(0.9843137, 0.89411765, 0.76862746, 1)
 z_index = -2
 position = Vector2(8, 8)
@@ -1834,7 +1834,6 @@ position = Vector2(8, 0)
 texture = ExtResource("2_j4i36")
 
 [node name="Sides" type="TileMapLayer" parent="." unique_id=515421271]
-visible = false
 modulate = Color(0.9843137, 0.89411765, 0.76862746, 1)
 z_index = -1
 position = Vector2(-1, 0)
@@ -1842,7 +1841,6 @@ tile_map_data = PackedByteArray("AADe/wsAAAANAA4AAADe/wwAAAANAA8AAADf/wsAAAAGAAg
 tile_set = SubResource("TileSet_u3s2m")
 
 [node name="NeighborCabin" type="TileMapLayer" parent="." unique_id=2072529658]
-visible = false
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(-448, -240)
@@ -1855,17 +1853,14 @@ tile_map_data = PackedByteArray("AADx/wgAAQAEAAgAAADx/wkAAQAEAAkAAADy/wgAAQAFAAg
 tile_set = SubResource("TileSet_adac6")
 
 [node name="CharacterBody2D" parent="." unique_id=1999503061 instance=ExtResource("8_t8k7e")]
-visible = false
 position = Vector2(568, -56)
 
 [node name="Tree Stump" type="TileMapLayer" parent="." unique_id=1922913783]
-visible = false
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AADq/yQAAQAGAAQAAAALACQAAQAGAAQAAAAnACQAAQAGAAQAAAAvABwAAQAGAAQAAAAvAPb/AQAGAAQAAAAZACQAAQAGAAQAAAAzAA8AAQAGAAQAAADb/yMAAQAGAAQAAAD3/yUAAQAGAAQAAAA=")
+tile_map_data = PackedByteArray("AADq/yQAAQAGAAQAAAALACQAAQAGAAQAAAAnACQAAQAGAAQAAAAvABwAAQAGAAQAAAAZACQAAQAGAAQAAAAzAA8AAQAGAAQAAADb/yMAAQAGAAQAAAD3/yUAAQAGAAQAAAA=")
 tile_set = SubResource("TileSet_vfbpg")
 
 [node name="TreeLeaves" parent="Tree Stump" unique_id=1485074745 instance=ExtResource("9_t8k7e")]
-visible = false
 self_modulate = Color(1, 1, 1, 0.32941177)
 position = Vector2(-352, 489)
 
@@ -1874,15 +1869,19 @@ libraries/ = SubResource("AnimationLibrary_t8k7e")
 autoplay = &"Clouds"
 
 [node name="Large Plants" type="TileMapLayer" parent="." unique_id=2099014402]
-visible = false
 y_sort_enabled = true
 position = Vector2(-1, 0)
 tile_map_data = PackedByteArray("AADX/9L/AgATADEAAADg/9f/AgATADEAAADq/9L/AgATADEAAADy/9f/AgATADEAAAD6/9L/AgATADEAAAACANf/AgATADEAAAAKANL/AgATADEAAAAQANf/AgATADEAAAAZANH/AgATADEAAAAgANb/AgATADEAAAApANP/AgATADEAAAAxANn/AgATADEAAAA0AOT/AgATADEAAADT/ykAAgATADEAAADh/ykAAgATADEAAADu/yoAAgATADEAAAD5/yoAAgATADEAAAAGACsAAgATADEAAAATACoAAgATADEAAAAjACoAAgATADEAAAAvACgAAgATADEAAAAzABoAAgATADEAAAA0AA0AAgATADEAAAAzAPD/AgATADEAAADP/9j/AgATADEAAAA=")
 tile_set = SubResource("TileSet_o130p")
 
 [node name="Ground Plants" type="TileMapLayer" parent="." unique_id=1819539353]
-visible = false
 z_index = -1
 position = Vector2(1, 0)
 tile_map_data = PackedByteArray("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")
 tile_set = SubResource("TileSet_gr1co")
+
+[node name="Entrance to Forest" type="Sprite2D" parent="." unique_id=25383090]
+modulate = Color(1, 0.27450982, 0.27450982, 1)
+position = Vector2(-791, 88)
+scale = Vector2(0.04569895, 0.44096637)
+texture = ExtResource("11_e2jgm")

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://yg6pfta61xd4" path="res://Background Assets/Lake/Lake Waves.png" id="3_j5a4w"]
 [ext_resource type="Shader" uid="uid://cxgq5u4kio8vi" path="res://Background Assets/Lake/WaterVisual.gdshader" id="4_cre3q"]
 [ext_resource type="PackedScene" uid="uid://cop15662dn8op" path="res://Characters/Main Character/Main Character.tscn" id="5_ujair"]
+[ext_resource type="Texture2D" uid="uid://cmbqeyhv8lok" path="res://Test/Beach -1.png.png" id="6_j5a4w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wpydg"]
 shader = ExtResource("2_ujair")
@@ -61,6 +62,7 @@ scale = Vector2(1.0400003, 1)
 texture = ExtResource("3_j5a4w")
 
 [node name="Wave visual" type="Sprite2D" parent="Wave Motion" unique_id=677167735]
+visible = false
 material = SubResource("ShaderMaterial_j5a4w")
 position = Vector2(7.6920547, -0.015533447)
 scale = Vector2(0.99999994, 1)
@@ -68,3 +70,10 @@ texture = ExtResource("3_j5a4w")
 
 [node name="CharacterBody2D" parent="." unique_id=1999503061 instance=ExtResource("5_ujair")]
 position = Vector2(24, 88)
+
+[node name="Entrance to Forest" type="Sprite2D" parent="." unique_id=546372643]
+modulate = Color(1, 0.27450982, 0.27450982, 1)
+position = Vector2(24, 527.00006)
+rotation = 1.568623
+scale = Vector2(0.04569895, 1.2454239)
+texture = ExtResource("6_j5a4w")

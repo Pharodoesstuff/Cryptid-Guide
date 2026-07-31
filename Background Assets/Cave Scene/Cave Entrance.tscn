@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://byuc6rrll2lh4" path="res://Background Assets/Cave Scene/Cave BG/Cave1.png" id="4_vwyu5"]
 [ext_resource type="Texture2D" uid="uid://bweb5yubbn56l" path="res://Background Assets/Cave Scene/BF living entrance/Cave Path.png" id="8_857wc"]
 [ext_resource type="Texture2D" uid="uid://dod7uqs2ruwqg" path="res://Background Assets/Cave Scene/Cave BG/Rocks.png" id="9_kwmqm"]
+[ext_resource type="Texture2D" uid="uid://cmbqeyhv8lok" path="res://Test/Beach -1.png.png" id="10_mkuai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvppj"]
 size = Vector2(69.08836, 89.02722)
@@ -88,9 +89,15 @@ build_mode = 1
 polygon = PackedVector2Array(-381, -61, -379, 75, -54, 75, -53, -63)
 
 [node name="CharacterBody2D" parent="." unique_id=1999503061 instance=ExtResource("2_2gj68")]
-position = Vector2(-138, -8)
+position = Vector2(-2126, -5)
 
 [node name="Rocks" type="Sprite2D" parent="." unique_id=2011419494]
 z_index = 1
 position = Vector2(-1150, -11)
 texture = ExtResource("9_kwmqm")
+
+[node name="Entrance to Left Side Forest" type="Sprite2D" parent="." unique_id=1332078257]
+modulate = Color(1, 0.27450982, 0.27450982, 1)
+position = Vector2(60, 15.593746)
+scale = Vector2(0.04569895, 0.29443276)
+texture = ExtResource("10_mkuai")

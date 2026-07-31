@@ -5,12 +5,12 @@ uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_n
 
 uniform vec4 color: source_color = vec4(0.,0.5,1.0,1.0);
 //uniform float amplitude : hint_range(0., 2., 0.01) = 2.;
-uniform float frequency : hint_range(0., 1000. , 1.) = 3.;
+uniform float frequency : hint_range(1000., 1000. , 1.) = 1.;
 uniform float compress : hint_range(1., 2. , 0.01) = 1.;
-uniform float add_light : hint_range(0., 2. , 0.01) = 0.;
+uniform float add_light : hint_range(1., 1. , 0.01) = 0.;
 
 uniform float scale : hint_range(0., 2. , 0.01) = 1.;
-uniform float speed : hint_range(-1000., 1000. , 0.01) = 0.1;
+uniform float speed : hint_range(-1000., 1000. , 0.01) = 3;
 uniform float x_angle: hint_range(-1.57, 1.57, 0.01) = 1.57;
 uniform float y_angle: hint_range(-1.57, 1.57, 0.01) = 1.57;
 uniform float base_alpha : hint_range(-2., 2. , 0.01) = 0.8;
@@ -18,7 +18,7 @@ uniform float refraction_ratio: hint_range(-100, 100, 0.01) = 10.;//0.2;
 uniform float clear : hint_range(0., 1. , 0.01) = 0.;
 
 uniform float surf_sinpowder : hint_range(0., 8. , 1.) = 8.;
-uniform float surf_speed : hint_range(-10., 10. , 0.01) = 1.;
+uniform float surf_speed : hint_range(-10., 10. , 0.01) = 3.;
 uniform float surf_angle : hint_range(-1.57, 1.57, 0.01) = 1.57;
 uniform float surf_magnitude : hint_range(0., 10. , 0.01) = 0.;
 
