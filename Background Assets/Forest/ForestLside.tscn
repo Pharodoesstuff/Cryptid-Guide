@@ -815,7 +815,7 @@ physics_material_override = SubResource("PhysicsMaterial_orusn")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World Border" unique_id=1734299426]
 build_mode = 1
-polygon = PackedVector2Array(784, 488, -704, 464, -672, -560, 776, -544, 784, -192, 840, -192, 840, 112, 784, 112)
+polygon = PackedVector2Array(792, 576, -776, 576, -672, -560, 776, -544, 784, -192, 840, -192, 840, 112, 784, 112)
 
 [node name="GrassRSide" type="Sprite2D" parent="." unique_id=1838289100]
 modulate = Color(0.9843137, 0.89411765, 0.76862746, 1)
