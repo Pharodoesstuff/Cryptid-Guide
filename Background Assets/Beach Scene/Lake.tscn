@@ -1,0 +1,415 @@
+[gd_scene format=3 uid="uid://ck1hyv06k08fv"]
+
+[ext_resource type="Shader" uid="uid://bi16jc3l1oe7b" path="res://Background Assets/Forest/Grass.gdshader" id="1_cre3q"]
+[ext_resource type="PackedScene" uid="uid://cop15662dn8op" path="res://Characters/Main Character/Main Character.tscn" id="5_ujair"]
+[ext_resource type="Texture2D" uid="uid://6e1fxv11jboe" path="res://Background Assets/Beach Scene/Sky BG/1.png" id="7_s2qyh"]
+[ext_resource type="Texture2D" uid="uid://gr33pljegiwo" path="res://Background Assets/Beach Scene/Sky BG/3.png" id="8_1x8at"]
+[ext_resource type="Texture2D" uid="uid://b1060wyivsvn2" path="res://Background Assets/Beach Scene/Beach Assets/Beach Water.png" id="8_eu1kv"]
+[ext_resource type="AudioStream" uid="uid://0a8wc8iplol5" path="res://Music/Scenes/Beach Music/A Smoothie At The Beach Bar.mp3" id="9_w0j3r"]
+[ext_resource type="Texture2D" uid="uid://dbckrk7wlltun" path="res://Background Assets/Beach Scene/Sky BG/4.png" id="9_w3exm"]
+[ext_resource type="Texture2D" uid="uid://blcraor3h78pb" path="res://Background Assets/Beach Scene/Beach Assets/lake Scene.png" id="10_s2qyh"]
+[ext_resource type="Texture2D" uid="uid://bmienuxnfhwwx" path="res://Background Assets/Beach Scene/Sky BG/2.png" id="10_w3exm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3e3e7"]
+shader = ExtResource("1_cre3q")
+shader_parameter/wind_dir_angle = 0.0
+shader_parameter/wind_speed = 50.0
+shader_parameter/use_wind_gusts = false
+shader_parameter/patch_width_px = 300.0
+shader_parameter/patch_height_px = 10.0
+shader_parameter/pixel_size_px = 1.0
+shader_parameter/rotation_degrees = -15.0
+shader_parameter/threshold = 0.6
+shader_parameter/opacity = 0.1
+
+[sub_resource type="Shader" id="Shader_w0j3r"]
+code = "shader_type canvas_item;
+
+uniform float base_y = 0.5;
+
+uniform sampler2D waterNoise;
+uniform sampler2D waterDistortionNoise;
+
+
+uniform float distortionForce = 0.026;
+uniform float WDBrightness = 0.386;
+uniform float WDFreq = 0.39;
+uniform float WDSize = 2.0;
+uniform float WDSpeed = 3.658;
+uniform vec2 tiling = vec2(1.164, 1.0);
+uniform vec2 offSetSpeed = vec2(0.035, 0.01);
+
+uniform float wave_frequency = 45.0;
+uniform float wave_amplitude = 0.035;
+uniform float wave_speed = 3.0;
+
+void fragment() {
+    vec2 uv = UV;
+
+    float wave1 = sin(uv.x * wave_frequency + TIME * wave_speed);
+    float wave2 = sin(uv.x * wave_frequency * 0.5 + TIME * wave_speed * 0.8);
+    float combined_wave = (wave1 + wave2) * 0.5;
+    float dynamic_water_level = base_y - (combined_wave * wave_amplitude);
+
+    vec2 noiseUV = uv * tiling + offSetSpeed * TIME * 0.5;
+    float noiseValue = texture(waterDistortionNoise, noiseUV).r;
+
+    vec2 waterUV = uv * tiling;
+    waterUV += offSetSpeed * TIME * vec2(1.0, 1.0);
+    waterUV += noiseValue * distortionForce * WDSpeed;
+    vec4 noiseColor = texture(waterNoise, waterUV);
+    float intensity = smoothstep(WDFreq, WDSize, noiseColor.r);
+    vec3 addLight = intensity * vec3(WDBrightness);
+
+
+    float water_mask = smoothstep(dynamic_water_level - 0.002, dynamic_water_level + 0.002, uv.y);
+
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w32gr"]
+shader = SubResource("Shader_w0j3r")
+shader_parameter/base_y = 0.5
+shader_parameter/distortionForce = 0.026
+shader_parameter/WDBrightness = 0.386
+shader_parameter/WDFreq = 0.39
+shader_parameter/WDSize = 2.0
+shader_parameter/WDSpeed = 3.658
+shader_parameter/tiling = Vector2(1.164, 1)
+shader_parameter/offSetSpeed = Vector2(0.035, 0.01)
+shader_parameter/wave_frequency = 45.0
+shader_parameter/wave_amplitude = 0.035
+shader_parameter/wave_speed = 3.0
+
+[sub_resource type="Shader" id="Shader_3e3e7"]
+code = "// Made by PWira
+// MIT License
+shader_type canvas_item;
+
+// Liquid Property
+uniform float liquid_level : hint_range(0.0, 1.0) = 0.5;
+uniform vec4 liquid_color : source_color = vec4(0.2, 0.5, 1.0, 0.8);
+uniform vec4 foam_color : source_color = vec4(0.8, 0.9, 1.0, 0.6);
+
+// Wave property
+uniform float wave_amplitude : hint_range(0.0, 0.1) = 0.08;
+uniform float wave_frequency : hint_range(0.0, 20.0) = 10.0;
+uniform float wave_speed : hint_range(0.0, 5.0) = 5.0;
+
+// Gravity property
+uniform float gravity_angle : hint_range(-3.14159, 3.14159) = 0.0; // rotate in radian
+uniform vec2 gravity_direction = vec2(0.0, 1.0);
+
+// Visual property
+uniform float foam_thickness : hint_range(0.0, 0.1) = 0.02;
+uniform float shine_intensity : hint_range(0.0, 1.0) = 0.3;
+uniform bool add_bubble = true;
+uniform float bubble_scale : hint_range(0.0, 50.0) = 10.0;
+uniform float bubble_speed : hint_range(0.0, 2.0) = 0.5;
+
+// Simple Noise
+float random(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+}
+
+float noise(vec2 st) {
+    vec2 i = floor(st);
+    vec2 f = fract(st);
+
+    float a = random(i);
+    float b = random(i + vec2(1.0, 0.0));
+    float c = random(i + vec2(0.0, 1.0));
+    float d = random(i + vec2(1.0, 1.0));
+
+    vec2 u = f * f * (3.0 - 2.0 * f);
+
+    return mix(a, b, u.x) + (c - a)* u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+}
+
+vec2 rotate(vec2 v, float angle) {
+    float c = cos(angle);
+    float s = sin(angle);
+    return vec2(v.x * c - v.y * s, v.x * s + v.y * c);
+}
+
+void fragment() {
+    vec2 uv = UV;
+    vec2 centered_uv = uv - 0.5;
+    vec2 rotated_uv = rotate(centered_uv, -gravity_angle);
+    rotated_uv += 0.5;
+
+    // Wave based on X in gravity coordinate
+    float wave = sin(rotated_uv.x * wave_frequency + TIME * wave_speed) * wave_amplitude;
+    float surface_y = (1.0 - liquid_level) + wave;
+
+
+    if (rotated_uv.y > surface_y) {
+
+        vec4 base_color = liquid_color;
+
+        float internal_wave = noise(vec2(rotated_uv.x * 3.0, rotated_uv.y * 3.0 + TIME * 0.5)) * 0.1;
+        base_color.rgb += vec3(internal_wave);
+
+
+		if (add_bubble){
+			vec2 bubble_uv = rotated_uv * bubble_scale;
+	        bubble_uv.y += TIME * bubble_speed;
+	        float bubble_noise = noise(bubble_uv);
+	        float bubbles = step(0.95, bubble_noise);
+	        base_color.rgb += vec3(bubbles * 0.3);
+		}
+
+        float shine = pow(1.0 - abs(uv.x - 0.5) * 2.0, 3.0) * shine_intensity;
+        base_color.rgb += vec3(shine);
+
+        float depth_factor = 1.0 - (rotated_uv.y - surface_y) / (1.0 - surface_y);
+        base_color.rgb *= 0.7 + depth_factor * 0.3;
+
+        COLOR = base_color;
+
+    } else if (rotated_uv.y > surface_y - foam_thickness) {
+
+        float foam_factor = (surface_y - rotated_uv.y) / foam_thickness;
+        float foam_noise = noise(vec2(rotated_uv.x * 20.0, TIME * 2.0));
+        foam_factor *= foam_noise;
+
+        vec4 final_foam = mix(liquid_color, foam_color, foam_factor);
+        COLOR = final_foam;
+
+    } else {
+
+        COLOR = vec4(0.0, 0.0, 0.0, 0.0);
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q1k2w"]
+shader = SubResource("Shader_3e3e7")
+shader_parameter/liquid_level = 0.5
+shader_parameter/liquid_color = Color(0.2, 0.5, 1, 0.8)
+shader_parameter/foam_color = Color(0.72, 0.68, 0.52, 1)
+shader_parameter/wave_amplitude = 0.02
+shader_parameter/wave_frequency = 5.0
+shader_parameter/wave_speed = 0.2
+shader_parameter/gravity_angle = 0.0
+shader_parameter/gravity_direction = Vector2(0, 1)
+shader_parameter/foam_thickness = 0.02
+shader_parameter/shine_intensity = 0.3
+shader_parameter/add_bubble = true
+shader_parameter/bubble_scale = 10.0
+shader_parameter/bubble_speed = 0.5
+
+[sub_resource type="Animation" id="Animation_3e3e7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-731, 35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background sky:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.04845749, 3.3739656e-05, 0.18717977, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cloud 1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.061673872, 0.014104305, 0.20065199, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eu1kv"]
+resource_name = "Sky Cycle"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background sky:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.4, 4.133333, 8.333333, 10.366667, 12.033334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.04845749, 3.3739656e-05, 0.18717977, 1), Color(0.69385815, 0.48304826, 0.35066184, 1), Color(0.845843, 0.84895456, 1, 1), Color(0.845843, 0.84895456, 1, 1), Color(0.9885556, 0.84286666, 0.56040394, 1), Color(0.04845749, 3.3739656e-05, 0.18717977, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.874302e-07, 6.0666666, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-731, 35), Vector2(-1, -50), Vector2(903, 58)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cloud 1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.10000076, 2.2999992, 4.0333323, 8.233333, 10.266666, 11.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.11927957, 0.00010896802, 0.3603097, 1), Color(0.69385815, 0.48304826, 0.35066184, 1), Color(0.845843, 0.84895456, 1, 1), Color(0.845843, 0.84895456, 1, 1), Color(0.9885556, 0.84286666, 0.56040394, 1), Color(0.11927957, 0.00010896802, 0.3603097, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cloud2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.3333325, 4.0666656, 8.266665, 10.299999, 12.066667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.19157344, 0.07795069, 0.5408262, 1), Color(0.69385815, 0.48304826, 0.35066184, 1), Color(0.845843, 0.84895456, 1, 1), Color(0.845843, 0.84895456, 1, 1), Color(0.9885556, 0.84286666, 0.56040394, 1), Color(0.11927957, 0.00010896802, 0.3603097, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BeachWater:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(-0.03333422, 2.3666658, 4.099999, 8.299999, 10.333333, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.04845749, 3.3739656e-05, 0.18717977, 1), Color(0.69385815, 0.48304826, 0.35066184, 1), Color(0.845843, 0.84895456, 1, 1), Color(0.845843, 0.84895456, 1, 1), Color(0.9885556, 0.84286666, 0.56040394, 1), Color(0.04845749, 3.3739656e-05, 0.18717977, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sand:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(-0.033333335, 4.1, 8.3, 12.000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.58341515, 0.48209327, 0.79703957, 1), Color(0.845843, 0.84895456, 1, 1), Color(0.845843, 0.84895456, 1, 1), Color(0.58431375, 0.48235294, 0.79607844, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s2qyh"]
+resource_name = "Sun"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.1666665, 11.866667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-731, 35), Vector2(-4, -133), Vector2(875, 81)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eu1kv"]
+_data = {
+&"RESET": SubResource("Animation_3e3e7"),
+&"Sky Cycle": SubResource("Animation_eu1kv"),
+&"Sun": SubResource("Animation_s2qyh")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y8mus"]
+
+[node name="Lake" type="Node2D" unique_id=1912421607]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_3e3e7")
+
+[node name="Background sky" type="Sprite2D" parent="." unique_id=391487945]
+modulate = Color(0.04845749, 3.3739656e-05, 0.18717977, 1)
+z_index = -7
+z_as_relative = false
+position = Vector2(39, -90.5)
+scale = Vector2(2.8359377, 1.095679)
+texture = ExtResource("7_s2qyh")
+
+[node name="Sun" type="Sprite2D" parent="." unique_id=721333953]
+z_index = -6
+position = Vector2(-731, 35)
+texture = ExtResource("10_w3exm")
+
+[node name="Cloud 1" type="Sprite2D" parent="." unique_id=1699958193]
+modulate = Color(0.061673872, 0.014104305, 0.20065199, 1)
+z_index = -5
+position = Vector2(28.000002, 115)
+scale = Vector2(2.8142364, 2.2839506)
+texture = ExtResource("8_1x8at")
+
+[node name="Cloud2" type="Sprite2D" parent="." unique_id=1033920798]
+modulate = Color(0.19157344, 0.07795069, 0.5408262, 1)
+z_index = -4
+position = Vector2(50.000004, 28)
+scale = Vector2(2.8663197, 1.6080247)
+texture = ExtResource("9_w3exm")
+
+[node name="Sand" type="Sprite2D" parent="." unique_id=421774567]
+self_modulate = Color(0.58553153, 0.48505184, 0.7986764, 1)
+z_index = -3
+material = SubResource("ShaderMaterial_w32gr")
+position = Vector2(1, 421)
+scale = Vector2(1.005, 0.6228901)
+texture = ExtResource("10_s2qyh")
+offset = Vector2(-1114.9252, 21)
+
+[node name="BeachWater" type="Sprite2D" parent="." unique_id=953755395]
+modulate = Color(0.057421625, 0.006742453, 0.18945041, 1)
+z_index = -1
+texture_filter = 1
+material = SubResource("ShaderMaterial_q1k2w")
+position = Vector2(41.431557, 121.90695)
+rotation = 3.136178
+scale = Vector2(1.0122284, 0.09811705)
+skew = 0.0017552376
+texture = ExtResource("8_eu1kv")
+
+[node name="CharacterBody2D" parent="." unique_id=1999503061 instance=ExtResource("5_ujair")]
+position = Vector2(5, 128)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2064907922]
+libraries/ = SubResource("AnimationLibrary_eu1kv")
+autoplay = &"Sky Cycle"
+
+[node name="Entrance to Forest" type="Sprite2D" parent="." unique_id=546372643]
+modulate = Color(1, 0.27450982, 0.27450982, 1)
+position = Vector2(43.000004, 777)
+rotation = 1.568623
+scale = Vector2(0.04569895, 1.2454239)
+texture = SubResource("CompressedTexture2D_y8mus")
+
+[node name="Scene Borders" type="StaticBody2D" parent="." unique_id=1372539873]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Scene Borders" unique_id=1933301097]
+build_mode = 1
+polygon = PackedVector2Array(-776, 116, -771, 783, 865, 781, 865, 110)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=283272273]
+stream = ExtResource("9_w0j3r")

@@ -89,7 +89,7 @@ build_mode = 1
 polygon = PackedVector2Array(-381, -61, -379, 75, -54, 75, -53, -63)
 
 [node name="CharacterBody2D" parent="." unique_id=1999503061 instance=ExtResource("2_2gj68")]
-position = Vector2(-2126, -5)
+position = Vector2(-24, 12)
 
 [node name="Rocks" type="Sprite2D" parent="." unique_id=2011419494]
 z_index = 1

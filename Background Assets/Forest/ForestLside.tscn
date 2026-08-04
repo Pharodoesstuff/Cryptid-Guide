@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cxrwp6l6vnn8t" path="res://Background Assets/Forest/Nature/tree_leaves.tscn" id="8_kli57"]
 [ext_resource type="Texture2D" uid="uid://q8cw64epbkxs" path="res://Background Assets/Forest/Nature/Large Plant Life.png" id="8_orusn"]
 [ext_resource type="Texture2D" uid="uid://bcw0nwmatjw71" path="res://Background Assets/Forest/Nature/Plant Life.png" id="9_16gj1"]
-[ext_resource type="Texture2D" uid="uid://cmbqeyhv8lok" path="res://Test/Beach -1.png.png" id="10_kli57"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_orusn"]
 
@@ -852,7 +851,7 @@ polygon = PackedVector2Array(-152, 832, -88, 792, -40, 648, -24, 640, -24, 624, 
 [node name="Tree Stump" type="TileMapLayer" parent="." unique_id=607369340]
 y_sort_enabled = true
 position = Vector2(3, 0)
-tile_map_data = PackedByteArray("AADX/+j/AQAGAAQAAADq/yQAAQAGAAQAAAD1/yQAAQAGAAQAAAAnACQAAQAGAAQAAADZ/yUAAQAGAAQAAAACACQAAQAGAAQAAAAbACcAAQAGAAQAAAAOACcAAQAGAAQAAAA=")
+tile_map_data = PackedByteArray("AADq/yQAAQAGAAQAAAD1/yQAAQAGAAQAAAAnACQAAQAGAAQAAADZ/yUAAQAGAAQAAAACACQAAQAGAAQAAAAbACcAAQAGAAQAAAAOACcAAQAGAAQAAAA=")
 tile_set = SubResource("TileSet_uv6kw")
 
 [node name="TreeLeaves" parent="Tree Stump" unique_id=2119468098 instance=ExtResource("8_kli57")]
@@ -879,10 +878,8 @@ tile_set = SubResource("TileSet_rvvyb")
 modulate = Color(1, 0.27450982, 0.27450982, 1)
 position = Vector2(823, 3.1874943)
 scale = Vector2(0.088709675, 0.44096637)
-texture = ExtResource("10_kli57")
 
 [node name="Entrance to this side" type="Sprite2D" parent="." unique_id=1561759555]
 modulate = Color(1, 0.27450982, 0.27450982, 1)
 position = Vector2(-624.754, -8)
 scale = Vector2(0.04503766, 0.19445133)
-texture = ExtResource("10_kli57")

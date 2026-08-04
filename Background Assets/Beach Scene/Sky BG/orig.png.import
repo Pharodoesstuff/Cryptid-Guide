@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blcraor3h78pb"
-path="res://.godot/imported/lake Scene.png-4beaf487017324bc9b1daf501a8a9062.ctex"
+uid="uid://ctgomgbyi8nwy"
+path="res://.godot/imported/orig.png-bf5b3ef8a866adfe8cb348c0d4f02547.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Assets/Lake/lake Scene.png"
-dest_files=["res://.godot/imported/lake Scene.png-4beaf487017324bc9b1daf501a8a9062.ctex"]
+source_file="res://Background Assets/Beach Scene/Sky BG/orig.png"
+dest_files=["res://.godot/imported/orig.png-bf5b3ef8a866adfe8cb348c0d4f02547.ctex"]
 
 [params]
 

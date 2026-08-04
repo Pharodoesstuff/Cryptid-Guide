@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmyivq4ry3av8"
-path="res://.godot/imported/Tiling-Grass-Texture-Main.jpg-4020b15532f9ccafa234c32f51a90a1d.ctex"
+uid="uid://bmienuxnfhwwx"
+path="res://.godot/imported/2.png-154bad7c7f814d5c54b0235c888f7989.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Test/Tiling-Grass-Texture-Main.jpg"
-dest_files=["res://.godot/imported/Tiling-Grass-Texture-Main.jpg-4020b15532f9ccafa234c32f51a90a1d.ctex"]
+source_file="res://Background Assets/Beach Scene/Sky BG/2.png"
+dest_files=["res://.godot/imported/2.png-154bad7c7f814d5c54b0235c888f7989.ctex"]
 
 [params]
 

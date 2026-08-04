@@ -5,9 +5,9 @@ uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_n
 
 uniform vec4 color: source_color = vec4(0.,0.5,1.0,1.0);
 //uniform float amplitude : hint_range(0., 2., 0.01) = 2.;
-uniform float frequency : hint_range(1000., 1000. , 1.) = 1.;
+uniform float frequency : hint_range(1000., 1000. , 1.) = 3.;
 uniform float compress : hint_range(1., 2. , 0.01) = 1.;
-uniform float add_light : hint_range(1., 1. , 0.01) = 0.;
+uniform float add_light : hint_range(1., 1. , 0.01) = 0.1;
 
 uniform float scale : hint_range(0., 2. , 0.01) = 1.;
 uniform float speed : hint_range(-1000., 1000. , 0.01) = 3;
@@ -20,15 +20,15 @@ uniform float clear : hint_range(0., 1. , 0.01) = 0.;
 uniform float surf_sinpowder : hint_range(0., 8. , 1.) = 8.;
 uniform float surf_speed : hint_range(-10., 10. , 0.01) = 3.;
 uniform float surf_angle : hint_range(-1.57, 1.57, 0.01) = 1.57;
-uniform float surf_magnitude : hint_range(0., 10. , 0.01) = 0.;
+uniform float surf_magnitude : hint_range(0., 10. , 0.01) = 0.10;
 
 uniform float s11: hint_range(-10, 10, 0.01) = 2.221;
 uniform float sinpowder : hint_range(0., 8. , 1.) = 8.;
 
 uniform float base_y = 0.5;
 uniform float wave_frequency = 15.0;
-uniform float wave_amplitude = 0.035;
-uniform float wave_speed = 3.0;
+uniform float wave_amplitude = 0.08;
+uniform float wave_speed = 8.0;
 
 vec2 UVtoSreenUV(vec2 uv, bool is_camera_center, vec2 texture_pixel_size, vec2 screen_pixel_size, vec4 fragcoord) {
 
@@ -91,7 +91,7 @@ float water_mask = smoothstep(
 	st.x += adda*cos(surf_angle);
 	st.y += adda*sin(surf_angle);
 
-	COLOR = color;
+	vec4 base = COLOR;
 
  	float a1 = (yget(distance(vec2(0.),st),1.30,1.72,s11,3.1122,1.,1.121,0.437,4.,4.5,4.,5.,2.5,1.,0.)
 	+ yget(distance(vec2(0.5,3.5),st),1.32,1.72,s11,3.1122,1.,1.121,0.437,4.269,4.5,4.,5.,2.5,-1.,0.)
@@ -123,6 +123,9 @@ float water_mask = smoothstep(
 
 	float a = ((sin(ang - PI*0.5 + y_angle) + cos(ang - PI*1.5 + x_angle)) + adda)/1.5;//sin(ang - PI*0.5 + y_angle)*0.5 - cos(ang + x_angle)*0.5;
 
+	COLOR = base;
+	
 	COLOR.a = clamp(base_alpha + a, 0., 1.) * water_mask;
-	COLOR.rgb = clamp(COLOR.rgb + mix(vec3(COLOR.a), bC.rgb, clear)*vec3(1. + add_light), vec3(0.), vec3(1.));
+	COLOR.rgb = clamp(base.rgb + mix(vec3(COLOR.a), bC.rgb, clear)
+	*vec3(1. + add_light), vec3(0.), vec3(1.));
 }

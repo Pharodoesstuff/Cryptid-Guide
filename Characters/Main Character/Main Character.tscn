@@ -168,7 +168,7 @@ texture = ExtResource("2_o60yy")
 libraries/ = SubResource("AnimationLibrary_06c34")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2082629439]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.25, 1.25)
 
 [node name="State Machine" type="Node" parent="." unique_id=1942385052]
 script = ExtResource("4_k4pqc")

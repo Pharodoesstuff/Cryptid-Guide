@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0a8wc8iplol5"
+path="res://.godot/imported/A Smoothie At The Beach Bar.mp3-c0b1f8352aff4ebeb28cae1523a64486.mp3str"
+
+[deps]
+
+source_file="res://Music/Scenes/Beach Music/A Smoothie At The Beach Bar.mp3"
+dest_files=["res://.godot/imported/A Smoothie At The Beach Bar.mp3-c0b1f8352aff4ebeb28cae1523a64486.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yg6pfta61xd4"
-path="res://.godot/imported/Lake Waves.png-2ff5660e19ee5748a6d9706e81d3048a.ctex"
+uid="uid://ch0piivf8a5hu"
+path="res://.godot/imported/512x512.png-f3ffd1a3e575c6c5fb4e0d814e822068.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Assets/Lake/Lake Waves.png"
-dest_files=["res://.godot/imported/Lake Waves.png-2ff5660e19ee5748a6d9706e81d3048a.ctex"]
+source_file="res://Test/512x512.png"
+dest_files=["res://.godot/imported/512x512.png-f3ffd1a3e575c6c5fb4e0d814e822068.ctex"]
 
 [params]
 
