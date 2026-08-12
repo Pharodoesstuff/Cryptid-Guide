@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://byuc6rrll2lh4" path="res://Background Assets/Cave Scene/Cave BG/Cave1.png" id="4_vwyu5"]
 [ext_resource type="Texture2D" uid="uid://bweb5yubbn56l" path="res://Background Assets/Cave Scene/BF living entrance/Cave Path.png" id="8_857wc"]
 [ext_resource type="Texture2D" uid="uid://dod7uqs2ruwqg" path="res://Background Assets/Cave Scene/Cave BG/Rocks.png" id="9_kwmqm"]
-[ext_resource type="Texture2D" uid="uid://cmbqeyhv8lok" path="res://Test/Beach -1.png.png" id="10_mkuai"]
+[ext_resource type="AudioStream" uid="uid://dxkw1mbxrsvxc" path="res://Music/Scenes/Cave Scene/Unsettling.mp3" id="10_mkuai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvppj"]
 size = Vector2(69.08836, 89.02722)
@@ -100,4 +100,8 @@ texture = ExtResource("9_kwmqm")
 modulate = Color(1, 0.27450982, 0.27450982, 1)
 position = Vector2(60, 15.593746)
 scale = Vector2(0.04569895, 0.29443276)
-texture = ExtResource("10_mkuai")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2094914245]
+position = Vector2(-24, 12)
+stream = ExtResource("10_mkuai")
+autoplay = true

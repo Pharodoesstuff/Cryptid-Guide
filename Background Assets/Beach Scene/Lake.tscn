@@ -385,14 +385,14 @@ modulate = Color(0.057421625, 0.006742453, 0.18945041, 1)
 z_index = -1
 texture_filter = 1
 material = SubResource("ShaderMaterial_q1k2w")
-position = Vector2(41.431557, 121.90695)
-rotation = 3.136178
-scale = Vector2(1.0122284, 0.09811705)
+position = Vector2(41.99244, 275.17883)
+rotation = 3.141935
+scale = Vector2(1.0122284, 0.30593044)
 skew = 0.0017552376
 texture = ExtResource("8_eu1kv")
 
 [node name="CharacterBody2D" parent="." unique_id=1999503061 instance=ExtResource("5_ujair")]
-position = Vector2(5, 128)
+position = Vector2(-4, 546)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2064907922]
 libraries/ = SubResource("AnimationLibrary_eu1kv")
@@ -409,7 +409,8 @@ texture = SubResource("CompressedTexture2D_y8mus")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Scene Borders" unique_id=1933301097]
 build_mode = 1
-polygon = PackedVector2Array(-776, 116, -771, 783, 865, 781, 865, 110)
+polygon = PackedVector2Array(-777, 285, -771, 783, 865, 781, 867, 267)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=283272273]
 stream = ExtResource("9_w0j3r")
+autoplay = true

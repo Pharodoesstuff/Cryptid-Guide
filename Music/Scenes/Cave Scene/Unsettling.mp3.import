@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxkw1mbxrsvxc"
+path="res://.godot/imported/Unsettling.mp3-ae09fd24a77de615cdd317721568e1c2.mp3str"
+
+[deps]
+
+source_file="res://Music/Scenes/Cave Scene/Unsettling.mp3"
+dest_files=["res://.godot/imported/Unsettling.mp3-ae09fd24a77de615cdd317721568e1c2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

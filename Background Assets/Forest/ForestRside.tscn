@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://q8cw64epbkxs" path="res://Background Assets/Forest/Nature/Large Plant Life.png" id="9_2gl3i"]
 [ext_resource type="PackedScene" uid="uid://cxrwp6l6vnn8t" path="res://Background Assets/Forest/Nature/tree_leaves.tscn" id="9_t8k7e"]
 [ext_resource type="Texture2D" uid="uid://bcw0nwmatjw71" path="res://Background Assets/Forest/Nature/Plant Life.png" id="10_e2jgm"]
-[ext_resource type="Texture2D" uid="uid://cmbqeyhv8lok" path="res://Test/Beach -1.png.png" id="11_e2jgm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6wxh"]
 texture = ExtResource("1_eqc7w")
@@ -1884,4 +1883,3 @@ tile_set = SubResource("TileSet_gr1co")
 modulate = Color(1, 0.27450982, 0.27450982, 1)
 position = Vector2(-791, 88)
 scale = Vector2(0.04569895, 0.44096637)
-texture = ExtResource("11_e2jgm")
