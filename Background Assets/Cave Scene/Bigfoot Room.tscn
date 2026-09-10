@@ -3,16 +3,11 @@
 [ext_resource type="Script" uid="uid://4xjskgcvxsxq" path="res://Background Assets/Cave Scene/bigfoot_room.gd" id="1_2om0l"]
 [ext_resource type="Texture2D" uid="uid://dq2lfh3dveyn4" path="res://Background Assets/Cave Scene/Bigfoot place/free_floor_TileSheet-4.png.png" id="1_3ep4e"]
 [ext_resource type="Texture2D" uid="uid://hr7lt5q3fvh" path="res://Background Assets/Cave Scene/Bigfoot place/free_floor_TileSheet-3.png.png" id="2_e0klv"]
-[ext_resource type="Texture2D" uid="uid://ea77e7rsjxac" path="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f1.png" id="2_r6nwu"]
-[ext_resource type="Texture2D" uid="uid://c3uv2ew40dy2w" path="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f2.png" id="3_2om0l"]
-[ext_resource type="Texture2D" uid="uid://bfgp3qagofn5s" path="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f3.png" id="4_eal0j"]
+[ext_resource type="Texture2D" uid="uid://colu30n3a7tp5" path="res://Background Assets/Cave Scene/Cave BG/pixelinterior_LRK_v1.1/livingroom_LRK x2.png" id="3_lc2tb"]
 [ext_resource type="Texture2D" uid="uid://bawwpke0jlnts" path="res://Background Assets/Cave Scene/Bigfoot place/TV.png" id="5_5dvdq"]
 [ext_resource type="Texture2D" uid="uid://kabfhebetpgb" path="res://Background Assets/Cave Scene/Bigfoot place/Ladder1-1.png.png" id="5_58y3n"]
-[ext_resource type="Texture2D" uid="uid://dpj8nefdtpgvv" path="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f4.png" id="5_l627w"]
 [ext_resource type="PackedScene" uid="uid://cop15662dn8op" path="res://Characters/Main Character/Main Character.tscn" id="6_5dvdq"]
 [ext_resource type="Texture2D" uid="uid://wkapooq8badr" path="res://Background Assets/Cave Scene/Bigfoot place/Tv Light.png" id="6_amxnn"]
-[ext_resource type="Texture2D" uid="uid://cgb713emwtjup" path="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f5.png" id="6_enlis"]
-[ext_resource type="Texture2D" uid="uid://poabkjvxcgg3" path="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f6.png" id="7_6fko4"]
 
 [sub_resource type="Gradient" id="Gradient_e0klv"]
 interpolation_mode = 2
@@ -29,33 +24,175 @@ fill_to = Vector2(1, 0.4982639)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_amxnn"]
 gradient = SubResource("Gradient_5dvdq")
 
-[sub_resource type="TileSet" id="TileSet_hq0xm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2hxa"]
+texture = ExtResource("3_lc2tb")
+2:4/size_in_atlas = Vector2i(6, 4)
+2:4/0 = 0
+10:4/size_in_atlas = Vector2i(6, 4)
+10:4/0 = 0
+18:2/size_in_atlas = Vector2i(4, 6)
+18:2/0 = 0
+24:2/size_in_atlas = Vector2i(4, 6)
+24:2/0 = 0
+30:4/size_in_atlas = Vector2i(4, 4)
+30:4/0 = 0
+36:4/size_in_atlas = Vector2i(4, 4)
+36:4/0 = 0
+2:12/size_in_atlas = Vector2i(6, 4)
+2:12/0 = 0
+10:12/size_in_atlas = Vector2i(6, 4)
+10:12/0 = 0
+18:10/size_in_atlas = Vector2i(4, 6)
+18:10/0 = 0
+24:10/size_in_atlas = Vector2i(4, 6)
+24:10/0 = 0
+30:12/size_in_atlas = Vector2i(4, 4)
+30:12/0 = 0
+36:12/size_in_atlas = Vector2i(4, 4)
+36:12/0 = 0
+2:20/size_in_atlas = Vector2i(6, 4)
+2:20/0 = 0
+10:18/size_in_atlas = Vector2i(4, 6)
+10:18/0 = 0
+16:18/size_in_atlas = Vector2i(2, 4)
+16:18/0 = 0
+19:18/size_in_atlas = Vector2i(2, 4)
+19:18/0 = 0
+22:18/size_in_atlas = Vector2i(2, 4)
+22:18/0 = 0
+25:18/size_in_atlas = Vector2i(2, 4)
+25:18/0 = 0
+28:18/size_in_atlas = Vector2i(2, 4)
+28:18/0 = 0
+32:18/size_in_atlas = Vector2i(2, 4)
+32:18/0 = 0
+2:26/size_in_atlas = Vector2i(4, 4)
+2:26/0 = 0
+8:26/size_in_atlas = Vector2i(2, 4)
+8:26/0 = 0
+11:26/size_in_atlas = Vector2i(2, 4)
+11:26/0 = 0
+14:26/size_in_atlas = Vector2i(2, 4)
+14:26/0 = 0
+17:26/size_in_atlas = Vector2i(2, 4)
+17:26/0 = 0
+20:26/size_in_atlas = Vector2i(2, 4)
+20:26/0 = 0
+24:26/size_in_atlas = Vector2i(2, 4)
+24:26/0 = 0
+28:26/size_in_atlas = Vector2i(4, 4)
+28:26/0 = 0
+34:26/size_in_atlas = Vector2i(2, 4)
+34:26/0 = 0
+37:26/size_in_atlas = Vector2i(2, 4)
+37:26/0 = 0
+2:32/size_in_atlas = Vector2i(8, 4)
+2:32/0 = 0
+12:32/size_in_atlas = Vector2i(4, 8)
+12:32/0 = 0
+18:32/size_in_atlas = Vector2i(8, 4)
+18:32/0 = 0
+28:32/size_in_atlas = Vector2i(4, 8)
+28:32/0 = 0
+34:32/size_in_atlas = Vector2i(2, 8)
+34:32/0 = 0
+38:32/size_in_atlas = Vector2i(2, 8)
+38:32/0 = 0
+42:4/size_in_atlas = Vector2i(4, 4)
+42:4/0 = 0
+48:4/size_in_atlas = Vector2i(4, 4)
+48:4/0 = 0
+54:2/size_in_atlas = Vector2i(4, 6)
+54:2/0 = 0
+60:2/size_in_atlas = Vector2i(4, 6)
+60:2/0 = 0
+66:2/size_in_atlas = Vector2i(4, 6)
+66:2/0 = 0
+72:2/size_in_atlas = Vector2i(4, 6)
+72:2/0 = 0
+42:12/size_in_atlas = Vector2i(4, 4)
+42:12/0 = 0
+48:12/size_in_atlas = Vector2i(4, 4)
+48:12/0 = 0
+54:10/size_in_atlas = Vector2i(4, 6)
+54:10/0 = 0
+60:10/size_in_atlas = Vector2i(4, 6)
+60:10/0 = 0
+66:10/size_in_atlas = Vector2i(4, 6)
+66:10/0 = 0
+72:10/size_in_atlas = Vector2i(4, 6)
+72:10/0 = 0
+36:20/size_in_atlas = Vector2i(6, 4)
+36:20/0 = 0
+44:18/size_in_atlas = Vector2i(4, 6)
+44:18/0 = 0
+52:18/size_in_atlas = Vector2i(2, 4)
+52:18/0 = 0
+55:18/size_in_atlas = Vector2i(2, 4)
+55:18/0 = 0
+58:18/size_in_atlas = Vector2i(2, 4)
+58:18/0 = 0
+61:18/size_in_atlas = Vector2i(2, 4)
+61:18/0 = 0
+64:18/size_in_atlas = Vector2i(2, 4)
+64:18/0 = 0
+68:18/size_in_atlas = Vector2i(2, 4)
+68:18/0 = 0
+71:22/size_in_atlas = Vector2i(4, 3)
+71:22/0 = 0
+71:26/size_in_atlas = Vector2i(4, 3)
+71:26/0 = 0
+71:30/size_in_atlas = Vector2i(4, 3)
+71:30/0 = 0
+61:27/size_in_atlas = Vector2i(2, 2)
+61:27/0 = 0
+61:23/size_in_atlas = Vector2i(2, 2)
+61:23/0 = 0
+61:31/size_in_atlas = Vector2i(2, 2)
+61:31/0 = 0
+50:26/size_in_atlas = Vector2i(2, 4)
+50:26/0 = 0
+46:26/size_in_atlas = Vector2i(2, 4)
+46:26/0 = 0
+40:26/size_in_atlas = Vector2i(2, 4)
+40:26/0 = 0
+43:26/size_in_atlas = Vector2i(2, 4)
+43:26/0 = 0
+52:32/size_in_atlas = Vector2i(6, 4)
+52:32/0 = 0
+58:36/size_in_atlas = Vector2i(4, 4)
+58:36/0 = 0
+2:42/size_in_atlas = Vector2i(8, 4)
+2:42/0 = 0
+12:42/size_in_atlas = Vector2i(4, 8)
+12:42/0 = 0
+18:42/size_in_atlas = Vector2i(8, 4)
+18:42/0 = 0
+28:42/size_in_atlas = Vector2i(4, 8)
+28:42/0 = 0
+34:44/size_in_atlas = Vector2i(2, 4)
+34:44/0 = 0
+36:44/size_in_atlas = Vector2i(2, 4)
+36:44/0 = 0
+38:43/size_in_atlas = Vector2i(6, 2)
+38:43/0 = 0
+38:47/size_in_atlas = Vector2i(6, 2)
+38:47/0 = 0
+44:46/size_in_atlas = Vector2i(6, 4)
+44:46/0 = 0
+44:42/size_in_atlas = Vector2i(6, 4)
+44:42/0 = 0
+52:40/size_in_atlas = Vector2i(6, 4)
+52:40/0 = 0
+58:44/size_in_atlas = Vector2i(4, 4)
+58:44/0 = 0
+42:36/size_in_atlas = Vector2i(8, 2)
+42:36/0 = 0
+42:32/size_in_atlas = Vector2i(8, 3)
+42:32/0 = 0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ggkjk"]
-animations = [{
-"frames": [{
-"duration": 0.5,
-"texture": ExtResource("2_r6nwu")
-}, {
-"duration": 0.5,
-"texture": ExtResource("3_2om0l")
-}, {
-"duration": 0.5,
-"texture": ExtResource("4_eal0j")
-}, {
-"duration": 0.5,
-"texture": ExtResource("5_l627w")
-}, {
-"duration": 0.5,
-"texture": ExtResource("6_enlis")
-}, {
-"duration": 0.5,
-"texture": ExtResource("7_6fko4")
-}],
-"loop": 1,
-"name": &"Flames",
-"speed": 5.0
-}]
+[sub_resource type="TileSet" id="TileSet_hq0xm"]
+sources/1 = SubResource("TileSetAtlasSource_t2hxa")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0klv"]
 texture = ExtResource("5_58y3n")
@@ -108,13 +245,6 @@ texture = ExtResource("1_3ep4e")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="BG 1" unique_id=1720685646]
 tile_set = SubResource("TileSet_hq0xm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BG 1" unique_id=1044985928]
-position = Vector2(5.265914, 148.5)
-scale = Vector2(2.2846437, 1.8870968)
-sprite_frames = SubResource("SpriteFrames_ggkjk")
-animation = &"Flames"
-frame_progress = 0.7979001
 
 [node name="BG 2" type="Sprite2D" parent="." unique_id=139575701]
 modulate = Color(0.90733314, 0.66641814, 0.63425183, 1)
