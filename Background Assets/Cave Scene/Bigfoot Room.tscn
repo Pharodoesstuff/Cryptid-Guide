@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://cx2yftjhx4pr1"]
 
+[ext_resource type="Script" uid="uid://4xjskgcvxsxq" path="res://Background Assets/Cave Scene/bigfoot_room.gd" id="1_2om0l"]
 [ext_resource type="Texture2D" uid="uid://dq2lfh3dveyn4" path="res://Background Assets/Cave Scene/Bigfoot place/free_floor_TileSheet-4.png.png" id="1_3ep4e"]
 [ext_resource type="Texture2D" uid="uid://hr7lt5q3fvh" path="res://Background Assets/Cave Scene/Bigfoot place/free_floor_TileSheet-3.png.png" id="2_e0klv"]
+[ext_resource type="Texture2D" uid="uid://ea77e7rsjxac" path="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f1.png" id="2_r6nwu"]
+[ext_resource type="Texture2D" uid="uid://c3uv2ew40dy2w" path="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f2.png" id="3_2om0l"]
+[ext_resource type="Texture2D" uid="uid://bfgp3qagofn5s" path="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f3.png" id="4_eal0j"]
 [ext_resource type="Texture2D" uid="uid://bawwpke0jlnts" path="res://Background Assets/Cave Scene/Bigfoot place/TV.png" id="5_5dvdq"]
 [ext_resource type="Texture2D" uid="uid://kabfhebetpgb" path="res://Background Assets/Cave Scene/Bigfoot place/Ladder1-1.png.png" id="5_58y3n"]
+[ext_resource type="Texture2D" uid="uid://dpj8nefdtpgvv" path="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f4.png" id="5_l627w"]
 [ext_resource type="PackedScene" uid="uid://cop15662dn8op" path="res://Characters/Main Character/Main Character.tscn" id="6_5dvdq"]
 [ext_resource type="Texture2D" uid="uid://wkapooq8badr" path="res://Background Assets/Cave Scene/Bigfoot place/Tv Light.png" id="6_amxnn"]
+[ext_resource type="Texture2D" uid="uid://cgb713emwtjup" path="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f5.png" id="6_enlis"]
+[ext_resource type="Texture2D" uid="uid://poabkjvxcgg3" path="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f6.png" id="7_6fko4"]
 
 [sub_resource type="Gradient" id="Gradient_e0klv"]
 interpolation_mode = 2
@@ -21,6 +28,34 @@ fill_to = Vector2(1, 0.4982639)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_amxnn"]
 gradient = SubResource("Gradient_5dvdq")
+
+[sub_resource type="TileSet" id="TileSet_hq0xm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggkjk"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_r6nwu")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_2om0l")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_eal0j")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_l627w")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_enlis")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_6fko4")
+}],
+"loop": 1,
+"name": &"Flames",
+"speed": 5.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0klv"]
 texture = ExtResource("5_58y3n")
@@ -38,6 +73,7 @@ size = Vector2(117, 58)
 
 [node name="Node2D" type="Node2D" unique_id=1328247456]
 y_sort_enabled = true
+script = ExtResource("1_2om0l")
 
 [node name="BG Light" type="PointLight2D" parent="." unique_id=1800854285]
 z_index = -2
@@ -69,6 +105,16 @@ z_index = -1
 y_sort_enabled = true
 position = Vector2(-10, -12)
 texture = ExtResource("1_3ep4e")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="BG 1" unique_id=1720685646]
+tile_set = SubResource("TileSet_hq0xm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BG 1" unique_id=1044985928]
+position = Vector2(5.265914, 148.5)
+scale = Vector2(2.2846437, 1.8870968)
+sprite_frames = SubResource("SpriteFrames_ggkjk")
+animation = &"Flames"
+frame_progress = 0.7979001
 
 [node name="BG 2" type="Sprite2D" parent="." unique_id=139575701]
 modulate = Color(0.90733314, 0.66641814, 0.63425183, 1)
