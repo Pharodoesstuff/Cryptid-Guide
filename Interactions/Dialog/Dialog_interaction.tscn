@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ddy3eos0rnchg"]
+
+[ext_resource type="Script" uid="uid://cnx0epavagmd0" path="res://Code/Dialog/Interactables.gd" id="1_gp4yb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4nyp"]
+
+[node name="DialogInteraction" type="Area2D" unique_id=160484217]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_gp4yb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=61798793]
+shape = SubResource("RectangleShape2D_k4nyp")

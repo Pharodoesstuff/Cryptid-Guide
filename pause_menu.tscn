@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://djwik6g5qxjs5"]
+
+[ext_resource type="Texture2D" uid="uid://c71hx6xrxmgwo" path="res://00_GUI/Menu/pause_menu/PauseMenu.png" id="1_hdmo1"]
+
+[sub_resource type="Animation" id="Animation_q2yj1"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_a32ks"]
+resource_name = "new_animation"
+loop_mode = 2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g7dbl"]
+_data = {
+&"RESET": SubResource("Animation_q2yj1"),
+&"new_animation": SubResource("Animation_a32ks")
+}
+
+[node name="PauseMenu" type="Node2D" unique_id=1615661943]
+
+[node name="PauseMenu" type="Sprite2D" parent="." unique_id=1978762395]
+position = Vector2(696, 360.00003)
+scale = Vector2(2.06, 2.06)
+texture = ExtResource("1_hdmo1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=772287712]
+libraries/ = SubResource("AnimationLibrary_g7dbl")

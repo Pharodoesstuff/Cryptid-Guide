@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d3cuqej3okgm1"]
+
+[ext_resource type="Script" uid="uid://corlwdsdel32g" path="res://00_Globals/player_spawn.gd" id="1_dltbo"]
+[ext_resource type="Texture2D" uid="uid://blj4el15od3j0" path="res://Characters/Main Character/MC Movement.png" id="1_htmpm"]
+
+[node name="PlayerSpawn" type="Node2D" unique_id=1158695474]
+script = ExtResource("1_dltbo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=319829845]
+modulate = Color(0, 1, 0.24705882, 1)
+texture = ExtResource("1_htmpm")
+hframes = 8
+vframes = 8

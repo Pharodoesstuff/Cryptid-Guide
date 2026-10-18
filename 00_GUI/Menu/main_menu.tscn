@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c5idyjl1q2fqu"]
+
+[ext_resource type="Script" uid="uid://cmvsuypp04q10" path="res://00_GUI/Menu/Main Menu Code/Main_Menu.gd" id="1_s0emd"]
+[ext_resource type="Texture2D" uid="uid://c0nordrevmvo5" path="res://00_GUI/Menu/Images/bookmarkback.png" id="1_vdbn4"]
+[ext_resource type="Texture2D" uid="uid://dljlk3rnb0du6" path="res://00_GUI/Menu/Images/BookCover.png" id="2_e6bfo"]
+
+[sub_resource type="Gradient" id="Gradient_wnkk6"]
+offsets = PackedFloat32Array(0, 0.9661654)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s0emd"]
+gradient = SubResource("Gradient_wnkk6")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.80046946, 0.17605634)
+
+[node name="Main Menu" type="Node2D" unique_id=964772325]
+process_mode = 3
+script = ExtResource("1_s0emd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1217440772]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1266619334]
+modulate = Color(1, 1, 1, 0.8392157)
+z_index = -2
+anchors_preset = -1
+anchor_right = 0.23999941
+anchor_bottom = 0.23999994
+offset_left = -14.015991
+offset_top = -1.3439941
+offset_right = 958.7848
+offset_bottom = 545.8561
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.01, 1.01)
+mouse_filter = 2
+color = Color(0.18731105, 0.09156514, 0.04404056, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Bookmarkback" type="Sprite2D" parent="CanvasLayer" unique_id=966267470]
+z_index = -1
+position = Vector2(577.984, 302.656)
+scale = Vector2(2.66, 2.5400026)
+texture = ExtResource("1_vdbn4")
+
+[node name="Shadow" type="Sprite2D" parent="CanvasLayer" unique_id=1518299332]
+modulate = Color(0.6313726, 0.35686275, 0.23137255, 0.64705884)
+position = Vector2(633.984, 390.656)
+scale = Vector2(10.156, 6.229)
+texture = SubResource("GradientTexture2D_s0emd")
+
+[node name="BookFirstMenu2" type="Sprite2D" parent="CanvasLayer" unique_id=1638954941]
+modulate = Color(0.28235295, 0.18039216, 0.06666667, 0.44313726)
+position = Vector2(640, 368)
+scale = Vector2(2.137, 2.028)
+texture = ExtResource("2_e6bfo")
+
+[node name="BookFirstMenu1" type="Sprite2D" parent="CanvasLayer" unique_id=1473344798]
+position = Vector2(641.984, 358.65604)
+scale = Vector2(2.0520847, 2.0276039)
+texture = ExtResource("2_e6bfo")
+
+[node name="Start" type="Button" parent="CanvasLayer" unique_id=653538351]
+modulate = Color(1, 1, 1, 0)
+offset_left = 569.984
+offset_top = 430.656
+offset_right = 649.984
+offset_bottom = 509.656
+scale = Vector2(0.9250028, 0.6328109)
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_start_pressed"]

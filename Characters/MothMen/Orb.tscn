@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dim6ncjnxjhr6"]
+
+[ext_resource type="Script" uid="uid://b8p1qindbqdxj" path="res://Characters/MothMen/orb.gd" id="1_m733d"]
+[ext_resource type="PackedScene" uid="uid://can7ufr5li1aq" path="res://Characters/Main Character/hurtbox/hurtbox.tscn" id="2_m733d"]
+
+[sub_resource type="Gradient" id="Gradient_2wdb0"]
+offsets = PackedFloat32Array(0.18421052, 0.28195488, 0.4699248, 0.7556391)
+colors = PackedColorArray(0.9870458, 6.160736e-06, 0.6273456, 1, 0.9255532, 0, 0.37251112, 1, 0.5686275, 0.23921569, 0.9764706, 1, 0.08950663, 4.9574674e-06, 0.424995, 0)
+metadata/_snap_count = 16
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pawe5"]
+gradient = SubResource("Gradient_2wdb0")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5140845, 0.49530515)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xboq1"]
+radius = 24.0
+
+[node name="Orb" type="Node2D" unique_id=1802872320]
+script = ExtResource("1_m733d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242591382]
+scale = Vector2(1, 1.0037848)
+texture = SubResource("GradientTexture2D_pawe5")
+
+[node name="Hurtbox" parent="." unique_id=715303479 instance=ExtResource("2_m733d")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=506975541]
+scale = Vector2(0.35, 0.35)
+shape = SubResource("CircleShape2D_xboq1")
+debug_color = Color(0, 0.6, 0.69803923, 0.30588236)

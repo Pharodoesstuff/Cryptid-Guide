@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://dx5em3nipa3dl"]
+
+[ext_resource type="Script" uid="uid://dvv74u60nap0j" path="res://00_GUI/Light/void_light.gd" id="1_12a1t"]
+
+[sub_resource type="Gradient" id="Gradient_6hydc"]
+offsets = PackedFloat32Array(0, 0.6536643)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jmwgl"]
+gradient = SubResource("Gradient_6hydc")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.4888393, 0.49776787)
+
+[sub_resource type="Animation" id="Animation_jmwgl"]
+resource_name = "Enclose"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Out_light:texture:gradient:offsets")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1, 1.8, 2.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [PackedFloat32Array(-0.016, 0.8), PackedFloat32Array(-0.016, 0.6), PackedFloat32Array(-0.016, 0.4), PackedFloat32Array(-0.016, 0.3), PackedFloat32Array(-0.016, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_12a1t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Out_light:texture:gradient:colors")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Out_light:texture:gradient:offsets")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedFloat32Array(0, 0.6536643)]
+}
+
+[sub_resource type="Animation" id="Animation_t46nd"]
+resource_name = "Start"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Out_light:texture:gradient:colors")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Out_light:texture:gradient:offsets")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedFloat32Array(0, 0.6536643)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cdv3i"]
+_data = {
+&"Enclose": SubResource("Animation_jmwgl"),
+&"RESET": SubResource("Animation_12a1t"),
+&"Start": SubResource("Animation_t46nd")
+}
+
+[node name="VoidLight" type="Node2D" unique_id=143977007]
+script = ExtResource("1_12a1t")
+
+[node name="Out_light" type="PointLight2D" parent="." unique_id=1923335562]
+position = Vector2(8.959999, 37.24807)
+scale = Vector2(7.0699997, 5.9160004)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_jmwgl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1124037524]
+libraries/ = SubResource("AnimationLibrary_cdv3i")

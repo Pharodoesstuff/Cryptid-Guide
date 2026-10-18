@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dfj1sjj3gvkhg"]
+
+[ext_resource type="Script" uid="uid://6f7y0d4k8sq8" path="res://Code/Dialog/dialog_system.gd" id="1_oflqc"]
+[ext_resource type="Texture2D" uid="uid://be3gd407wfvy4" path="res://00_GUI/Font/sprites/text-bubble.png" id="2_f8vcv"]
+[ext_resource type="FontFile" uid="uid://cw5dn0bt7twjf" path="res://00_GUI/Font/Fibberish v1.0/fibberish.ttf" id="3_fwfps"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fwfps"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_oflqc"]
+offsets = PackedFloat32Array(0.0037593986, 1)
+colors = PackedColorArray(0.24231139, 3.203703e-07, 3.008172e-08, 1, 0.6624426, 0.36884004, 0.27680418, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w2hp4"]
+gradient = SubResource("Gradient_oflqc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oflqc"]
+light_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k4nyp"]
+content_margin_left = 28.0
+content_margin_top = 20.0
+content_margin_right = 28.0
+content_margin_bottom = 20.0
+texture = ExtResource("2_f8vcv")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_f8vcv"]
+light_mode = 1
+
+[node name="DialogSystem" type="CanvasLayer" unique_id=1455392891 groups=["dialogue_system"]]
+process_mode = 3
+layer = 0
+script = ExtResource("1_oflqc")
+
+[node name="Dialog UI" type="Control" parent="." unique_id=1251794451]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Dialog UI" unique_id=883406096]
+material = SubResource("CanvasItemMaterial_fwfps")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 176.0
+offset_top = -216.0
+offset_right = -136.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_w2hp4")
+
+[node name="PanelContainer" type="PanelContainer" parent="Dialog UI" unique_id=667128173]
+self_modulate = Color(1, 0.4627451, 0.32156864, 1)
+material = SubResource("CanvasItemMaterial_oflqc")
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1112.0
+offset_top = -224.0
+offset_right = -136.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_k4nyp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialog UI/PanelContainer" unique_id=1346339631]
+modulate = Color(0.99443644, 0.74972355, 0.808725, 1)
+material = SubResource("CanvasItemMaterial_f8vcv")
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.8812988, 0.5047407, 1)
+theme_override_fonts/normal_font = ExtResource("3_fwfps")
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
+theme_override_font_sizes/bold_italics_font_size = 48
+theme_override_font_sizes/italics_font_size = 48
+theme_override_font_sizes/mono_font_size = 48
+bbcode_enabled = true
+text = "
+"
+scroll_active = false
+
+[node name="NameLabel" type="Label" parent="." unique_id=663296063]
+visible = false
+offset_left = 280.0
+offset_top = 456.0
+offset_right = 408.0
+offset_bottom = 528.0
+theme_override_colors/font_shadow_color = Color(0.32156864, 0.07058824, 0.050980393, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("3_fwfps")
+theme_override_font_sizes/font_size = 48
+text = "Name"
+
+[node name="Timer" type="Timer" parent="." unique_id=1819802446]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=507030463]

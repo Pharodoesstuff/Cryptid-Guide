@@ -1,0 +1,380 @@
+[gd_scene format=4 uid="uid://bj31tbom2rxcd"]
+
+[ext_resource type="Script" uid="uid://h6thbb5bynwa" path="res://Code/Level Code/level.gd" id="1_7ea1o"]
+[ext_resource type="Texture2D" uid="uid://b22fdcrvouwwt" path="res://Background Assets/Cabin/Cabin Assets/The Cabin.png" id="3_14io3"]
+[ext_resource type="Texture2D" uid="uid://c4lexjy6jyf6r" path="res://Background Assets/Cabin/Cabin Assets/Furniture .png" id="4_x5oxm"]
+[ext_resource type="Texture2D" uid="uid://d0yxv4ku3ijqo" path="res://Background Assets/Cabin/Cabin Assets/Updates Furniture.png" id="5_6ppk2"]
+[ext_resource type="Texture2D" uid="uid://dfyolmitm87l0" path="res://Background Assets/Cabin/Cabin Assets/BloodyBathub.png" id="6_8got3"]
+[ext_resource type="PackedScene" uid="uid://bns4o274efft6" path="res://00_Globals/lvl_trans2.tscn" id="6_axy76"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycdy4"]
+texture = ExtResource("4_x5oxm")
+7:17/size_in_atlas = Vector2i(9, 9)
+7:17/0 = 0
+7:17/0/z_index = 1
+
+[sub_resource type="TileSet" id="TileSet_w48qg"]
+sources/0 = SubResource("TileSetAtlasSource_ycdy4")
+
+[sub_resource type="Gradient" id="Gradient_u1i4r"]
+offsets = PackedFloat32Array(0, 0.55509645, 0.8002755, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.91873276, 0.91873276, 0.91873276, 1, 0.1351077, 0.1351077, 0.1351077, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w2hp4"]
+gradient = SubResource("Gradient_u1i4r")
+width = 256
+height = 256
+fill = 2
+fill_from = Vector2(0.4795222, 0.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_utrjk"]
+texture = ExtResource("3_14io3")
+35:25/size_in_atlas = Vector2i(33, 7)
+35:25/0 = 0
+18:8/size_in_atlas = Vector2i(13, 9)
+18:8/0 = 0
+18:8/0/texture_origin = Vector2i(-6, 10)
+22:53/0 = 0
+22:54/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_h2yge"]
+physics_layer_0/collision_layer = 2
+sources/2 = SubResource("TileSetAtlasSource_utrjk")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8uu3j"]
+texture = ExtResource("3_14io3")
+34:39/size_in_atlas = Vector2i(34, 17)
+34:39/0 = 0
+34:39/0/texture_origin = Vector2i(2, 0)
+18:19/size_in_atlas = Vector2i(13, 15)
+18:19/0 = 0
+18:19/0/texture_origin = Vector2i(-6, 0)
+2:36/size_in_atlas = Vector2i(9, 8)
+2:36/0 = 0
+2:36/0/texture_origin = Vector2i(-5, 6)
+19:49/size_in_atlas = Vector2i(12, 6)
+19:49/0 = 0
+71:28/size_in_atlas = Vector2i(8, 4)
+71:28/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0xm2m"]
+physics_layer_0/collision_layer = 2
+sources/1 = SubResource("TileSetAtlasSource_8uu3j")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
+texture = ExtResource("4_x5oxm")
+10:32/0 = 0
+10:33/0 = 0
+11:32/0 = 0
+11:33/0 = 0
+12:32/0 = 0
+12:33/0 = 0
+50:28/size_in_atlas = Vector2i(15, 4)
+50:28/0 = 0
+50:28/0/texture_origin = Vector2i(0, -8)
+50:28/0/z_index = 1
+50:28/0/y_sort_origin = -100
+50:28/0/physics_layer_0/polygon_0/points = PackedVector2Array(-105.48462, -3.2385674, 109.18582, -3.2385674, 108.56897, 40.2507, -102.7087, 40.2507)
+69:25/size_in_atlas = Vector2i(4, 7)
+69:25/0 = 0
+69:25/0/texture_origin = Vector2i(10, 0)
+69:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 17.272339, -7.5566483, 16.655457, 35.31575, -8.019302, 34.698883)
+56:12/size_in_atlas = Vector2i(20, 5)
+56:12/0 = 0
+56:12/0/z_index = -2
+40:16/size_in_atlas = Vector2i(7, 4)
+40:16/0 = 0
+40:16/0/texture_origin = Vector2i(-2, 0)
+40:16/0/z_index = -1
+15:8/size_in_atlas = Vector2i(3, 2)
+15:8/0 = 0
+15:8/0/z_index = -1
+15:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.8727036, -4.091425, 10.359142, -4.091425, 9.488628, 8.792215, -2.6986008, 10.010937)
+45:9/size_in_atlas = Vector2i(2, 1)
+45:9/0 = 0
+45:9/0/texture_origin = Vector2i(11, 0)
+45:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -1.4798775, 0.26115608, -8, 8)
+11:42/size_in_atlas = Vector2i(10, 5)
+11:42/0 = 0
+11:42/0/z_index = -1
+11:42/0/physics_layer_0/polygon_0/points = PackedVector2Array(-63.025375, 10.359142, 71.382324, 10.1850395, 71.20822, 20.283028, -63.19948, 18.36789)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
+texture = ExtResource("5_6ppk2")
+34:35/size_in_atlas = Vector2i(6, 6)
+34:35/0 = 0
+34:35/0/texture_origin = Vector2i(3, 0)
+34:35/0/z_index = -1
+
+[sub_resource type="TileSet" id="TileSet_ig7tw"]
+physics_layer_0/collision_layer = 2
+sources/1 = SubResource("TileSetAtlasSource_lquwl")
+sources/2 = SubResource("TileSetAtlasSource_7mycd")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
+texture = ExtResource("4_x5oxm")
+29:14/size_in_atlas = Vector2i(3, 6)
+29:14/0 = 0
+29:14/0/texture_origin = Vector2i(-7, 0)
+29:14/0/z_index = -1
+29:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.089241, -2.0021896, 31.338577, -1.4798775, 31.164474, 17.671478, -1.2187195, 17.845581)
+21:25/size_in_atlas = Vector2i(9, 4)
+21:25/0 = 0
+21:25/0/y_sort_origin = -140
+21:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45.963257, 13.667103, -53.27559, -1.4798775, -55.016624, -19.76072, 58.498695, -19.76072, 57.62818, -3.7432213, 50.838158, 12.970692)
+35:28/size_in_atlas = Vector2i(4, 7)
+35:28/0 = 0
+35:28/0/z_index = 1
+35:28/0/physics_layer_0/polygon_0/points = PackedVector2Array(30.226593, 20.819328, 29.918152, 40.867577, -27.450684, 39.633835, -26.216934, 22.669937)
+32:49/size_in_atlas = Vector2i(10, 5)
+32:49/0 = 0
+32:49/0/texture_origin = Vector2i(0, -4)
+32:49/0/z_index = -1
+32:49/0/physics_layer_0/polygon_0/points = PackedVector2Array(-66.33334, 11.577866, 74.690285, 11.055553, 74.34208, 20.283028, 63.895897, 19.934818, 62.677162, 15.582237, -49.445324, 15.930447, -50.83815, 21.50175, -66.15923, 21.675854)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
+texture = ExtResource("5_6ppk2")
+37:26/size_in_atlas = Vector2i(3, 7)
+37:26/0 = 0
+37:26/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.401573, -37.780403, 15.14698, -37.258095, 10.6203, 48.74891, -9.053368, 46.485565)
+49:33/size_in_atlas = Vector2i(2, 2)
+49:33/0 = 0
+49:33/0/z_index = -1
+
+[sub_resource type="TileSet" id="TileSet_kek77"]
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_272bh")
+sources/2 = SubResource("TileSetAtlasSource_5vw27")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4c57u"]
+texture = ExtResource("4_x5oxm")
+53:47/size_in_atlas = Vector2i(10, 5)
+53:47/0 = 0
+53:47/0/texture_origin = Vector2i(-3, 0)
+53:47/0/physics_layer_0/polygon_0/points = PackedVector2Array(-62.32896, 7.9216957, 64.940506, 8.0957985, 64.940506, -14.015312, 44.39633, -24.983818, -42.307083, -24.983818, -62.02487, -11.235888)
+73:42/size_in_atlas = Vector2i(3, 5)
+73:42/0 = 0
+73:42/0/z_index = 1
+73:42/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.968506, -20.37008, 10.6203, -19.673668, 8.879265, 30.642166, -11.316711, 29.945755)
+62:42/size_in_atlas = Vector2i(6, 3)
+62:42/0 = 0
+62:42/0/z_index = -2
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_efxa6"]
+texture = ExtResource("5_6ppk2")
+29:32/size_in_atlas = Vector2i(3, 4)
+29:32/0 = 0
+29:32/0/texture_origin = Vector2i(-5, 0)
+29:32/0/z_index = -1
+29:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-17.932632, -0.78346634, 19.325455, -1.8280869, 19.325455, 29.336395, -17.75853, 28.465881)
+
+[sub_resource type="TileSet" id="TileSet_dg77c"]
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_4c57u")
+sources/1 = SubResource("TileSetAtlasSource_efxa6")
+
+[sub_resource type="Animation" id="Animation_axy76"]
+resource_name = "Bloody"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cabin Design/Bloody tub:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7ea1o"]
+resource_name = "Bloody All"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cabin Design:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.44705883, 0.10980392, 0.10980392, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cabin Design/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.53333336, 1.9333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.11639596, 0.0362716, 0, 1), Color(1, 0.09803922, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cabin Design/ColorRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5.756, 3.041), Vector2(10.621, 5.158)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("cabin Design/Fan:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.35686275, 0.35686275, 0.35686275, 0.7490196), Color(1, 0.7882353, 0.84705883, 0.95686275)]
+}
+
+[sub_resource type="Animation" id="Animation_am1c7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cabin Design/Bloody tub:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("cabin Design/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("cabin Design/ColorRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("cabin Design:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("cabin Design/Fan:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.35686275, 0.35686275, 0.35686275, 0.7490196)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3tqdm"]
+_data = {
+&"Bloody": SubResource("Animation_axy76"),
+&"Bloody All": SubResource("Animation_7ea1o"),
+&"RESET": SubResource("Animation_am1c7")
+}
+
+[node name="Cabin" type="Node2D" unique_id=415258001]
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_7ea1o")
+
+[node name="cabin Design" type="Node2D" parent="." unique_id=1941871013]
+y_sort_enabled = true
+
+[node name="Fan" type="TileMapLayer" parent="cabin Design" unique_id=442863574]
+modulate = Color(0.35686275, 0.35686275, 0.35686275, 0.7490196)
+z_index = 3
+tile_map_data = PackedByteArray("AADx//f/AAAHABEAAADj/w8AAAAHABEAAGDa//3/AAAHABEAAGADAA8AAAAHABEAAGDT/wcAAAAHABEAAADd/w8AAAAHABEAAADZ//7/AAAHABEAAADX//n/AAAHABEAAADW////AAAHABEAAADV////AAAHABEAAADM/wAAAAAHABEAAADL/wAAAAAHABEAAADJ/wYAAAAHABEAAADJ/wcAAAAHABEAAADQ/wkAAAAHABEAAADQ/wEAAAAHABEAAADQ/wIAAAAHABEAAADP/xAAAAAHABEAAADc/xAAAAAHABEAAADa//7/AAAHABEAAADc//X/AAAHABEAAADd//X/AAAHABEAAAD3/xsAAAAHABEAAADW/w0AAAAHABEAAAA=")
+tile_set = SubResource("TileSet_w48qg")
+
+[node name="ColorRect" type="Sprite2D" parent="cabin Design" unique_id=297069963]
+modulate = Color(0.11639596, 0.0362716, 0, 1)
+z_index = -3
+position = Vector2(-88, 106.99999)
+scale = Vector2(5.756, 3.041)
+texture = SubResource("GradientTexture2D_w2hp4")
+
+[node name="Wall" type="TileMapLayer" parent="cabin Design" unique_id=2119646852]
+z_index = -2
+tile_map_data = PackedByteArray("AAAHAPj/AgAjABkAAADm//r/AgASAAgAAADx/wAAAgAWADUAAADy/wAAAgAWADUAAADz/wIAAgAWADYAAADy/wIAAgAWADYAAADy/wEAAgAWADUAAAA=")
+tile_set = SubResource("TileSet_h2yge")
+
+[node name="Floor" type="TileMapLayer" parent="cabin Design" unique_id=377496548]
+z_index = -2
+tile_map_data = PackedByteArray("AAAHAAMAAQAiACcAAADx////AQATADEAAADm/wQAAQASABMAAADc/wcAAQACACQAAAA=")
+tile_set = SubResource("TileSet_0xm2m")
+
+[node name="Furniture" type="TileMapLayer" parent="cabin Design" unique_id=269252582]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAVAAMAAQBFABkAABAIAAYAAQAyABwAAAAUAPj/AgAiACMAAADi////AQAtAAkAAAD4//r/AQAPAAgAAAAMAPv/AQALACoAAAD9//f/AQAoABAAAAAKAP7/AQA4AAwAACAeAAAAAQA4AAwAACA=")
+tile_set = SubResource("TileSet_ig7tw")
+
+[node name="Furniture 2" type="TileMapLayer" parent="cabin Design" unique_id=1919299763]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAADAPf/AgAxACEAAADc/wYAAAAVABkAAAD4/wQAAgAlABoAAAD+//v/AAAgADEAAADl//z/AAAdAA4AAADp/wYAAAAjABwAAAA=")
+tile_set = SubResource("TileSet_kek77")
+
+[node name="Furniture 3" type="TileMapLayer" parent="cabin Design" unique_id=221676487]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AADm//j/AQAdACAAAAAFAPz/AAA+ACoAAAATAAcAAAA1AC8AAADg/wcAAABJACoAAAA=")
+tile_set = SubResource("TileSet_dg77c")
+
+[node name="Bloody tub" type="Sprite2D" parent="cabin Design" unique_id=2124887251]
+modulate = Color(1, 1, 1, 0)
+y_sort_enabled = true
+position = Vector2(-565, 90)
+texture = ExtResource("6_8got3")
+
+[node name="Wall Borders" type="StaticBody2D" parent="." unique_id=330644693]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall Borders" unique_id=769268148]
+build_mode = 1
+polygon = PackedVector2Array(-499, -61, -499, 44, -627, 44, -630, 151, -315, 148, -316, 8, -137, 4, -138, 148, 377, 145, 377, 34, 1130, 40, 1254, 77, 1360, 70, 1332, -19, 1273, -25, 1155.7742, -8.135193, 374, -9, 374, -88, -141, -87, -140, -55, -308, -60)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=559530118]
+libraries/ = SubResource("AnimationLibrary_3tqdm")
+autoplay = &"Bloody All"
+
+[node name="Alt" parent="." unique_id=1833128993 instance=ExtResource("6_axy76")]
+position = Vector2(1243, 16)
+trigger_mode = 1
+timer_delay = 0.0
