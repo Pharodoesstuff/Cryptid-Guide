@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://4xgipsss1mgx"]
+
+[ext_resource type="Script" uid="uid://wrm3bxbextct" path="res://Code/Dialog/dialogue_system.gd" id="1_5h2ry"]
+[ext_resource type="FontFile" uid="uid://cw5dn0bt7twjf" path="res://00_GUI/Font/Fibberish v1.0/fibberish.ttf" id="1_fojh5"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5h2ry"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_oflqc"]
+offsets = PackedFloat32Array(0.0037593986, 1)
+colors = PackedColorArray(0.24231139, 3.203703e-07, 3.008172e-08, 1, 0.6624426, 0.36884004, 0.27680418, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0m4j5"]
+gradient = SubResource("Gradient_oflqc")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fojh5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.9715033, 0.62790406, 0.52755487, 1)
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0m4j5"]
+light_mode = 1
+
+[node name="DialogueSystem" type="CanvasLayer" unique_id=474244663]
+script = ExtResource("1_5h2ry")
+
+[node name="DialogueContainer" type="Control" parent="." unique_id=1818498907]
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="DialogueContainer" unique_id=2031440741]
+z_index = -2
+material = SubResource("CanvasItemMaterial_5h2ry")
+layout_mode = 0
+offset_right = 656.0
+offset_bottom = 120.0
+texture = SubResource("GradientTexture2D_0m4j5")
+
+[node name="Panel" type="Panel" parent="DialogueContainer" unique_id=1612630332]
+layout_mode = 0
+offset_right = 650.0
+offset_bottom = 120.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fojh5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogueContainer" unique_id=1527589155]
+layout_mode = 0
+offset_right = 648.0
+offset_bottom = 120.0
+
+[node name="SpeakerParent" type="Control" parent="DialogueContainer/HBoxContainer" unique_id=770033131]
+custom_minimum_size = Vector2(56, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogueContainer/HBoxContainer/SpeakerParent" unique_id=1026708002]
+position = Vector2(56, 56)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueContainer/HBoxContainer" unique_id=2135709728]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueContainer/HBoxContainer/VBoxContainer" unique_id=1906784579]
+modulate = Color(0.99443644, 0.74972355, 0.808725, 1)
+material = SubResource("CanvasItemMaterial_0m4j5")
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 0.8812988, 0.5047407, 1)
+theme_override_fonts/normal_font = ExtResource("1_fojh5")
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
+theme_override_font_sizes/bold_italics_font_size = 48
+theme_override_font_sizes/italics_font_size = 48
+theme_override_font_sizes/mono_font_size = 48
+bbcode_enabled = true
+scroll_active = false
+visible_characters_behavior = 1
+
+[node name="button_container" type="HBoxContainer" parent="DialogueContainer/HBoxContainer/VBoxContainer" unique_id=36446871]
+visible = false
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1410893129]
+max_polyphony = 100

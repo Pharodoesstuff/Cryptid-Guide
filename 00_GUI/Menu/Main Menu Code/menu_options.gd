@@ -22,11 +22,14 @@ func _ready() -> void:
 	
 	pass
 	
+# In menu_options.gd
 func _on_create_pressed() -> void:
 	PlayerManager.player_spawned = false
 	PlayerManager.is_loading_save = false
+	if is_instance_valid(PlayerManager.player):
+		PlayerManager.player.reset_player_state()
 	start_game()
-	pass
+	
 func _on_host_pressed() -> void:
 	pass
 func _on_load_pressed() -> void:

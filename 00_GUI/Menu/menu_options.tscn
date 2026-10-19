@@ -65,46 +65,50 @@ scale = Vector2(2.66, 2.5400026)
 texture = ExtResource("5_m7uoa")
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer2" unique_id=1459153547]
-modulate = Color(1, 1, 1, 0)
+modulate = Color(9.060141, 6.828089, 4.744841, 1)
 z_index = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 489.984
-offset_top = 278.65604
-offset_right = 679.984
-offset_bottom = 345.656
+offset_left = 488.00003
+offset_top = 288.0
+offset_right = 678.0
+offset_bottom = 347.32507
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.68, 1.68)
+scale = Vector2(1.845, 1.845)
 mouse_filter = 0
-theme_override_constants/h_separation = 60
-theme_override_constants/v_separation = 5
+theme_override_constants/h_separation = 51
+theme_override_constants/v_separation = 13
 columns = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Create" type="Button" parent="CanvasLayer2/GridContainer" unique_id=1186838426]
 layout_mode = 2
-text = "Create"
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
+theme_override_colors/icon_pressed_color = Color(1, 0.5565601, 0.5870164, 1)
+text = "Creating"
 
 [node name="Host" type="Button" parent="CanvasLayer2/GridContainer" unique_id=793275643]
 layout_mode = 2
-text = "Host"
 
 [node name="Load_in" type="Button" parent="CanvasLayer2/GridContainer" unique_id=749743685]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Load"
 
 [node name="Options" type="Button" parent="CanvasLayer2/GridContainer" unique_id=1097327156]
 layout_mode = 2
-text = "Options"
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+text = "Optionss"
 
 [node name="Exit" type="Button" parent="CanvasLayer2" unique_id=855710353]
 modulate = Color(1, 1, 1, 0)
-offset_left = 665.984
-offset_top = 254.656
-offset_right = 707.984
-offset_bottom = 285.656
+offset_left = 664.0
+offset_top = 248.0
+offset_right = 706.0
+offset_bottom = 279.0
 scale = Vector2(0.6669073, 3.3210156)
 text = "Quit"
 metadata/_edit_use_anchors_ = true

@@ -36,13 +36,15 @@ func _on_button_exit_pressed() -> void:
 	pass # Replace with function body.
 
 
+# In pause_menu.gd
 func _on_button_menu_pressed() -> void:
 	hide_pause_menu()
 	
-	# Save the player from being freed when the Level scene unloads
-	if is_instance_valid(PlayerManager.player) and PlayerManager.player.get_parent():
-		PlayerManager.player.get_parent().remove_child(PlayerManager.player)
-		PlayerManager.add_child(PlayerManager.player)
+	if is_instance_valid(PlayerManager.player):
+		PlayerManager.player.reset_player_state() # Unlocks movement and resets input vectors
+		if PlayerManager.player.get_parent():
+			PlayerManager.player.get_parent().remove_child(PlayerManager.player)
+			PlayerManager.add_child(PlayerManager.player)
 		
 	get_tree().change_scene_to_file("res://00_GUI/Menu/menu_options.tscn")
 

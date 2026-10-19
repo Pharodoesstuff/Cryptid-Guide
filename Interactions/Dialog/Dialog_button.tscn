@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ddy3eos0rnchg"]
+
+[node name="DialogueButton" type="Button" unique_id=1124934116]
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9439606, 0.90076125, 0, 1)
+theme_override_colors/font_focus_color = Color(0.8890973, 1, 0.6923154, 1)
+theme_override_colors/font_pressed_color = Color(0.8901961, 1, 0.69411767, 1)
+theme_override_colors/font_hover_color = Color(0.8901961, 1, 0.69411767, 1)

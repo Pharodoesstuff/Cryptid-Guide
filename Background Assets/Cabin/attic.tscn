@@ -6376,6 +6376,8 @@ sources/0 = SubResource("TileSetAtlasSource_bfoiy")
 texture = ExtResource("3_nf00x")
 texture_region_size = Vector2i(28, 28)
 0:0/0 = 0
+0:0/0/y_sort_origin = 17
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.448381, -3.9173222, 13.493, -3.9173222, 14.015312, 10.707352, -12.100175, 10.359142)
 
 [sub_resource type="TileSet" id="TileSet_1hdgx"]
 physics_layer_0/collision_layer = 1
@@ -6385,8 +6387,10 @@ sources/1 = SubResource("TileSetAtlasSource_6vfcr")
 texture = ExtResource("3_nf00x")
 texture_region_size = Vector2i(28, 28)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.23185, -6.441822, 13.580055, -6.2677193, 13.057739, 11.316711, -13.23185, 11.316711)
 
 [sub_resource type="TileSet" id="TileSet_711rt"]
+physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_hfhvk")
 
 [sub_resource type="Animation" id="Animation_escx8"]
@@ -6550,10 +6554,11 @@ tile_set = SubResource("TileSet_si7ac")
 [node name="Furniture" type="TileMapLayer" parent="." unique_id=781157707]
 modulate = Color(0.9725091, 0.65174246, 0.3969891, 1)
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AADz/wkAAQAAAAAAAAD5/wMAAQAAAAAAAAAJAAkAAQAAAAAAAAD0/wIAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AADz/wkAAQAAAAAAAAD5/wMAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_1hdgx")
 
 [node name="Boxes2" type="TileMapLayer" parent="Furniture" unique_id=1577439006]
+y_sort_enabled = true
 tile_map_data = PackedByteArray("AADy/woAAQAAAAAAAADy/wEAAQAAAAAAAADy/wMAAQAAAAAAAADy/wYAAQAAAAAAAAD6/wQAAQAAAAAAAAD8/wgAAQAAAAAAAAD+/wsAAQAAAAAAAAABAAkAAQAAAAAAAAACAAUAAQAAAAAAAAAIAAgAAQAAAAAAAAD0/woAAQAAAAAAAAD4/wQAAQAAAAAAAAANAAIAAQAAAAAAAAAOAAEAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_711rt")
 
@@ -6571,9 +6576,9 @@ libraries/ = SubResource("AnimationLibrary_2a5b4")
 position = Vector2(288, 272)
 
 [node name="LvlTransition1" parent="." unique_id=959766907 instance=ExtResource("8_6vfcr")]
-position = Vector2(248, 272)
+position = Vector2(248, 280)
 rotation = -3.1415927
-scale = Vector2(0.105830565, -1.4827695)
+scale = Vector2(0.105830565, -0.7627694)
 level = "uid://dpxmw1emc12l1"
 target_transition_Area = "LvlTransition2"
 size = 1

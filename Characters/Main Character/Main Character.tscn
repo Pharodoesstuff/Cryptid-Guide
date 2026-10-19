@@ -273,9 +273,6 @@ _data = {
 &"default": SubResource("Animation_p3iov")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4nyp"]
-size = Vector2(43, 50)
-
 [node name="Player" type="CharacterBody2D" unique_id=1999503061]
 y_sort_enabled = true
 collision_mask = 3
@@ -349,11 +346,3 @@ libraries/ = SubResource("AnimationLibrary_2311a")
 
 [node name="VoidLight" parent="." unique_id=143977007 instance=ExtResource("10_p4s3c")]
 position = Vector2(16, -20)
-
-[node name="Interact" type="Area2D" parent="." unique_id=1922193603]
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact" unique_id=605254052]
-position = Vector2(1.5, 7)
-shape = SubResource("RectangleShape2D_k4nyp")
