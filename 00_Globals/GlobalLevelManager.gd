@@ -31,7 +31,12 @@ func load_new_level(
 	
 	await get_tree().process_frame
 	
-	get_tree().change_scene_to_file ( level_path )
+	# Load resource first so uid:// paths resolve correctly
+	var next_scene = load(level_path) as PackedScene
+	if is_instance_valid(next_scene):
+		get_tree().change_scene_to_packed(next_scene)
+	else:
+		push_error("Failed to load level path: " + level_path)
 	
 	await get_tree().process_frame
 	
@@ -40,5 +45,3 @@ func load_new_level(
 	await get_tree().process_frame
 	
 	level_loaded.emit()
-	
-	pass

@@ -1,4 +1,4 @@
-extends Area2D
+class_name DialogueArea2d extends Area2D
 
 const DialogueSystemPreload = preload("res://00_Globals/dialogue_system.tscn")
 
@@ -21,6 +21,10 @@ func _ready() -> void:
 		player_node = i
 
 func _process(_delta: float) -> void:
+	# Stop processing if monitoring has been disabled
+	if not monitoring:
+		return
+
 	if !player_node:
 		for i in get_tree().get_nodes_in_group("player"):
 			player_node = i
@@ -35,8 +39,8 @@ func _process(_delta: float) -> void:
 		return
 
 	if Input.is_action_just_pressed("Accept") and !activate_instant:
-		# Check overlap directly in real-time to avoid 1-frame signal latency
-		var is_inside = player_body_in or (player_node in get_overlapping_bodies())
+		# Guard against calling get_overlapping_bodies() if monitoring is off
+		var is_inside = player_body_in or (monitoring and player_node in get_overlapping_bodies())
 		if is_inside and _check_look_direction():
 			_activate_dialogue()
 

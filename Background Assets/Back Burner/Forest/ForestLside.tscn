@@ -1,15 +1,22 @@
 [gd_scene format=4 uid="uid://cqr8r17wve6im"]
 
+[ext_resource type="Script" uid="uid://h6thbb5bynwa" path="res://Code/Level Code/level.gd" id="1_c44r2"]
 [ext_resource type="Texture2D" uid="uid://cbckr3gv70kv4" path="res://Background Assets/Back Burner/Forest/Layouts/GrassLSide.png" id="1_ndcrg"]
 [ext_resource type="Shader" uid="uid://bi16jc3l1oe7b" path="res://Background Assets/Back Burner/Forest/Grass.gdshader" id="2_kli57"]
 [ext_resource type="Script" uid="uid://c6wsdsq63qaf1" path="res://Code/Level Code/LevelTileMap.gd" id="2_rvvyb"]
 [ext_resource type="Texture2D" uid="uid://dv3mlsk35bu18" path="res://Background Assets/Back Burner/Forest/Cave.png" id="3_l8daa"]
 [ext_resource type="Texture2D" uid="uid://dyn6qyel5ang6" path="res://Background Assets/Back Burner/Forest/Grass&credits/Grass tiles.png" id="5_orusn"]
 [ext_resource type="Texture2D" uid="uid://dotqbq8ymlpmy" path="res://Background Assets/Back Burner/Forest/Nature/Tree Stump.png" id="7_16gj1"]
-[ext_resource type="PackedScene" uid="uid://cop15662dn8op" path="res://Characters/Main Character/Main Character.tscn" id="7_orusn"]
 [ext_resource type="PackedScene" uid="uid://cxrwp6l6vnn8t" path="res://Background Assets/Back Burner/Forest/Nature/tree_leaves.tscn" id="8_kli57"]
 [ext_resource type="Texture2D" uid="uid://q8cw64epbkxs" path="res://Background Assets/Back Burner/Forest/Nature/Large Plant Life.png" id="8_orusn"]
 [ext_resource type="Texture2D" uid="uid://bcw0nwmatjw71" path="res://Background Assets/Back Burner/Forest/Nature/Plant Life.png" id="9_16gj1"]
+[ext_resource type="PackedScene" uid="uid://b7lin4hbpyfqe" path="res://Interactions/lvl_transition.tscn" id="11_4qffl"]
+[ext_resource type="PackedScene" uid="uid://bv0xa11si6b7h" path="res://Characters/bigfoot.tscn" id="12_c44r2"]
+[ext_resource type="PackedScene" uid="uid://d3cuqej3okgm1" path="res://Interactions/player_spawn.tscn" id="13_f4yjn"]
+[ext_resource type="PackedScene" uid="uid://dcsc5xj77t1kv" path="res://Interactions/Dialog/forced_dialogue.tscn" id="14_k0s84"]
+[ext_resource type="Script" uid="uid://d27xfxagxwibs" path="res://Code/Dialog/DialogueExportResource.gd" id="15_lr8rt"]
+[ext_resource type="Script" uid="uid://cug1l4ymh31cf" path="res://Code/Dialog/DialogueTextResource.gd" id="16_3hpyq"]
+[ext_resource type="Script" uid="uid://blsntwbwnpc4p" path="res://Code/Dialog/DialogueFunctionResource.gd" id="17_lr8rt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uv6kw"]
 texture = ExtResource("1_ndcrg")
@@ -8719,6 +8726,8 @@ texture = ExtResource("5_orusn")
 [sub_resource type="TileSet" id="TileSet_evtrj"]
 sources/0 = SubResource("TileSetAtlasSource_5gqv1")
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4qffl"]
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uqlty"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvvyb"]
@@ -8814,8 +8823,127 @@ texture = ExtResource("9_16gj1")
 [sub_resource type="TileSet" id="TileSet_rvvyb"]
 sources/2 = SubResource("TileSetAtlasSource_kli57")
 
+[sub_resource type="Resource" id="Resource_f4yjn"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60]..."
+text_speed = 5.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_k0s84"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60]Interesting..."
+text_speed = 10.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_lr8rt"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60]My human vessel..."
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_3hpyq"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60]It's alive."
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_1yvpn"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60]Perhaps?"
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_p0vs8"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60]Remnants of my soul?"
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_v0vcd"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60] Or simply you were-"
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_1e0pm"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60]Contaminated"
+text_speed = 14.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_8plrv"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60]..."
+text_speed = 5.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_4puw0"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60] No matter-"
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_k6ynl"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60] Unnaceptable"
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_ae7uy"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60]You freed them"
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_bp1se"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60]As ignorant as you are-"
+text_speed = 18.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_i402f"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60]No one can leave-"
+text_speed = 15.0
+auto_advance_delay = 0.7
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_a1unj"]
+script = ExtResource("16_3hpyq")
+text = "
+[center][font_size=60]Disrespecing me"
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_gjsey"]
+script = ExtResource("16_3hpyq")
+text = "[shake][center][font_size=60]BIGFOOT"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_hv6s2"]
+script = ExtResource("17_lr8rt")
+target_path = NodePath("..")
+function_name = "_the_end"
+hide_dialogue_box = true
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
 [node name="ForestLside" type="Node2D" unique_id=1132000186]
 y_sort_enabled = true
+script = ExtResource("1_c44r2")
 
 [node name="Borders" type="TileMapLayer" parent="." unique_id=300057598]
 modulate = Color(0.9843137, 0.89411765, 0.76862746, 1)
@@ -8849,6 +8977,7 @@ tile_map_data = PackedByteArray("AADa/woAAAAJAAgAAADb/wQAAAAUAAkAAADb/woAAAAKAAg
 tile_set = SubResource("TileSet_evtrj")
 
 [node name="Cave" type="Sprite2D" parent="." unique_id=1847226889]
+material = SubResource("CanvasItemMaterial_4qffl")
 position = Vector2(-665, -16)
 scale = Vector2(1.06, 1)
 texture = ExtResource("3_l8daa")
@@ -8861,8 +8990,6 @@ physics_material_override = SubResource("PhysicsMaterial_uqlty")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cave/StaticBody2D" unique_id=1735058613]
 position = Vector2(-1, 0)
 polygon = PackedVector2Array(-152, 832, -88, 792, -40, 648, -24, 640, -24, 624, -16, 600, 0, 576, 8, 544, -8, 512, -16, 488, -8, 472, -8, 432, 16, 424, 16, 384, 0, 376, 0, 344, -16, 328, -16, 304, -24, 264, 16, 256, 72, 264, 64, 176, 56, 144, 8, 96, 33, 71, 33, 47, 32, -40, 16, -64, 25, -97, 32, -120, 40, -160, 16, -200, -8, -240, 0, -272, -8, -312, -24, -328, -120, -400, -144, -400, -160, -256)
-
-[node name="CharacterBody2D" parent="." unique_id=1999503061 instance=ExtResource("7_orusn")]
 
 [node name="Tree Stump" type="TileMapLayer" parent="." unique_id=607369340]
 y_sort_enabled = true
@@ -8899,3 +9026,24 @@ scale = Vector2(0.088709675, 0.44096637)
 modulate = Color(1, 0.27450982, 0.27450982, 1)
 position = Vector2(-624.754, -8)
 scale = Vector2(0.04503766, 0.19445133)
+
+[node name="LvlTransition" parent="." unique_id=959766907 instance=ExtResource("11_4qffl")]
+position = Vector2(-640, 64)
+level = "uid://72ibion4eo65"
+target_transition_Area = "LvlTransition2"
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=403129173]
+color = Color(0.61354953, 0.9644864, 0.77313405, 1)
+blend_mode = 1
+
+[node name="Bigfoot" parent="." unique_id=1418063881 instance=ExtResource("12_c44r2")]
+position = Vector2(24, 24)
+
+[node name="PlayerSpawn" parent="." unique_id=1158695474 instance=ExtResource("13_f4yjn")]
+position = Vector2(-560, 56)
+
+[node name="ForcedDialogue" parent="." unique_id=628127795 instance=ExtResource("14_k0s84")]
+position = Vector2(-584, 80)
+scale = Vector2(3.635, 3.635)
+persistence_key = "Vessel"
+dialogue_sequence = Array[ExtResource("15_lr8rt")]([SubResource("Resource_f4yjn"), SubResource("Resource_k0s84"), SubResource("Resource_lr8rt"), SubResource("Resource_3hpyq"), SubResource("Resource_1yvpn"), SubResource("Resource_p0vs8"), SubResource("Resource_v0vcd"), SubResource("Resource_1e0pm"), SubResource("Resource_8plrv"), SubResource("Resource_4puw0"), SubResource("Resource_k6ynl"), SubResource("Resource_ae7uy"), SubResource("Resource_bp1se"), SubResource("Resource_i402f"), SubResource("Resource_a1unj"), SubResource("Resource_gjsey"), SubResource("Resource_hv6s2")])

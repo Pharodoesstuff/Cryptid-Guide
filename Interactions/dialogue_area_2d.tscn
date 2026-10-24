@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://swrwl0w25idt"]
 
-[ext_resource type="Script" uid="uid://u10b5c405vwc" path="res://00_Globals/dialogue_area_2d.gd" id="1_4qvk1"]
+[ext_resource type="Script" uid="uid://u10b5c405vwc" path="res://Interactions/dialogue_area_2d.gd" id="1_4qvk1"]
 
 [node name="DialogueArea2D" type="Area2D" unique_id=1341398698]
 script = ExtResource("1_4qvk1")
+override_dialogue_position = true
+override_position = Vector2(315, 580)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

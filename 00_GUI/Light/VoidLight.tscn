@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dx5em3nipa3dl"]
 
 [ext_resource type="Script" uid="uid://dvv74u60nap0j" path="res://00_GUI/Light/void_light.gd" id="1_12a1t"]
+[ext_resource type="Script" uid="uid://bm2oiehkv5fn7" path="res://Code/Progress/detect_devil.gd" id="2_t46nd"]
+[ext_resource type="Resource" uid="uid://owhux5yqvcgm" path="res://Code/Progress/dialogue_3s.tres" id="3_cdv3i"]
 
 [sub_resource type="Gradient" id="Gradient_6hydc"]
-offsets = PackedFloat32Array(0, 0.6536643)
+offsets = PackedFloat32Array(-0.016, 0.15)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_jmwgl"]
@@ -12,10 +14,11 @@ width = 256
 height = 256
 fill = 1
 fill_from = Vector2(0.4888393, 0.49776787)
+fill_to = Vector2(0.435, 0.12)
 
 [sub_resource type="Animation" id="Animation_jmwgl"]
 resource_name = "Enclose"
-length = 2.5000000000000004
+length = 3.0000000000000004
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -23,10 +26,34 @@ tracks/0/path = NodePath("Out_light:texture:gradient:offsets")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 1, 1.8, 2.4666667),
+"times": PackedFloat32Array(0, 0.53333336, 1.1, 1.6333333, 2.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [PackedFloat32Array(-0.016, 0.8), PackedFloat32Array(-0.016, 0.6), PackedFloat32Array(-0.016, 0.4), PackedFloat32Array(-0.016, 0.3), PackedFloat32Array(-0.016, 0.2)]
+"values": [PackedFloat32Array(-0.016, 0.6), PackedFloat32Array(-0.016, 0.4), PackedFloat32Array(-0.016, 0.3), PackedFloat32Array(-0.016, 0.2), PackedFloat32Array(-0.016, 0.15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Out_light:texture:fill_to")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.435, 0.12)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Out_light:texture:gradient")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Gradient_6hydc")]
 }
 
 [sub_resource type="Animation" id="Animation_12a1t"]
@@ -50,10 +77,34 @@ tracks/1/path = NodePath("Out_light:texture:gradient:offsets")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(-0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedFloat32Array(-0.016, 0.15)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Out_light:texture:fill_to")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [PackedFloat32Array(0, 0.6536643)]
+"values": [Vector2(0.435, 0.12)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Out_light:texture:gradient")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Gradient_6hydc")]
 }
 
 [sub_resource type="Animation" id="Animation_t46nd"]
@@ -91,6 +142,17 @@ _data = {
 &"Start": SubResource("Animation_t46nd")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k4nyp"]
+radius = 72.0
+height = 144.0
+
+[sub_resource type="Gradient" id="Gradient_t46nd"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w2hp4"]
+gradient = SubResource("Gradient_t46nd")
+
 [node name="VoidLight" type="Node2D" unique_id=143977007]
 script = ExtResource("1_12a1t")
 
@@ -102,3 +164,23 @@ texture = SubResource("GradientTexture2D_jmwgl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1124037524]
 libraries/ = SubResource("AnimationLibrary_cdv3i")
+
+[node name="Detect Devil" type="Area2D" parent="." unique_id=1522570927]
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("2_t46nd")
+final_dialogue = ExtResource("3_cdv3i")
+override_position = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect Devil" unique_id=184473746]
+light_mask = 0
+visibility_layer = 16
+z_index = 6
+position = Vector2(-8, 32)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_k4nyp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=522109225]
+visible = false
+scale = Vector2(14.415, 14.415)
+texture = SubResource("GradientTexture2D_w2hp4")

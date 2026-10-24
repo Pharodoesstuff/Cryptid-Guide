@@ -7,7 +7,7 @@
 light_mode = 1
 
 [sub_resource type="Gradient" id="Gradient_oflqc"]
-offsets = PackedFloat32Array(0.0037593986, 1)
+offsets = PackedFloat32Array(0.007745267, 1)
 colors = PackedColorArray(0.24231139, 3.203703e-07, 3.008172e-08, 1, 0.6624426, 0.36884004, 0.27680418, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0m4j5"]
@@ -21,7 +21,7 @@ border_width_left = 8
 border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
-border_color = Color(0.9715033, 0.62790406, 0.52755487, 1)
+border_color = Color(0.9992265, 0.81797886, 0.6651868, 1)
 expand_margin_left = 8.0
 expand_margin_top = 8.0
 expand_margin_right = 8.0
@@ -39,6 +39,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="TextureRect" type="TextureRect" parent="DialogueContainer" unique_id=2031440741]
+modulate = Color(1, 1, 1, 0.827451)
 z_index = -2
 material = SubResource("CanvasItemMaterial_5h2ry")
 layout_mode = 0
@@ -75,11 +76,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(1, 0.8812988, 0.5047407, 1)
 theme_override_fonts/normal_font = ExtResource("1_fojh5")
-theme_override_font_sizes/normal_font_size = 48
-theme_override_font_sizes/bold_font_size = 48
-theme_override_font_sizes/bold_italics_font_size = 48
-theme_override_font_sizes/italics_font_size = 48
-theme_override_font_sizes/mono_font_size = 48
+theme_override_font_sizes/normal_font_size = 46
+theme_override_font_sizes/bold_font_size = 46
+theme_override_font_sizes/bold_italics_font_size = 46
+theme_override_font_sizes/italics_font_size = 46
+theme_override_font_sizes/mono_font_size = 46
 bbcode_enabled = true
 scroll_active = false
 visible_characters_behavior = 1

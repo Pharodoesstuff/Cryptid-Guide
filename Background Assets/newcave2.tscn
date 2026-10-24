@@ -1,0 +1,240 @@
+[gd_scene format=3 uid="uid://72ibion4eo65"]
+
+[ext_resource type="Script" uid="uid://h6thbb5bynwa" path="res://Code/Level Code/level.gd" id="1_ejud2"]
+[ext_resource type="Texture2D" uid="uid://cmrmhn1qne6bq" path="res://Background Assets/cave2.png" id="1_l3eja"]
+[ext_resource type="Texture2D" uid="uid://byuc6rrll2lh4" path="res://Background Assets/Back Burner/Cave Scene/Cave BG/Cave1.png" id="2_5cfss"]
+[ext_resource type="Script" uid="uid://c6wsdsq63qaf1" path="res://Code/Level Code/LevelTileMap.gd" id="2_85xkd"]
+[ext_resource type="Texture2D" uid="uid://ev3l3bdotjmy" path="res://Background Assets/Back Burner/Cave Scene/Cave BG/Cave4.png" id="2_toiqp"]
+[ext_resource type="PackedScene" uid="uid://d3cuqej3okgm1" path="res://Interactions/player_spawn.tscn" id="3_ejud2"]
+[ext_resource type="Texture2D" uid="uid://dwkq7a02lvygv" path="res://Background Assets/Back Burner/Cave Scene/Cave BG/Cave3.png" id="3_toiqp"]
+[ext_resource type="Texture2D" uid="uid://b3ie0kfbmumib" path="res://Background Assets/Back Burner/Cave Scene/Cave BG/Cave2.png" id="7_dvdh6"]
+[ext_resource type="PackedScene" uid="uid://b7lin4hbpyfqe" path="res://Interactions/lvl_transition.tscn" id="9_dvdh6"]
+[ext_resource type="PackedScene" uid="uid://dcsc5xj77t1kv" path="res://Interactions/Dialog/forced_dialogue.tscn" id="10_f6y1j"]
+[ext_resource type="Script" uid="uid://d27xfxagxwibs" path="res://Code/Dialog/DialogueExportResource.gd" id="11_1eu43"]
+[ext_resource type="Script" uid="uid://cug1l4ymh31cf" path="res://Code/Dialog/DialogueTextResource.gd" id="12_mv8rc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y3ela"]
+texture = ExtResource("1_l3eja")
+0:0/size_in_atlas = Vector2i(37, 62)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k4nyp"]
+sources/0 = SubResource("TileSetAtlasSource_y3ela")
+
+[sub_resource type="Gradient" id="Gradient_toiqp"]
+offsets = PackedFloat32Array(0.024752475, 0.68151814)
+colors = PackedColorArray(1, 1, 1, 0.68235296, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k4nyp"]
+gradient = SubResource("Gradient_toiqp")
+fill = 1
+fill_from = Vector2(0, 0.45221844)
+fill_to = Vector2(0.98122865, 0)
+
+[sub_resource type="Gradient" id="Gradient_dvdh6"]
+offsets = PackedFloat32Array(0.26567656, 1)
+colors = PackedColorArray(0, 0, 0, 0.50980395, 1, 1, 1, 0.27450982)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w2hp4"]
+gradient = SubResource("Gradient_dvdh6")
+
+[sub_resource type="Resource" id="Resource_rg0fl"]
+script = ExtResource("12_mv8rc")
+text = "Your heart beats faster"
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_ty20v"]
+script = ExtResource("12_mv8rc")
+text = "The world of opportunities awaits"
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_thjiu"]
+script = ExtResource("12_mv8rc")
+text = "..."
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_px7q2"]
+script = ExtResource("12_mv8rc")
+text = "What even is the outside world? "
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_kne3w"]
+script = ExtResource("12_mv8rc")
+text = "What even is.. me? "
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_nw64h"]
+script = ExtResource("12_mv8rc")
+text = "What did any of that cabin mean? "
+text_speed = 18.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_phmq0"]
+script = ExtResource("12_mv8rc")
+text = "The souls? "
+text_speed = 18.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_8e3ox"]
+script = ExtResource("12_mv8rc")
+text = "The monsters"
+text_speed = 18.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_vquv7"]
+script = ExtResource("12_mv8rc")
+text = "..."
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_nge5r"]
+script = ExtResource("12_mv8rc")
+text = "[center]you..."
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_rfbdh"]
+script = ExtResource("12_mv8rc")
+text = "Someone..."
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_luavx"]
+script = ExtResource("12_mv8rc")
+text = "Had to make you..."
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_ncpoe"]
+script = ExtResource("12_mv8rc")
+text = "...Right?"
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_ph3rp"]
+script = ExtResource("12_mv8rc")
+text = "..."
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_itp2b"]
+script = ExtResource("12_mv8rc")
+text = "..."
+text_speed = 10.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_nxgm6"]
+script = ExtResource("12_mv8rc")
+text = "..."
+text_speed = 5.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_ne7hy"]
+script = ExtResource("12_mv8rc")
+text = "Are you yourself a monster? "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[node name="Newcave2" type="Node2D" unique_id=1426250092]
+script = ExtResource("1_ejud2")
+
+[node name="Cave5" type="Sprite2D" parent="." unique_id=664576501]
+modulate = Color(1, 1, 1, 0.69803923)
+z_index = -4
+position = Vector2(15.9999695, -176.00002)
+scale = Vector2(0.28000003, 0.37037036)
+texture = ExtResource("2_toiqp")
+
+[node name="Cave4" type="Sprite2D" parent="." unique_id=1112151449]
+z_index = -3
+position = Vector2(-80, 136)
+scale = Vector2(1, 1.5999994)
+texture = ExtResource("7_dvdh6")
+
+[node name="Cave3" type="Sprite2D" parent="." unique_id=645880527]
+z_index = 5
+position = Vector2(96, 32)
+scale = Vector2(1, 2.2799988)
+texture = ExtResource("3_toiqp")
+
+[node name="Cave1" type="Sprite2D" parent="." unique_id=1871138848]
+z_index = 5
+position = Vector2(32, -136.00002)
+texture = ExtResource("2_5cfss")
+
+[node name="Cave2" type="TileMapLayer" parent="." unique_id=1578248293]
+z_index = -5
+position = Vector2(24, 8)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_k4nyp")
+script = ExtResource("2_85xkd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cave2" unique_id=1916460037]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cave2/StaticBody2D" unique_id=1445450778]
+build_mode = 1
+polygon = PackedVector2Array(-288, 24, -288, 160, 312, 160, 312, 24)
+
+[node name="PlayerSpawn" parent="." unique_id=1158695474 instance=ExtResource("3_ejud2")]
+position = Vector2(256, 88)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2020653328]
+position = Vector2(200.00002, 96.00001)
+rotation = 3.0983236
+scale = Vector2(5.4056797, 1.6506944)
+texture = SubResource("GradientTexture2D_k4nyp")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=329667421]
+position = Vector2(232, 216.00002)
+rotation = -0.0007708266
+scale = Vector2(15.790444, 6.0719686)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_w2hp4")
+
+[node name="LvlTransition" parent="." unique_id=959766907 instance=ExtResource("9_dvdh6")]
+position = Vector2(-256, 96)
+level = "uid://d1chtv1kasu0x"
+target_transition_Area = "LvlTransition2"
+size = 5
+
+[node name="LvlTransition2" parent="." unique_id=582439024 instance=ExtResource("9_dvdh6")]
+position = Vector2(320, 96)
+level = "uid://cqr8r17wve6im"
+size = 4
+side = 1
+
+[node name="ForcedDialogue" parent="." unique_id=628127795 instance=ExtResource("10_f6y1j")]
+position = Vector2(-96, 104)
+rotation = 1.5707964
+scale = Vector2(7, 1)
+persistence_key = "spirit"
+dialogue_sequence = Array[ExtResource("11_1eu43")]([SubResource("Resource_rg0fl"), SubResource("Resource_ty20v"), SubResource("Resource_thjiu")])
+
+[node name="ForcedDialogue2" parent="." unique_id=199448187 instance=ExtResource("10_f6y1j")]
+position = Vector2(-80, 88)
+rotation = 1.5707964
+scale = Vector2(9.23, 1)
+persistence_key = "wrld"
+dialogue_sequence = Array[ExtResource("11_1eu43")]([SubResource("Resource_px7q2")])
+
+[node name="ForcedDialogue3" parent="." unique_id=1832379116 instance=ExtResource("10_f6y1j")]
+position = Vector2(176, 96)
+rotation = 1.5707964
+scale = Vector2(8.26, 0.5)
+dialogue_sequence = Array[ExtResource("11_1eu43")]([SubResource("Resource_kne3w")])
+
+[node name="ForcedDialogue4" parent="." unique_id=383133090 instance=ExtResource("10_f6y1j")]
+position = Vector2(264, 96)
+rotation = 1.5707964
+scale = Vector2(8, 1)
+persistence_key = "meaning"
+dialogue_sequence = Array[ExtResource("11_1eu43")]([SubResource("Resource_nw64h"), SubResource("Resource_phmq0"), SubResource("Resource_8e3ox"), SubResource("Resource_vquv7"), SubResource("Resource_nge5r")])
+
+[node name="ForcedDialogue5" parent="." unique_id=98439926 instance=ExtResource("10_f6y1j")]
+position = Vector2(296, 96)
+rotation = 1.5707964
+scale = Vector2(8, 1)
+persistence_key = "make"
+dialogue_sequence = Array[ExtResource("11_1eu43")]([SubResource("Resource_rfbdh"), SubResource("Resource_luavx"), SubResource("Resource_ncpoe"), SubResource("Resource_ph3rp"), SubResource("Resource_itp2b"), SubResource("Resource_nxgm6"), SubResource("Resource_ne7hy")])

@@ -16,15 +16,12 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.80046946, 0.17605634)
 
-[node name="Menu Options" type="Node2D" unique_id=209157203]
-process_mode = 3
-script = ExtResource("1_stxv3")
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1904139376]
+[node name="CanvasLayer2" type="CanvasLayer" unique_id=1904139376]
 process_mode = 3
 layer = -1
+script = ExtResource("1_stxv3")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=879543370]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=879543370]
 modulate = Color(1, 1, 1, 0.8392157)
 z_index = -2
 anchors_preset = -1
@@ -41,30 +38,30 @@ mouse_filter = 2
 color = Color(0.18731105, 0.09156514, 0.04404056, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Shadow" type="Sprite2D" parent="CanvasLayer2" unique_id=480977046]
+[node name="Shadow" type="Sprite2D" parent="." unique_id=480977046]
 modulate = Color(0.6313726, 0.35686275, 0.23137255, 0.64705884)
 position = Vector2(633.984, 390.656)
 scale = Vector2(10.156, 6.229)
 texture = SubResource("GradientTexture2D_vq08m")
 
-[node name="MenuOptions2" type="Sprite2D" parent="CanvasLayer2" unique_id=585646376]
+[node name="MenuOptions2" type="Sprite2D" parent="." unique_id=585646376]
 modulate = Color(0.28235295, 0.18039216, 0.06666667, 0.44313726)
 position = Vector2(672, 368)
 scale = Vector2(2.09, 2)
 texture = ExtResource("2_25pm2")
 
-[node name="MenuOptions" type="Sprite2D" parent="CanvasLayer2" unique_id=318962825]
+[node name="MenuOptions" type="Sprite2D" parent="." unique_id=318962825]
 position = Vector2(673.984, 358.656)
 scale = Vector2(2, 2)
 texture = ExtResource("2_25pm2")
 
-[node name="Bookmark" type="Sprite2D" parent="CanvasLayer2" unique_id=116743654]
+[node name="Bookmark" type="Sprite2D" parent="." unique_id=116743654]
 self_modulate = Color(1.1730844, 1.1730844, 1.1730844, 1)
 position = Vector2(681.984, 294.656)
 scale = Vector2(2.66, 2.5400026)
 texture = ExtResource("5_m7uoa")
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer2" unique_id=1459153547]
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1459153547]
 modulate = Color(9.060141, 6.828089, 4.744841, 1)
 z_index = 2
 anchors_preset = 15
@@ -83,27 +80,27 @@ theme_override_constants/v_separation = 13
 columns = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Create" type="Button" parent="CanvasLayer2/GridContainer" unique_id=1186838426]
+[node name="Create" type="Button" parent="GridContainer" unique_id=1186838426]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.9490196, 0)
 theme_override_colors/icon_pressed_color = Color(1, 0.5565601, 0.5870164, 1)
 text = "Creating"
 
-[node name="Host" type="Button" parent="CanvasLayer2/GridContainer" unique_id=793275643]
+[node name="Host" type="Button" parent="GridContainer" unique_id=793275643]
 layout_mode = 2
 
-[node name="Load_in" type="Button" parent="CanvasLayer2/GridContainer" unique_id=749743685]
+[node name="Load_in" type="Button" parent="GridContainer" unique_id=749743685]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Load"
 
-[node name="Options" type="Button" parent="CanvasLayer2/GridContainer" unique_id=1097327156]
+[node name="Options" type="Button" parent="GridContainer" unique_id=1097327156]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Optionss"
 
-[node name="Exit" type="Button" parent="CanvasLayer2" unique_id=855710353]
+[node name="Exit" type="Button" parent="." unique_id=855710353]
 modulate = Color(1, 1, 1, 0)
 offset_left = 664.0
 offset_top = 248.0
@@ -112,5 +109,3 @@ offset_bottom = 279.0
 scale = Vector2(0.6669073, 3.3210156)
 text = "Quit"
 metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="CanvasLayer2/GridContainer/Load_in" to="." method="_on_load_in_pressed"]

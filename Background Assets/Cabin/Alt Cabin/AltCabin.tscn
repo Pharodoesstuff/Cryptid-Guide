@@ -1,20 +1,19 @@
 [gd_scene format=4 uid="uid://bj31tbom2rxcd"]
 
-[ext_resource type="Script" uid="uid://h6thbb5bynwa" path="res://Code/Level Code/level.gd" id="1_7ea1o"]
+[ext_resource type="Script" uid="uid://cyw7n8r758goj" path="res://Background Assets/Cabin/Alt Cabin/alt_cabin.gd" id="1_gbmbn"]
 [ext_resource type="Texture2D" uid="uid://b22fdcrvouwwt" path="res://Background Assets/Cabin/Cabin Assets/The Cabin.png" id="3_14io3"]
 [ext_resource type="Texture2D" uid="uid://c4lexjy6jyf6r" path="res://Background Assets/Cabin/Cabin Assets/Furniture .png" id="4_x5oxm"]
 [ext_resource type="Texture2D" uid="uid://d0yxv4ku3ijqo" path="res://Background Assets/Cabin/Cabin Assets/Updates Furniture.png" id="5_6ppk2"]
 [ext_resource type="Texture2D" uid="uid://dfyolmitm87l0" path="res://Background Assets/Cabin/Cabin Assets/BloodyBathub.png" id="6_8got3"]
-[ext_resource type="PackedScene" uid="uid://bns4o274efft6" path="res://00_Globals/lvl_trans2.tscn" id="6_axy76"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycdy4"]
-texture = ExtResource("4_x5oxm")
-7:17/size_in_atlas = Vector2i(9, 9)
-7:17/0 = 0
-7:17/0/z_index = 1
-
-[sub_resource type="TileSet" id="TileSet_w48qg"]
-sources/0 = SubResource("TileSetAtlasSource_ycdy4")
+[ext_resource type="PackedScene" uid="uid://bns4o274efft6" path="res://Interactions/lvl_trans2.tscn" id="6_axy76"]
+[ext_resource type="Script" uid="uid://dlbjieq0woku6" path="res://Code/Progress/dialogue.gd" id="7_cfikp"]
+[ext_resource type="PackedScene" uid="uid://swrwl0w25idt" path="res://Interactions/dialogue_area_2d.tscn" id="8_m52n2"]
+[ext_resource type="Script" uid="uid://d27xfxagxwibs" path="res://Code/Dialog/DialogueExportResource.gd" id="9_cnqwe"]
+[ext_resource type="Script" uid="uid://cug1l4ymh31cf" path="res://Code/Dialog/DialogueTextResource.gd" id="10_y6502"]
+[ext_resource type="PackedScene" uid="uid://dcsc5xj77t1kv" path="res://Interactions/Dialog/forced_dialogue.tscn" id="11_m52n2"]
+[ext_resource type="Script" uid="uid://blsntwbwnpc4p" path="res://Code/Dialog/DialogueFunctionResource.gd" id="12_y6502"]
+[ext_resource type="Script" uid="uid://cw476sbwig11y" path="res://Code/Dialog/DialogueChoiceResource.gd" id="13_gbmbn"]
+[ext_resource type="PackedScene" uid="uid://d3cuqej3okgm1" path="res://Interactions/player_spawn.tscn" id="14_gbmbn"]
 
 [sub_resource type="Gradient" id="Gradient_u1i4r"]
 offsets = PackedFloat32Array(0, 0.55509645, 0.8002755, 1)
@@ -26,6 +25,15 @@ width = 256
 height = 256
 fill = 2
 fill_from = Vector2(0.4795222, 0.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycdy4"]
+texture = ExtResource("4_x5oxm")
+7:17/size_in_atlas = Vector2i(9, 9)
+7:17/0 = 0
+7:17/0/z_index = 1
+
+[sub_resource type="TileSet" id="TileSet_w48qg"]
+sources/0 = SubResource("TileSetAtlasSource_ycdy4")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_utrjk"]
 texture = ExtResource("3_14io3")
@@ -120,6 +128,7 @@ texture = ExtResource("4_x5oxm")
 29:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.089241, -2.0021896, 31.338577, -1.4798775, 31.164474, 17.671478, -1.2187195, 17.845581)
 21:25/size_in_atlas = Vector2i(9, 4)
 21:25/0 = 0
+21:25/0/z_index = 1
 21:25/0/y_sort_origin = -140
 21:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45.963257, 13.667103, -53.27559, -1.4798775, -55.016624, -19.76072, 58.498695, -19.76072, 57.62818, -3.7432213, 50.838158, 12.970692)
 35:28/size_in_atlas = Vector2i(4, 7)
@@ -136,7 +145,8 @@ texture = ExtResource("4_x5oxm")
 texture = ExtResource("5_6ppk2")
 37:26/size_in_atlas = Vector2i(3, 7)
 37:26/0 = 0
-37:26/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.401573, -37.780403, 15.14698, -37.258095, 10.6203, 48.74891, -9.053368, 46.485565)
+37:26/0/y_sort_origin = 60
+37:26/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.700783, 22.45932, 4.178482, 22.285217, 2.4374466, 38.12861, -1.2187195, 44.396324)
 49:33/size_in_atlas = Vector2i(2, 2)
 49:33/0 = 0
 49:33/0/z_index = -1
@@ -200,34 +210,34 @@ tracks/0/path = NodePath("cabin Design:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.9, 1.9333333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.44705883, 0.10980392, 0.10980392, 1)]
+"values": [Color(1, 1, 1, 1), Color(0.44705883, 0.10980392, 0.10980392, 1), Color(1, 0.09803922, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("cabin Design/ColorRect:modulate")
+tracks/1/path = NodePath("ColorRect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.53333336, 1.9333333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(-0.03333333, 0.6666667, 1.9333333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(0.11639596, 0.0362716, 0, 1), Color(1, 0.09803922, 0, 1)]
+"values": [Color(0.11764706, 0.03529412, 0, 0), Color(0.11639596, 0.0362716, 0, 1), Color(0.77226716, 0.08211973, 0, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("cabin Design/ColorRect:scale")
+tracks/2/path = NodePath("ColorRect:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1.5666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(5.756, 3.041), Vector2(10.621, 5.158)]
+"values": [Vector2(5.756, 3.041), Vector2(17.451, 8.928)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -239,7 +249,31 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 1.9666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.35686275, 0.35686275, 0.35686275, 0.7490196), Color(1, 0.7882353, 0.84705883, 0.95686275)]
+"values": [Color(0.35686275, 0.35686275, 0.35686275, 0.7490196), Color(1, 0.7882353, 0.84705883, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("cabin Design/Fan:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("cabin Design/Floor:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(-0.06666667, 1.1333333, 2.0666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.732732, 0.21430525, 0.21143693, 1), Color(0.51368517, 0.2715351, 0.28122947, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_am1c7"]
@@ -258,20 +292,20 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("cabin Design/ColorRect:modulate")
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 0.09803922, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("cabin Design/ColorRect:scale")
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -304,6 +338,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(0.35686275, 0.35686275, 0.35686275, 0.7490196)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("cabin Design/Floor:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3tqdm"]
 _data = {
@@ -312,10 +358,240 @@ _data = {
 &"RESET": SubResource("Animation_am1c7")
 }
 
+[sub_resource type="Resource" id="Resource_w2hp4"]
+script = ExtResource("10_y6502")
+text = "[color=pink]!"
+auto_advance = true
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_flt8o"]
+script = ExtResource("10_y6502")
+text = "[color=pink] WHY DID YOU RUN! WHY DID YOU RUN!"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_cfikp"]
+script = ExtResource("10_y6502")
+text = "[color=pink] THAT'S HOW IT GOT US THINKING WE'VE WON "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_k4nyp"]
+script = ExtResource("10_y6502")
+text = "[color=pink]  THE BEAST DOES NOT CARE, HE KNOWS YOU'RE HERE"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_bbo3a"]
+script = ExtResource("10_y6502")
+text = "[color=pink] IT'S TRAPPED IN WATER, SO IT LURES IT'S BAIT"
+auto_advance = true
+auto_advance_delay = 0.4
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_gbmbn"]
+script = ExtResource("10_y6502")
+text = "[color=pink] THE [rainbow]BEAST OF BUSCO[/rainbow] HAS SEALED OUR FAI-"
+auto_advance = true
+auto_advance_delay = 2.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_x6pfj"]
+script = ExtResource("10_y6502")
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_y5ug8"]
+script = ExtResource("10_y6502")
+text = "..."
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_xqrce"]
+script = ExtResource("10_y6502")
+text = "....no more response...."
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4nyp"]
+size = Vector2(20, 42)
+
+[sub_resource type="Resource" id="Resource_fvn5l"]
+script = ExtResource("10_y6502")
+text = "..."
+text_speed = 5.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_m52n2"]
+script = ExtResource("10_y6502")
+text = "[rainbow][shake]I"
+text_speed = 5.0
+auto_advance = true
+auto_advance_delay = 2.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_cnqwe"]
+script = ExtResource("10_y6502")
+text = "[rainbow][shake]LOVE YOU"
+text_speed = 5.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2hp4"]
+size = Vector2(130, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flt8o"]
+size = Vector2(132, 36)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w2hp4"]
+radius = 22.000008
+height = 186.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbo3a"]
+size = Vector2(33, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le31t"]
+size = Vector2(23, 39)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qqepl"]
+radius = 8.0
+
+[sub_resource type="Resource" id="Resource_y6502"]
+script = ExtResource("10_y6502")
+text = "You gaze upon the water"
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_qqepl"]
+script = ExtResource("10_y6502")
+text = "It's pretty... It's [rainbow]g[/rainbow]o[rainbow]r[/rainbow]g[rainbow]e[/rainbow]o[rainbow]u[/rainbow]s"
+text_speed = 17.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_4tyn7"]
+script = ExtResource("10_y6502")
+text = "you.... [rainbow]LOVE YOU[/rainbow] "
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_e6uly"]
+script = ExtResource("10_y6502")
+text = "huh??"
+text_speed = 5.0
+auto_advance_delay = 0.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_dtjbm"]
+script = ExtResource("10_y6502")
+text = "[rainbow]LOVE YOU[/rainbow]"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_bliby"]
+script = ExtResource("10_y6502")
+text = "something..[rainbow]LOVE YOU[/rainbow] is...[rainbow]LOVE YOU[/rainbow] "
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_hjaqm"]
+script = ExtResource("10_y6502")
+text = "
+[center][rainbow]I LOVE YOU[/rainbow]"
+text_speed = 15.0
+auto_advance = true
+auto_advance_delay = 0.5
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_q38rw"]
+script = ExtResource("10_y6502")
+text = "WRONG! "
+auto_advance = true
+auto_advance_delay = 0.7
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_fcoyr"]
+script = ExtResource("10_y6502")
+text = "
+[center][rainbow]I LOVE YOU[/rainbow]"
+text_speed = 15.0
+auto_advance = true
+auto_advance_delay = 0.5
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_yca4f"]
+script = ExtResource("10_y6502")
+text = "
+[center][rainbow]I LOVE YOU[/rainbow]"
+auto_advance = true
+auto_advance_delay = 0.5
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_h4khj"]
+script = ExtResource("10_y6502")
+text = "
+[center][rainbow]I LOVE YOU[/rainbow]"
+auto_advance = true
+auto_advance_delay = 0.4
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_bv0ch"]
+script = ExtResource("10_y6502")
+text = "[rainbow]I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU [/rainbow] "
+auto_advance = true
+auto_advance_delay = 0.3
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_0nwb3"]
+script = ExtResource("10_y6502")
+text = "[rainbow]I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU [/rainbow]"
+auto_advance = true
+auto_advance_delay = 0.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_o736u"]
+script = ExtResource("10_y6502")
+text = "[rainbow]I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! I LOVE YOU! [/rainbow]"
+auto_advance = true
+auto_advance_delay = 0.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_hkt8j"]
+script = ExtResource("10_y6502")
+text = "[rainbow]I LOVE YOU!!![/rainbow]"
+text_speed = 10.0
+auto_advance_delay = 1.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_cp8rl"]
+script = ExtResource("12_y6502")
+target_path = NodePath("../AnimationPlayer")
+function_name = "play"
+function_arguments = Array[String](["Bloody All"])
+hide_dialogue_box = true
+wait_for_signal_to_continue = "animation_finished"
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="Resource" id="Resource_hk7qk"]
+script = ExtResource("13_gbmbn")
+text = "[rainbow][shake] DO YOU LOVE, ME? "
+choice_text = Array[String](["I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU "])
+choice_function_call = Array[ExtResource("12_y6502")]([SubResource("Resource_cp8rl")])
+metadata/_custom_type_script = "uid://cw476sbwig11y"
+
+[sub_resource type="Resource" id="Resource_2wggt"]
+script = ExtResource("12_y6502")
+target_path = NodePath("..")
+function_name = "trigger_player_death"
+hide_dialogue_box = true
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_flt8o"]
+radius = 14.0
+height = 106.0
+
 [node name="Cabin" type="Node2D" unique_id=415258001]
 y_sort_enabled = true
 texture_filter = 1
-script = ExtResource("1_7ea1o")
+script = ExtResource("1_gbmbn")
+
+[node name="ColorRect" type="Sprite2D" parent="." unique_id=297069963]
+modulate = Color(1, 0.09803922, 0, 0)
+z_index = -4
+position = Vector2(-88, 106.99999)
+scale = Vector2(1e-05, 1e-05)
+texture = SubResource("GradientTexture2D_w2hp4")
 
 [node name="cabin Design" type="Node2D" parent="." unique_id=1941871013]
 y_sort_enabled = true
@@ -325,13 +601,6 @@ modulate = Color(0.35686275, 0.35686275, 0.35686275, 0.7490196)
 z_index = 3
 tile_map_data = PackedByteArray("AADx//f/AAAHABEAAADj/w8AAAAHABEAAGDa//3/AAAHABEAAGADAA8AAAAHABEAAGDT/wcAAAAHABEAAADd/w8AAAAHABEAAADZ//7/AAAHABEAAADX//n/AAAHABEAAADW////AAAHABEAAADV////AAAHABEAAADM/wAAAAAHABEAAADL/wAAAAAHABEAAADJ/wYAAAAHABEAAADJ/wcAAAAHABEAAADQ/wkAAAAHABEAAADQ/wEAAAAHABEAAADQ/wIAAAAHABEAAADP/xAAAAAHABEAAADc/xAAAAAHABEAAADa//7/AAAHABEAAADc//X/AAAHABEAAADd//X/AAAHABEAAAD3/xsAAAAHABEAAADW/w0AAAAHABEAAAA=")
 tile_set = SubResource("TileSet_w48qg")
-
-[node name="ColorRect" type="Sprite2D" parent="cabin Design" unique_id=297069963]
-modulate = Color(0.11639596, 0.0362716, 0, 1)
-z_index = -3
-position = Vector2(-88, 106.99999)
-scale = Vector2(5.756, 3.041)
-texture = SubResource("GradientTexture2D_w2hp4")
 
 [node name="Wall" type="TileMapLayer" parent="cabin Design" unique_id=2119646852]
 z_index = -2
@@ -345,12 +614,12 @@ tile_set = SubResource("TileSet_0xm2m")
 
 [node name="Furniture" type="TileMapLayer" parent="cabin Design" unique_id=269252582]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAVAAMAAQBFABkAABAIAAYAAQAyABwAAAAUAPj/AgAiACMAAADi////AQAtAAkAAAD4//r/AQAPAAgAAAAMAPv/AQALACoAAAD9//f/AQAoABAAAAAKAP7/AQA4AAwAACAeAAAAAQA4AAwAACA=")
+tile_map_data = PackedByteArray("AAAVAAMAAQBFABkAABAIAAYAAQAyABwAAAAUAPj/AgAiACMAAAD4//r/AQAPAAgAAAAMAPv/AQALACoAAAD9//f/AQAoABAAAAAKAP7/AQA4AAwAACAeAAAAAQA4AAwAACA=")
 tile_set = SubResource("TileSet_ig7tw")
 
 [node name="Furniture 2" type="TileMapLayer" parent="cabin Design" unique_id=1919299763]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAADAPf/AgAxACEAAADc/wYAAAAVABkAAAD4/wQAAgAlABoAAAD+//v/AAAgADEAAADl//z/AAAdAA4AAADp/wYAAAAjABwAAAA=")
+tile_map_data = PackedByteArray("AAADAPf/AgAxACEAAADc/wYAAAAVABkAAAD+//v/AAAgADEAAADl//z/AAAdAA4AAAD0/wYAAgAlABoAAGA=")
 tile_set = SubResource("TileSet_kek77")
 
 [node name="Furniture 3" type="TileMapLayer" parent="cabin Design" unique_id=221676487]
@@ -360,7 +629,7 @@ tile_set = SubResource("TileSet_dg77c")
 
 [node name="Bloody tub" type="Sprite2D" parent="cabin Design" unique_id=2124887251]
 modulate = Color(1, 1, 1, 0)
-y_sort_enabled = true
+z_index = 1
 position = Vector2(-565, 90)
 texture = ExtResource("6_8got3")
 
@@ -372,9 +641,71 @@ polygon = PackedVector2Array(-499, -61, -499, 44, -627, 44, -630, 151, -315, 148
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=559530118]
 libraries/ = SubResource("AnimationLibrary_3tqdm")
-autoplay = &"Bloody All"
+autoplay = &"Bloody"
 
 [node name="Alt" parent="." unique_id=1833128993 instance=ExtResource("6_axy76")]
 position = Vector2(1243, 16)
 trigger_mode = 1
 timer_delay = 0.0
+transition_id = "Alt"
+
+[node name="Dialogue" type="Node2D" parent="." unique_id=1393116549]
+script = ExtResource("7_cfikp")
+
+[node name="Toilet" parent="." unique_id=1341398698 instance=ExtResource("8_m52n2")]
+activate_instant = true
+only_activate_once = true
+dialogue = Array[ExtResource("9_cnqwe")]([SubResource("Resource_w2hp4"), SubResource("Resource_flt8o"), SubResource("Resource_cfikp"), SubResource("Resource_k4nyp"), SubResource("Resource_bbo3a"), SubResource("Resource_gbmbn"), SubResource("Resource_x6pfj"), SubResource("Resource_y5ug8"), SubResource("Resource_xqrce")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Toilet" unique_id=1165238222]
+position = Vector2(-411, -41)
+shape = SubResource("RectangleShape2D_k4nyp")
+
+[node name="ForcedDialogue" parent="." unique_id=628127795 instance=ExtResource("11_m52n2")]
+position = Vector2(438, 14)
+dialogue_sequence = Array[ExtResource("9_cnqwe")]([SubResource("Resource_fvn5l")])
+
+[node name="I love you" parent="." unique_id=334286893 instance=ExtResource("8_m52n2")]
+z_index = 1
+y_sort_enabled = true
+activate_instant = true
+dialogue = Array[ExtResource("9_cnqwe")]([SubResource("Resource_m52n2"), SubResource("Resource_cnqwe")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="I love you" unique_id=317851280]
+position = Vector2(200, -72)
+shape = SubResource("RectangleShape2D_w2hp4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="I love you" unique_id=342295038]
+position = Vector2(-17, -66)
+shape = SubResource("RectangleShape2D_flt8o")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="I love you" unique_id=743236791]
+position = Vector2(125, 109)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_w2hp4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="I love you" unique_id=1385446792]
+position = Vector2(282, 102)
+shape = SubResource("RectangleShape2D_bbo3a")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="I love you" unique_id=1758457341]
+position = Vector2(337, 68)
+shape = SubResource("RectangleShape2D_le31t")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="I love you" unique_id=1901131475]
+position = Vector2(-144, 104)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qqepl")
+
+[node name="Bath" parent="." unique_id=1778955692 instance=ExtResource("8_m52n2")]
+required_player_look_dir = "down"
+dialogue = Array[ExtResource("9_cnqwe")]([SubResource("Resource_y6502"), SubResource("Resource_qqepl"), SubResource("Resource_4tyn7"), SubResource("Resource_e6uly"), SubResource("Resource_dtjbm"), SubResource("Resource_bliby"), SubResource("Resource_hjaqm"), SubResource("Resource_q38rw"), SubResource("Resource_fcoyr"), SubResource("Resource_yca4f"), SubResource("Resource_h4khj"), SubResource("Resource_bv0ch"), SubResource("Resource_0nwb3"), SubResource("Resource_o736u"), SubResource("Resource_o736u"), SubResource("Resource_o736u"), SubResource("Resource_o736u"), SubResource("Resource_o736u"), SubResource("Resource_hkt8j"), SubResource("Resource_hk7qk"), SubResource("Resource_2wggt")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bath" unique_id=1728329893]
+position = Vector2(-563, 87)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_flt8o")
+
+[node name="PlayerSpawn" parent="." unique_id=1158695474 instance=ExtResource("14_gbmbn")]
+y_sort_enabled = true
+position = Vector2(-72, 88)

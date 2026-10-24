@@ -2,6 +2,8 @@ class_name Player extends CharacterBody2D
 
 signal player_damaged(hurt_box: HurtBox)
 
+var is_dead: bool = false
+
 var invulnerable: bool = false
 var hp: int = 6
 var max_hp: int = 6
@@ -13,6 +15,9 @@ var direction: Vector2 = Vector2.ZERO
 
 var look_dir: String = "down"
 
+var is_frozen: bool = false
+
+@export var death_scene: PackedScene 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var effect: AnimationPlayer = $Effect
 @onready var hitbox: HitBox = $Hitbox
@@ -20,6 +25,7 @@ var look_dir: String = "down"
 @onready var state_machine: PlayerStateMachine = $"State Machine"
 
 func _ready():
+	EventBus.player_freeze_requested.connect(_on_player_freeze_requested)
 	add_to_group("player")
 	PlayerManager.player = self
 	state_machine.Initialize(self)
@@ -74,14 +80,41 @@ func AnimDirection() -> String:
 	else:
 		return "side"
 
+# In player.gd
 func _take_damage(hurt_box: HurtBox) -> void:
-	if invulnerable:
+	if invulnerable or is_dead: # <--- Ignore damage if already dying
 		return
+		
 	update_hp(-hurt_box.damage)
-	
 	player_damaged.emit(hurt_box)
+	
 	if hp <= 0:
-		update_hp(99)
+		is_dead = true
+		die.call_deferred(hurt_box.death_type) # Call deferred avoids physics query errors
+
+func die(type: String) -> void:
+	visible = false
+	process_mode = PROCESS_MODE_DISABLED
+	
+	# 2. Clear PlayerManager reference
+	if PlayerManager.player == self:
+		PlayerManager.player = null
+		EventBus.off_light.emit()
+
+
+	# 3. Spawn Death Scene
+	if death_scene:
+		var death_instance = death_scene.instantiate()
+		get_parent().add_child(death_instance)
+		death_instance.global_position = global_position
+		
+		if has_node("Camera2D"):
+			$Camera2D.reparent(death_instance)
+			
+		if death_instance.has_method("setup"):
+			death_instance.setup(sprite_2d.scale.x, AnimDirection(), type)
+
+	queue_free()
 
 func update_hp(delta: int) -> void:
 	hp = clampi(hp + delta, 0, max_hp)
@@ -100,3 +133,30 @@ func reset_player_state() -> void:
 	can_move = true
 	velocity = Vector2.ZERO
 	direction = Vector2.ZERO
+
+func set_frozen(freeze: bool) -> void:
+	can_move = !freeze
+	if freeze:
+		velocity = Vector2.ZERO
+		direction = Vector2.ZERO
+
+
+func _on_player_freeze_requested(frozen: bool) -> void:
+	is_frozen = frozen
+	can_move = !frozen
+	velocity = Vector2.ZERO
+	direction = Vector2.ZERO
+	
+	if frozen:
+		# 1. Switch immediately to the correct idle direction
+		animation_player.play("idle_" + AnimDirection())
+		
+		# 2. Pause the state machine so it doesn't overwrite animations
+		if state_machine:
+			state_machine.set_process(false)
+			state_machine.set_physics_process(false)
+	else:
+		# Re-enable state machine when unfrozen
+		if state_machine:
+			state_machine.set_process(true)
+			state_machine.set_physics_process(true)

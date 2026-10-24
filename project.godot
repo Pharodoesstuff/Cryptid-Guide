@@ -21,6 +21,8 @@ LevelManager="*uid://bve75m784gjfi"
 PlayerManager="*uid://cqqtgp7kpejix"
 SaveManager="*uid://ca3x7vd8j53eo"
 PauseMenu="*uid://bgs31d5fgqaom"
+EventBus="*uid://od6ydff5eul2"
+GameManager="*uid://dt64pnp0xc645"
 
 [display]
 

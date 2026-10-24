@@ -1,11 +1,11 @@
-extends Node2D
+extends CanvasLayer
 const START_LEVEL : String = "res://Background Assets/Cabin/Cabin.tscn"
 
-@onready var create: Button = $CanvasLayer2/GridContainer/Create
-@onready var host: Button = $CanvasLayer2/GridContainer/Host
-@onready var load_in: Button = $CanvasLayer2/GridContainer/Load_in
-@onready var options: Button = $CanvasLayer2/GridContainer/Options
-@onready var exit: Button = $CanvasLayer2/Exit
+@onready var create: Button = $GridContainer/Create
+@onready var host: Button = $GridContainer/Host
+@onready var load_in: Button = $GridContainer/Load_in
+@onready var options: Button = $GridContainer/Options
+@onready var exit: Button = $Exit
 
 
 

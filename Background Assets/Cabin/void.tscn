@@ -2,42 +2,302 @@
 
 [ext_resource type="Script" uid="uid://8mqanvgat5hh" path="res://Code/void.gd" id="1_hwavj"]
 [ext_resource type="Texture2D" uid="uid://byj1hufj1rx87" path="res://Background Assets/Cabin/Cabin Assets/Empty Zone.png" id="1_lusxn"]
-[ext_resource type="PackedScene" uid="uid://bns4o274efft6" path="res://00_Globals/lvl_trans2.tscn" id="4_fqd2h"]
+[ext_resource type="PackedScene" uid="uid://4xgipsss1mgx" path="res://00_Globals/dialogue_system.tscn" id="2_pks37"]
+[ext_resource type="Script" uid="uid://d27xfxagxwibs" path="res://Code/Dialog/DialogueExportResource.gd" id="3_awdq2"]
+[ext_resource type="PackedScene" uid="uid://bu58ue4vnm8ui" path="res://Characters/Jersey Devil/Jersey_Devil.tscn" id="4_6hydc"]
+[ext_resource type="Script" uid="uid://dpmkvwn7mgc3b" path="res://Code/Dialog/timed_dialogue.gd" id="4_7p5k0"]
+[ext_resource type="PackedScene" uid="uid://bns4o274efft6" path="res://Interactions/lvl_trans2.tscn" id="4_fqd2h"]
+[ext_resource type="Script" uid="uid://cug1l4ymh31cf" path="res://Code/Dialog/DialogueTextResource.gd" id="7_7p5k0"]
+[ext_resource type="PackedScene" uid="uid://d3cuqej3okgm1" path="res://Interactions/player_spawn.tscn" id="9_awdq2"]
+[ext_resource type="Script" uid="uid://r0fkh10u1pnp" path="res://Background Assets/Cabin/point_light_2d.gd" id="9_pqvi1"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rgfam"]
+[sub_resource type="Resource" id="Resource_k4nyp"]
+script = ExtResource("7_7p5k0")
+text = "[font_size=60]?!?"
+text_speed = 5.3
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_t46nd"]
+script = ExtResource("7_7p5k0")
+text = "[color=black] Oh how queer! HOW QUEER!"
+text_speed = 25.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_cdv3i"]
+script = ExtResource("7_7p5k0")
+text = "[color=black]A human being sent too me?  "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_muyvn"]
+script = ExtResource("7_7p5k0")
+text = "[color=black] But you're not truly human[shake] ARE [/shake]you? "
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_7p5k0"]
+script = ExtResource("7_7p5k0")
+text = "[color=black] Where are my manners, I know better to treat a guest!"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_6kav8"]
+script = ExtResource("7_7p5k0")
+text = "[color=black]Just come my way..."
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_pqvi1"]
+script = ExtResource("7_7p5k0")
+text = "
+[center][shake rate=20][color=black]TO INVITE YOU TO DEATH!"
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_2kvnt"]
+script = ExtResource("7_7p5k0")
+text = "[font_size=50][center][shake][color=black]RUN! "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_cqy0m"]
+script = ExtResource("7_7p5k0")
+text = "[color=black]Cmon, I have to enjoy myself yknow? "
+auto_advance = true
+auto_advance_delay = 0.7
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_awdq2"]
+script = ExtResource("7_7p5k0")
+text = "[color=black]He puts me here to guard for intruders-"
+auto_advance = true
+auto_advance_delay = 0.5
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_3a5pd"]
+script = ExtResource("7_7p5k0")
+text = "[color=black]BUT WHO WOULD INVADE HIM?!! "
+auto_advance = true
+auto_advance_delay = 1.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_pks37"]
+script = ExtResource("7_7p5k0")
+text = "[color=black]Something must be wrong in you to invade but not run from me"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_nafg8"]
+script = ExtResource("7_7p5k0")
+text = "[color=black] Disperse! You're so BORING for an intruder"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_sp7in"]
+script = ExtResource("7_7p5k0")
+text = "[color=black] uhmm"
+auto_advance = true
+auto_advance_delay = 4.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_bmlny"]
+script = ExtResource("4_7p5k0")
+time = 5.0
+dialogue = SubResource("Resource_sp7in")
+override_position = true
+custom_position = Vector2(315, 580)
+metadata/_custom_type_script = "uid://dpmkvwn7mgc3b"
+
+[sub_resource type="Resource" id="Resource_8as6h"]
+script = ExtResource("7_7p5k0")
+text = "[color=black] You know I want to eat you right? "
+auto_advance = true
+auto_advance_delay = 5.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_1jdfj"]
+script = ExtResource("4_7p5k0")
+time = 9.0
+dialogue = SubResource("Resource_8as6h")
+override_position = true
+custom_position = Vector2(315, 580)
+metadata/_custom_type_script = "uid://dpmkvwn7mgc3b"
+
+[sub_resource type="Resource" id="Resource_0f40o"]
+script = ExtResource("7_7p5k0")
+text = "[color=black]I'M GOING TO RIP OUT YOUR STOMACH AND-"
+auto_advance = true
+auto_advance_delay = 2.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_qrsgx"]
+script = ExtResource("4_7p5k0")
+time = 14.0
+dialogue = SubResource("Resource_0f40o")
+override_position = true
+custom_position = Vector2(315, 580)
+metadata/_custom_type_script = "uid://dpmkvwn7mgc3b"
+
+[sub_resource type="Resource" id="Resource_0mmm7"]
+script = ExtResource("7_7p5k0")
+text = "[color=black]..."
+auto_advance = true
+auto_advance_delay = 4.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_35auq"]
+script = ExtResource("4_7p5k0")
+time = 16.0
+dialogue = SubResource("Resource_0mmm7")
+override_position = true
+custom_position = Vector2(315, 580)
+metadata/_custom_type_script = "uid://dpmkvwn7mgc3b"
+
+[sub_resource type="Resource" id="Resource_ka4qd"]
+script = ExtResource("7_7p5k0")
+text = "[color=black]I'M THE EVIL JERSEY DEVIL! FEAR ME!!!"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_v7mgk"]
+script = ExtResource("4_7p5k0")
+time = 20.0
+dialogue = SubResource("Resource_ka4qd")
+override_position = true
+custom_position = Vector2(315, 580)
+metadata/_custom_type_script = "uid://dpmkvwn7mgc3b"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_awdq2"]
 texture = ExtResource("1_lusxn")
 33:27/size_in_atlas = Vector2i(24, 26)
 33:27/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_hwavj"]
-sources/0 = SubResource("TileSetAtlasSource_rgfam")
+[sub_resource type="TileSet" id="TileSet_pks37"]
+sources/0 = SubResource("TileSetAtlasSource_awdq2")
 
-[node name="Void" type="Node2D" unique_id=2002405006]
+[sub_resource type="Gradient" id="Gradient_awdq2"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k4nyp"]
+gradient = SubResource("Gradient_awdq2")
+
+[sub_resource type="Animation" id="Animation_pqvi1"]
+resource_name = "success"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_awdq2"]
+_data = {
+&"success": SubResource("Animation_pqvi1")
+}
+
+[node name="Void" type="Node2D" unique_id=2002405006 node_paths=PackedStringArray("jersey_devil")]
 script = ExtResource("1_hwavj")
+dialogue_scene = ExtResource("2_pks37")
+jersey_devil = NodePath("Jersey Devil")
+intro_dialogue = Array[ExtResource("3_awdq2")]([SubResource("Resource_k4nyp"), SubResource("Resource_t46nd"), SubResource("Resource_cdv3i"), SubResource("Resource_muyvn"), SubResource("Resource_7p5k0"), SubResource("Resource_6kav8"), SubResource("Resource_pqvi1"), SubResource("Resource_2kvnt")])
+intro_override_pos = true
+intro_custom_pos = Vector2(315, 580)
+success_dialogue = Array[ExtResource("3_awdq2")]([SubResource("Resource_cqy0m"), SubResource("Resource_awdq2"), SubResource("Resource_3a5pd"), SubResource("Resource_pks37")])
+success_override_pos = true
+success_custom_pos = Vector2(315, 580)
+final_dialogue = Array[ExtResource("3_awdq2")]([SubResource("Resource_nafg8")])
+final_override_pos = true
+final_custom_pos = Vector2(315, 580)
+timer_dialogues = Array[ExtResource("4_7p5k0")]([SubResource("Resource_bmlny"), SubResource("Resource_1jdfj"), SubResource("Resource_qrsgx"), SubResource("Resource_35auq"), SubResource("Resource_v7mgk")])
+challenge_duration = 24.0
+teleport_delay = 0.0
+stalk_speed = 60.0
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=196184680]
+[node name="BG" type="Node2D" parent="." unique_id=1984691462]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="BG" unique_id=898066638]
 z_index = -1
-position = Vector2(952, 1200)
+position = Vector2(4584, 4456)
 tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
-tile_set = SubResource("TileSet_hwavj")
+tile_set = SubResource("TileSet_pks37")
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="TileMapLayer" unique_id=1409755015]
+[node name="TileMapLayer2" type="TileMapLayer" parent="BG/TileMapLayer" unique_id=1260153617]
 z_index = -1
 position = Vector2(-3176, 0)
 tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
-tile_set = SubResource("TileSet_hwavj")
+tile_set = SubResource("TileSet_pks37")
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=217812410]
+[node name="TileMapLayer4" type="TileMapLayer" parent="BG" unique_id=1920220127]
 z_index = -1
-position = Vector2(952, -2000)
+position = Vector2(-1768, 4456)
 tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
-tile_set = SubResource("TileSet_hwavj")
+tile_set = SubResource("TileSet_pks37")
 
-[node name="TileMapLayer2" type="TileMapLayer" parent="TileMapLayer2" unique_id=189845518]
+[node name="TileMapLayer2" type="TileMapLayer" parent="BG/TileMapLayer4" unique_id=1794191305]
 z_index = -1
 position = Vector2(-3176, 0)
 tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
-tile_set = SubResource("TileSet_hwavj")
+tile_set = SubResource("TileSet_pks37")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="BG" unique_id=530178888]
+z_index = -1
+position = Vector2(4584, 1256)
+tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
+tile_set = SubResource("TileSet_pks37")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="BG/TileMapLayer2" unique_id=854984052]
+z_index = -1
+position = Vector2(-3176, 0)
+tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
+tile_set = SubResource("TileSet_pks37")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="BG" unique_id=715825967]
+z_index = -1
+position = Vector2(-1768, 1256)
+tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
+tile_set = SubResource("TileSet_pks37")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="BG/TileMapLayer3" unique_id=1300732540]
+z_index = -1
+position = Vector2(-3176, 0)
+tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
+tile_set = SubResource("TileSet_pks37")
+
+[node name="TileMapLayer5" type="TileMapLayer" parent="BG" unique_id=653197792]
+z_index = -1
+position = Vector2(4584, -1952)
+tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
+tile_set = SubResource("TileSet_pks37")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="BG/TileMapLayer5" unique_id=1325331052]
+z_index = -1
+position = Vector2(-3176, 0)
+tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
+tile_set = SubResource("TileSet_pks37")
+
+[node name="TileMapLayer6" type="TileMapLayer" parent="BG" unique_id=730047663]
+z_index = -1
+position = Vector2(-1768, -1952)
+tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
+tile_set = SubResource("TileSet_pks37")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="BG/TileMapLayer6" unique_id=486493297]
+z_index = -1
+position = Vector2(-3176, 0)
+tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
+tile_set = SubResource("TileSet_pks37")
+
+[node name="TileMapLayer7" type="TileMapLayer" parent="BG" unique_id=745256111]
+z_index = -1
+position = Vector2(4584, -5152)
+tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
+tile_set = SubResource("TileSet_pks37")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="BG/TileMapLayer7" unique_id=1432027952]
+z_index = -1
+position = Vector2(-3176, 0)
+tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
+tile_set = SubResource("TileSet_pks37")
+
+[node name="TileMapLayer8" type="TileMapLayer" parent="BG" unique_id=1660576472]
+z_index = -1
+position = Vector2(-1768, -5152)
+tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
+tile_set = SubResource("TileSet_pks37")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="BG/TileMapLayer8" unique_id=1980490114]
+z_index = -1
+position = Vector2(-3176, 0)
+tile_map_data = PackedByteArray("AAARAAsAAAAhABsAAAARACQAAAAhABsAAAAnAAsAAAAhABsAAAAnACQAAAAhABsAAAA9AAsAAAAhABsAAAA9ACQAAAAhABsAAAARAD0AAAAhABsAAAAnAD0AAAAhABsAAAA9AD0AAAAhABsAAABTAD0AAAAhABsAAABTACQAAAAhABsAAABTAAsAAAAhABsAAABTAPL/AAAhABsAAAA9APL/AAAhABsAAAAnAPL/AAAhABsAAAARAPL/AAAhABsAAAD7//L/AAAhABsAAAD7/wsAAAAhABsAAAD7/yQAAAAhABsAAAD7/z0AAAAhABsAAADl/z0AAAAhABsAAADl/yQAAAAhABsAAADl/wsAAAAhABsAAADl//L/AAAhABsAAABpAPL/AAAhABsAAABpAAsAAAAhABsAAABpACQAAAAhABsAAABpAD0AAAAhABsAAABpAFYAAAAhABsAAABTAFYAAAAhABsAAAA9AFYAAAAhABsAAAAnAFYAAAAhABsAAAARAFYAAAAhABsAAAD7/1YAAAAhABsAAADl/1YAAAAhABsAAADl/9n/AAAhABsAAAD7/9n/AAAhABsAAAARANn/AAAhABsAAAAnANn/AAAhABsAAAA9ANn/AAAhABsAAABTANn/AAAhABsAAABpANn/AAAhABsAAADP/1YAAAAhABsAAADP/z0AAAAhABsAAADP/yQAAAAhABsAAADP/wsAAAAhABsAAADP//L/AAAhABsAAADP/9n/AAAhABsAAADP/8D/AAAhABsAAADl/8D/AAAhABsAAAD7/8D/AAAhABsAAAARAMD/AAAhABsAAAAnAMD/AAAhABsAAAA9AMD/AAAhABsAAABTAMD/AAAhABsAAABpAMD/AAAhABsAAAB/AMD/AAAhABsAAAB/ANn/AAAhABsAAAB/APL/AAAhABsAAAB/AAsAAAAhABsAAAB/ACQAAAAhABsAAAB/AD0AAAAhABsAAAB/AFYAAAAhABsAAAB/AG8AAAAhABsAAABpAG8AAAAhABsAAABTAG8AAAAhABsAAAA9AG8AAAAhABsAAAAnAG8AAAAhABsAAAARAG8AAAAhABsAAAD7/28AAAAhABsAAADl/28AAAAhABsAAADP/28AAAAhABsAAAA=")
+tile_set = SubResource("TileSet_pks37")
 
 [node name="Level transitions" type="Node2D" parent="." unique_id=1267390346]
 position = Vector2(-623.04, -322.75198)
@@ -49,17 +309,34 @@ level_path = "uid://bj31tbom2rxcd"
 target_transition = "Alt"
 timer_delay = 0.0
 is_one_shot = true
-transition_id = "Weirder"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Level transitions/Weird" unique_id=1681711546]
 position = Vector2(280.41232, 24.742266)
 build_mode = 1
-polygon = PackedVector2Array(-514.0893, -511.34015, -514.0893, 593.8144, 581.44324, 592.4398, 580.06866, -509.96558)
+polygon = PackedVector2Array(-985.5669, -1054.2955, -981.4432, 1151.8899, 1198.6254, 1156.0137, 1213.7456, -1050.1718)
 
 [node name="Cabin" parent="Level transitions" unique_id=1833128993 instance=ExtResource("4_fqd2h")]
 position = Vector2(623.04004, 338.75198)
-scale = Vector2(7.0699997, 5.9160004)
+scale = Vector2(26.035, 21.772)
+monitoring = false
+monitorable = false
 level_path = "uid://dpxmw1emc12l1"
 target_transition = "Void"
-trigger_mode = 2
-timer_delay = 15.0
+
+[node name="Jersey Devil" parent="." unique_id=432524728 instance=ExtResource("4_6hydc")]
+position = Vector2(616, -48)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1423267426]
+visible = false
+scale = Vector2(200, 200)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_k4nyp")
+script = ExtResource("9_pqvi1")
+
+[node name="Timer" type="Timer" parent="." unique_id=104962345]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=626750249]
+libraries/ = SubResource("AnimationLibrary_awdq2")
+
+[node name="PlayerSpawn" parent="." unique_id=1158695474 instance=ExtResource("9_awdq2")]
+position = Vector2(-5736, -48)

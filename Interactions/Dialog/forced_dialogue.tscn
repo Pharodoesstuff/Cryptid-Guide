@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dcsc5xj77t1kv"]
+
+[ext_resource type="Script" uid="uid://cx18p761ir4p4" path="res://Interactions/Dialog/Scripts/forced_Dialogue.gd" id="1_bmlny"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4nyp"]
+
+[node name="ForcedDialogue" type="Area2D" unique_id=628127795]
+script = ExtResource("1_bmlny")
+override_position = true
+custom_position = Vector2(315, 580)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1471014124]
+shape = SubResource("RectangleShape2D_k4nyp")

@@ -85,3 +85,12 @@ func update_player_data() -> void:
 
 func autosave_timer() -> void:
 	save_game()
+
+# SaveManager.gd
+
+func set_persistence(key: String) -> void:
+	if not key in current_save.persistence:
+		current_save.persistence.append(key)
+
+func has_persistence(key: String) -> bool:
+	return key in current_save.persistence

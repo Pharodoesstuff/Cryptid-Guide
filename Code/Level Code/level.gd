@@ -35,3 +35,10 @@ func _position_player() -> void:
 	var spawn_node: Node2D = find_child("PlayerSpawn", true, false) as Node2D
 	if is_instance_valid(spawn_node):
 		player.global_position = spawn_node.global_position
+
+func _the_end() -> void:
+	if is_instance_valid(PlayerManager.player) and not PlayerManager.player.is_dead:
+		# 1. Trigger default death sequence
+		PlayerManager.player.die("default")
+		
+		# 2. Wait for the death animation/scene to play before switching scenes

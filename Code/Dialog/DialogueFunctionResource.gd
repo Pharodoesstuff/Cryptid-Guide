@@ -3,11 +3,10 @@ class_name DialogueFunction
 
 @export var target_path: NodePath
 @export var function_name: String
-@export var function_arguments: Array
+@export var function_arguments: Array[String] = []
 
-@export var hide_dialogue_box: bool
+@export var hide_dialogue_box: bool = false
 @export var wait_for_signal_to_continue: String = ""
-
 
 
 # Called when the node enters the scene tree for the first time.

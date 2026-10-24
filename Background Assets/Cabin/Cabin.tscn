@@ -1,20 +1,25 @@
 [gd_scene format=4 uid="uid://dpxmw1emc12l1"]
 
-[ext_resource type="Script" uid="uid://h6thbb5bynwa" path="res://Code/Level Code/level.gd" id="1_pr8sj"]
+[ext_resource type="Script" uid="uid://cc03tal4gap0s" path="res://Code/Level Code/cabin_level.gd" id="1_pnyl4"]
 [ext_resource type="VideoStream" uid="uid://dhsocrtm1leug" path="res://Background Assets/Animation/Sparkle Overlay.ogv" id="1_utrjk"]
 [ext_resource type="Texture2D" uid="uid://c4lexjy6jyf6r" path="res://Background Assets/Cabin/Cabin Assets/Furniture .png" id="2_8uu3j"]
-[ext_resource type="PackedScene" uid="uid://bns4o274efft6" path="res://00_Globals/lvl_trans2.tscn" id="2_lf08p"]
+[ext_resource type="PackedScene" uid="uid://bns4o274efft6" path="res://Interactions/lvl_trans2.tscn" id="2_lf08p"]
 [ext_resource type="Texture2D" uid="uid://b22fdcrvouwwt" path="res://Background Assets/Cabin/Cabin Assets/The Cabin.png" id="2_xk60p"]
 [ext_resource type="Texture2D" uid="uid://d0yxv4ku3ijqo" path="res://Background Assets/Cabin/Cabin Assets/Updates Furniture.png" id="3_c6wnk"]
 [ext_resource type="Texture2D" uid="uid://bsbkxrh2ut6kx" path="res://Background Assets/Cabin/Cabin Assets/Free Cryptid.png" id="6_c6wnk"]
-[ext_resource type="PackedScene" uid="uid://d3cuqej3okgm1" path="res://00_Globals/player_spawn.tscn" id="8_pr8sj"]
-[ext_resource type="PackedScene" uid="uid://swrwl0w25idt" path="res://00_Globals/dialogue_area_2d.tscn" id="10_lf08p"]
-[ext_resource type="PackedScene" uid="uid://b7lin4hbpyfqe" path="res://00_Globals/lvl_transition.tscn" id="10_tjy0m"]
+[ext_resource type="Texture2D" uid="uid://ccwh0muxo08v7" path="res://Background Assets/Cabin/Cabin Assets/Door.png" id="8_nafg8"]
+[ext_resource type="PackedScene" uid="uid://d3cuqej3okgm1" path="res://Interactions/player_spawn.tscn" id="8_pr8sj"]
+[ext_resource type="PackedScene" uid="uid://swrwl0w25idt" path="res://Interactions/dialogue_area_2d.tscn" id="10_lf08p"]
+[ext_resource type="PackedScene" uid="uid://b7lin4hbpyfqe" path="res://Interactions/lvl_transition.tscn" id="10_tjy0m"]
 [ext_resource type="Script" uid="uid://d27xfxagxwibs" path="res://Code/Dialog/DialogueExportResource.gd" id="11_i80aj"]
+[ext_resource type="Script" uid="uid://dlbjieq0woku6" path="res://Code/Progress/dialogue.gd" id="11_si1gx"]
 [ext_resource type="Script" uid="uid://cug1l4ymh31cf" path="res://Code/Dialog/DialogueTextResource.gd" id="12_w0c03"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_xk60p"]
-b = Vector2(0, 40)
+[ext_resource type="Texture2D" uid="uid://c4tv21tgby4mr" path="res://Background Assets/Cabin/Cabin Assets/Book.png" id="13_i80aj"]
+[ext_resource type="Script" uid="uid://blsntwbwnpc4p" path="res://Code/Dialog/DialogueFunctionResource.gd" id="14_bqxvc"]
+[ext_resource type="Script" uid="uid://cw476sbwig11y" path="res://Code/Dialog/DialogueChoiceResource.gd" id="15_si1gx"]
+[ext_resource type="Script" uid="uid://bfr8db4yujeph" path="res://Code/Progress/closet.gd" id="17_rh0qw"]
+[ext_resource type="PackedScene" uid="uid://dyvwwv68a3yvy" path="res://Characters/MothMen/Moth_Men.tscn" id="18_pnyl4"]
+[ext_resource type="PackedScene" uid="uid://dcsc5xj77t1kv" path="res://Interactions/Dialog/forced_dialogue.tscn" id="19_i6fta"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_utrjk"]
 texture = ExtResource("2_xk60p")
@@ -66,7 +71,7 @@ texture = ExtResource("2_8uu3j")
 69:25/size_in_atlas = Vector2i(4, 7)
 69:25/0 = 0
 69:25/0/texture_origin = Vector2i(10, 0)
-69:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 17.272339, -7.5566483, 16.655457, 35.31575, -8.019302, 34.698883)
+69:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.9641304, 18.019684, -7.138233, 17.671478, 35.691162, -8.618111, 35.51706)
 56:12/size_in_atlas = Vector2i(20, 5)
 56:12/0 = 0
 56:12/0/z_index = -2
@@ -82,7 +87,7 @@ texture = ExtResource("2_8uu3j")
 45:9/0 = 0
 45:9/0/texture_origin = Vector2i(11, 0)
 45:9/0/y_sort_origin = 6
-45:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20.02187, -0.52231216, -1.0446167, -0.52231216, -2.2633362, 30.119858, -24.722656, 28.030624)
+45:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20.80534, 8.008747, -2.1762924, 8, -2.3503952, 32.90551, -29.858707, 26.289589)
 11:42/size_in_atlas = Vector2i(10, 5)
 11:42/0 = 0
 11:42/0/z_index = -1
@@ -93,8 +98,8 @@ texture = ExtResource("2_8uu3j")
 texture = ExtResource("3_c6wnk")
 34:35/size_in_atlas = Vector2i(6, 6)
 34:35/0 = 0
-34:35/0/texture_origin = Vector2i(3, 0)
-34:35/0/z_index = -1
+34:35/0/texture_origin = Vector2i(3, -1)
+34:35/0/y_sort_origin = 30
 
 [sub_resource type="TileSet" id="TileSet_ig7tw"]
 physics_layer_0/collision_layer = 2
@@ -135,21 +140,22 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_272bh")
 sources/2 = SubResource("TileSetAtlasSource_5vw27")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_72h8w"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i6fta"]
 texture = ExtResource("6_c6wnk")
 0:0/size_in_atlas = Vector2i(4, 6)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(-8, -7)
 
 [sub_resource type="TileSet" id="TileSet_fw5fr"]
-sources/0 = SubResource("TileSetAtlasSource_72h8w")
+sources/0 = SubResource("TileSetAtlasSource_i6fta")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4c57u"]
 texture = ExtResource("2_8uu3j")
 53:47/size_in_atlas = Vector2i(10, 5)
 53:47/0 = 0
 53:47/0/texture_origin = Vector2i(-3, 0)
-53:47/0/physics_layer_0/polygon_0/points = PackedVector2Array(-62.32896, 7.9216957, 64.940506, 8.0957985, 64.940506, -14.015312, 44.39633, -24.983818, -42.307083, -24.983818, -62.02487, -11.235888)
+53:47/0/y_sort_origin = -8
+53:47/0/physics_layer_0/polygon_0/points = PackedVector2Array(-41.87183, -24.200352, 52.318024, -24.026249, 66.420395, -15.321087, 66.9427, 14.450569, -64.50525, 14.798775, -64.15704, -15.321087)
 73:42/size_in_atlas = Vector2i(3, 5)
 73:42/0 = 0
 73:42/0/z_index = 1
@@ -190,6 +196,22 @@ texture = ExtResource("2_8uu3j")
 [sub_resource type="TileSet" id="TileSet_w48qg"]
 sources/0 = SubResource("TileSetAtlasSource_ycdy4")
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rh0qw"]
+light_mode = 1
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owy3o"]
+texture = ExtResource("8_nafg8")
+0:0/size_in_atlas = Vector2i(5, 6)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(9, 2)
+0:0/0/z_index = -1
+0:0/0/y_sort_origin = 30
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.401581, -3.1338577, 28.030617, 35.952316, -47.53019, 36.12642)
+
+[sub_resource type="TileSet" id="TileSet_k4nyp"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_owy3o")
+
 [sub_resource type="Resource" id="Resource_flt8o"]
 script = ExtResource("12_w0c03")
 text = "You grab a role"
@@ -205,24 +227,66 @@ radius = 16.0
 
 [sub_resource type="Resource" id="Resource_le31t"]
 script = ExtResource("12_w0c03")
-text = "A toilet bro"
+text = "You hear voices..."
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_8tqt1"]
+script = ExtResource("14_bqxvc")
+function_name = "close_dialogue"
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="Resource" id="Resource_fq274"]
+script = ExtResource("15_si1gx")
+text = "Listen?"
+choice_text = Array[String](["Yes", "No"])
+choice_function_call = Array[ExtResource("14_bqxvc")]([null, SubResource("Resource_8tqt1")])
+metadata/_custom_type_script = "uid://cw476sbwig11y"
+
+[sub_resource type="Resource" id="Resource_64hs1"]
+script = ExtResource("12_w0c03")
+text = "[color=pink]...He loves intruders"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_b4w2p"]
+script = ExtResource("12_w0c03")
+text = "[color=pink]He loves to chase..."
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_xjo36"]
+script = ExtResource("12_w0c03")
+text = "[color=pink]Don't run from him, as this is now our faith..."
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_qkplt"]
+script = ExtResource("12_w0c03")
+text = "[color=pink]muttering..."
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4nyp"]
-size = Vector2(8, 33)
+size = Vector2(32, 33)
 
 [sub_resource type="Resource" id="Resource_w0c03"]
 script = ExtResource("12_w0c03")
-text = "Gurggling"
+text = "The water is still "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_pnyl4"]
+script = ExtResource("12_w0c03")
+text = "You hear a [shake]Gurggling[/shake] sound "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_bqxvc"]
+script = ExtResource("12_w0c03")
+text = "It might be best to step away.."
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5h2ry"]
 radius = 23.999542
-height = 127.99768
+height = 143.99731
 
 [sub_resource type="Resource" id="Resource_lf08p"]
 script = ExtResource("12_w0c03")
-text = "Waterflows and it can't stop"
+text = "An overflowing water"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flt8o"]
@@ -233,10 +297,19 @@ script = ExtResource("12_w0c03")
 text = "Comfy Bed"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
+[sub_resource type="Resource" id="Resource_si1gx"]
+script = ExtResource("12_w0c03")
+text = "Is that bear real? "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
 [sub_resource type="Resource" id="Resource_liwaf"]
 script = ExtResource("12_w0c03")
-text = "Woof Woof"
-text_speed = 15.0
+text = "[color=white] WOOF! WOOF! [/color]"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_fto8x"]
+script = ExtResource("12_w0c03")
+text = "ohh..."
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbo3a"]
@@ -244,114 +317,1032 @@ size = Vector2(128, 40)
 
 [sub_resource type="Resource" id="Resource_8kra7"]
 script = ExtResource("12_w0c03")
-text = "Comfy Couch
-"
+text = "An enormous couch "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_owy3o"]
+script = ExtResource("12_w0c03")
+text = "..."
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_dnkbn"]
+script = ExtResource("12_w0c03")
+text = "It's plastic..."
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_cekop"]
+script = ExtResource("12_w0c03")
+text = "you don't feel like getting on "
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_le31t"]
 size = Vector2(144, 42)
 
-[sub_resource type="Resource" id="Resource_n6ck4"]
-script = ExtResource("12_w0c03")
-text = "Locked Door
-"
-metadata/_custom_type_script = "uid://cug1l4ymh31cf"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7d1b"]
-size = Vector2(72, 42)
-
-[sub_resource type="Resource" id="Resource_w2hp4"]
-script = ExtResource("12_w0c03")
-text = "Closet
-"
-metadata/_custom_type_script = "uid://cug1l4ymh31cf"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_liwaf"]
-size = Vector2(48, 64)
-
 [sub_resource type="Resource" id="Resource_g21rv"]
 script = ExtResource("12_w0c03")
-text = "Perfect to stub toe
-"
+text = "A table "
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kra7"]
-size = Vector2(128, 56)
+size = Vector2(64, 48)
 
-[sub_resource type="Resource" id="Resource_8r51t"]
-script = ExtResource("12_w0c03")
-text = "Rug
-"
-metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2hp4"]
+size = Vector2(80, 18)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6ck4"]
-size = Vector2(266, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r51t"]
+size = Vector2(8, 26)
 
 [sub_resource type="Resource" id="Resource_1okm0"]
 script = ExtResource("12_w0c03")
-text = "Glug Glug
+text = "What-
 "
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_2cxaj"]
+script = ExtResource("12_w0c03")
+text = "is that?"
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_ohnk5"]
+script = ExtResource("12_w0c03")
+text = "It reminds you of you"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g21rv"]
-radius = 36.0
-height = 104.0
+radius = 32.0
+height = 80.0
 
 [sub_resource type="Resource" id="Resource_8lscb"]
 script = ExtResource("12_w0c03")
-text = "Failed Kitchen
-"
+text = "An imitation of a kitchen "
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g21rv"]
-size = Vector2(232, 64)
+[sub_resource type="Resource" id="Resource_q0qq5"]
+script = ExtResource("12_w0c03")
+text = "the stove doesn't seem to work"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7p5k0"]
+radius = 32.0
+height = 228.0
 
 [sub_resource type="Resource" id="Resource_i80aj"]
 script = ExtResource("12_w0c03")
-text = "Permanently fixed
+text = "You tried flipping the light switch"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_cu3wp"]
+script = ExtResource("12_w0c03")
+text = "It's stuck "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bqxvc"]
+height = 48.0
+
+[sub_resource type="Resource" id="Resource_i6fta"]
+script = ExtResource("12_w0c03")
+text = "Someone's house? 
 "
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k4nyp"]
-radius = 16.0
-
-[sub_resource type="Resource" id="Resource_bqxvc"]
+[sub_resource type="Resource" id="Resource_1keje"]
 script = ExtResource("12_w0c03")
-text = "Poor imitation of life
-"
+text = "but if there's clothes on it, wouldn't that mean they're home? "
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1okm0"]
 size = Vector2(20, 48)
 
+[sub_resource type="Resource" id="Resource_rh0qw"]
+script = ExtResource("12_w0c03")
+text = "Book"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_w82hs"]
+script = ExtResource("14_bqxvc")
+function_name = "close_dialogue"
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="Resource" id="Resource_nafg8"]
+script = ExtResource("15_si1gx")
+text = "Read?"
+choice_text = Array[String](["Yes", "No"])
+choice_function_call = Array[ExtResource("14_bqxvc")]([null, SubResource("Resource_w82hs")])
+metadata/_custom_type_script = "uid://cw476sbwig11y"
+
+[sub_resource type="Resource" id="Resource_0f7ee"]
+script = ExtResource("14_bqxvc")
+target_path = NodePath("..")
+function_name = "answer_correct"
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="Resource" id="Resource_1i7c8"]
+script = ExtResource("14_bqxvc")
+target_path = NodePath("..")
+function_name = "answer_wrong"
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="Resource" id="Resource_tq43o"]
+script = ExtResource("15_si1gx")
+text = "The Souls that take baths love to make a ____ sound"
+choice_text = Array[String](["Gurggling", "Whimper"])
+choice_function_call = Array[ExtResource("14_bqxvc")]([SubResource("Resource_0f7ee"), SubResource("Resource_1i7c8")])
+metadata/_custom_type_script = "uid://cw476sbwig11y"
+
+[sub_resource type="Resource" id="Resource_bqus1"]
+script = ExtResource("12_w0c03")
+text = "The screams echo louder..."
+camera_position = Vector2(320, 256)
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_n41jw"]
+script = ExtResource("12_w0c03")
+text = "You kept reading"
+reset_camera_to_player = true
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_6420t"]
+script = ExtResource("14_bqxvc")
+target_path = NodePath("..")
+function_name = "answer_correct"
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="Resource" id="Resource_u23md"]
+script = ExtResource("14_bqxvc")
+target_path = NodePath("..")
+function_name = "answer_wrong"
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="Resource" id="Resource_8g1tt"]
+script = ExtResource("15_si1gx")
+text = "His soul curses its cage and screams  _____"
+choice_text = Array[String](["Woof! Woof!", "Meow"])
+choice_function_call = Array[ExtResource("14_bqxvc")]([SubResource("Resource_6420t"), SubResource("Resource_u23md")])
+metadata/_custom_type_script = "uid://cw476sbwig11y"
+
+[sub_resource type="Resource" id="Resource_xoudl"]
+script = ExtResource("12_w0c03")
+text = "The sounds eers closer than you think..."
+camera_position = Vector2(320, 256)
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_diowh"]
+script = ExtResource("14_bqxvc")
+target_path = NodePath("..")
+function_name = "answer_wrong"
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="Resource" id="Resource_jnbtu"]
+script = ExtResource("14_bqxvc")
+target_path = NodePath("..")
+function_name = "answer_correct"
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="Resource" id="Resource_ouexn"]
+script = ExtResource("15_si1gx")
+text = "You should listen one more time... maybe you'll hear..."
+choice_text = Array[String](["Silence", "CLOSETCLOSETCLOSETCLOSETCLOSET"])
+choice_function_call = Array[ExtResource("14_bqxvc")]([SubResource("Resource_diowh"), SubResource("Resource_jnbtu")])
+metadata/_custom_type_script = "uid://cw476sbwig11y"
+
+[sub_resource type="Resource" id="Resource_njdlv"]
+script = ExtResource("14_bqxvc")
+target_path = NodePath("..")
+function_name = "check_quiz_results"
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="Resource" id="Resource_p0is2"]
+script = ExtResource("12_w0c03")
+text = "..."
+reset_camera_to_player = true
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0c03"]
+size = Vector2(18, 34)
+
+[sub_resource type="Resource" id="Resource_w2hp4"]
+script = ExtResource("12_w0c03")
+text = "A closet? "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_xo8y8"]
+script = ExtResource("12_w0c03")
+text = "You listen closely..."
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_t1d54"]
+script = ExtResource("12_w0c03")
+text = "..."
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_3iehx"]
+script = ExtResource("12_w0c03")
+text = "..."
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_liwaf"]
+size = Vector2(48, 64)
+
+[sub_resource type="Resource" id="Resource_cy35e"]
+script = ExtResource("12_w0c03")
+text = "Door is locked..."
+text_speed = 15.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_u6dqm"]
+script = ExtResource("12_w0c03")
+text = "...From the inside?"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdnty"]
+size = Vector2(64, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6ck4"]
+size = Vector2(53, 64)
+
+[sub_resource type="Animation" id="Animation_b8twf"]
+resource_name = "Moth"
+length = 0.26666668
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MothMen:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MothMen:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MothMen:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 10]
+}
+
+[sub_resource type="Animation" id="Animation_bx6t5"]
+resource_name = "test2"
+length = 0.33333334
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MothMen:vframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MothMen:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MothMen:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 7]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MothMen:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_pwokw"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MothMen:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MothMen:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MothMen:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_u7akj"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MothMen:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MothMen:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MothMen:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MothMen:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_abfvh"]
+resource_name = "TEst"
+length = 0.33333334
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MothMen:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MothMen:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MothMen:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MothMen:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_ebkda"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MothMen:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MothMen:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MothMen:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c525o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MothMen:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MothMen:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MothMen:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pnyl4"]
+_data = {
+&"Moth": SubResource("Animation_b8twf"),
+&"Moth_Diag": SubResource("Animation_bx6t5"),
+&"Moth_Diag_Idol": SubResource("Animation_pwokw"),
+&"Moth_Idol": SubResource("Animation_u7akj"),
+&"Moth_Side": SubResource("Animation_abfvh"),
+&"Moth_Side_Idol": SubResource("Animation_ebkda"),
+&"RESET": SubResource("Animation_c525o")
+}
+
+[sub_resource type="Animation" id="Animation_pnyl4"]
+resource_name = "Fight"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Monsters/MothMenM:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.3666667, 2.1, 2.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(336, 50), Vector2(320.535, 64.055), Vector2(336, 64), Vector2(368, 50), Vector2(336, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Monsters/MothMenUL:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 1.4666667, 2.3333333, 2.9506342),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(32, 100), Vector2(16, 96), Vector2(8, 112), Vector2(48, 112), Vector2(32.875732, 100.6568)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Monsters/MothMenUR:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5666178, 1.1333333, 2.0666666, 2.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(620, 100), Vector2(632, 80), Vector2(592, 72), Vector2(624, 96), Vector2(592, 112)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Monsters/MothMenL:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5981942, 1.7823083, 2.6032941),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-32, 220), Vector2(-40, 200), Vector2(-56, 224), Vector2(-32, 200)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Monsters/MothMenR:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(-0.033333335, 1.2849804, 2.5480354),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(700, 220), Vector2(656, 224), Vector2(712, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_nafg8"]
+resource_name = "Finish"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Monsters/MothMenM:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Monsters/MothMenUL:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03333333, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Monsters/MothMenUR:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Monsters/MothMenL:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0097144535, 0.4912738),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Monsters/MothMenR:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.48017156),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xo8y8"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Monsters/MothMenM:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(376, 256)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Monsters/MothMenUL:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(376, 253.065)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Monsters/MothMenUR:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(376, 253.065)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Monsters/MothMenL:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(376, 253.065)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Monsters/MothMenR:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(376, 253.065)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Monsters/MothMenM:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Monsters/MothMenUL:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Monsters/MothMenUR:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Monsters/MothMenL:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Monsters/MothMenR:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i6fta"]
+resource_name = "Summon"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Monsters/MothMenM:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1761506),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(376, 256), Vector2(336, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Monsters/MothMenUL:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(376, 253.065), Vector2(32, 100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Monsters/MothMenUR:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(376, 253.065), Vector2(620, 100)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Monsters/MothMenL:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(376, 253.065), Vector2(-32, 220)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Monsters/MothMenR:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.122042),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(376, 253.065), Vector2(700, 220)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t1d54"]
+_data = {
+&"Fight": SubResource("Animation_pnyl4"),
+&"Finish": SubResource("Animation_nafg8"),
+&"RESET": SubResource("Animation_xo8y8"),
+&"Summon": SubResource("Animation_i6fta")
+}
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xk60p"]
+b = Vector2(0, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lcsu"]
+size = Vector2(130, 50)
+
+[sub_resource type="Resource" id="Resource_sp7in"]
+script = ExtResource("12_w0c03")
+text = "Attic is open... You feel a cold air"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_bmlny"]
+script = ExtResource("12_w0c03")
+text = "Wha-"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_hralk"]
+script = ExtResource("12_w0c03")
+text = "You felt... "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_8utmu"]
+script = ExtResource("12_w0c03")
+text = "...something tugged at your soul..."
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_wdnty"]
+script = ExtResource("12_w0c03")
+text = "The Cryptid are freed. "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g21rv"]
+size = Vector2(138, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lscb"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0eky"]
+size = Vector2(56, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t46t3"]
+size = Vector2(48, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egoo8"]
+size = Vector2(20, 50)
+
+[sub_resource type="Resource" id="Resource_k4nyp"]
+script = ExtResource("12_w0c03")
+text = "You read the book again"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_ryc2j"]
+script = ExtResource("12_w0c03")
+text = "All you see is \"The cryptids are free...\""
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_fbp7y"]
+script = ExtResource("12_w0c03")
+text = "\"...Thank you..\""
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cby1c"]
+
+[sub_resource type="Resource" id="Resource_2byap"]
+script = ExtResource("12_w0c03")
+text = "[pulse][color=white]Woof Woof
+(Hey bro) "
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_66fw2"]
+script = ExtResource("12_w0c03")
+text = "[pulse][color=white]Woof Woof woof (I don't have much time left)"
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_trjo8"]
+script = ExtResource("12_w0c03")
+text = "[pulse][color=white]Woof!(Thank you for releasing us from him. My soul can go back to it's body now)"
+text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_8r51t"]
+script = ExtResource("12_w0c03")
+text = "[pulse][color=white]Woof Wo-(Before I lost the ability to move-)"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_2b3pb"]
+script = ExtResource("12_w0c03")
+text = "[pulse][color=white]Woof Woof(I took this key from him)"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_1lcsu"]
+script = ExtResource("12_w0c03")
+text = "[color=white][center][font_size=80][shake rate=5]WOOOF!!!"
+camera_position = Vector2(352, 96)
+camera_transition_time = 1.05
+auto_advance = true
+auto_advance_delay = 4.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_pcbgb"]
+script = ExtResource("14_bqxvc")
+target_path = NodePath("..")
+function_name = "_open_door"
+hide_dialogue_box = true
+metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="Resource" id="Resource_v0vdr"]
+script = ExtResource("12_w0c03")
+text = "
+[center]*Obtained Key*"
+reset_camera_to_player = true
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
 [node name="Cabin" type="Node2D" unique_id=415258001]
 y_sort_enabled = true
 texture_filter = 1
-script = ExtResource("1_pr8sj")
+script = ExtResource("1_pnyl4")
 
 [node name="Stars" type="VideoStreamPlayer" parent="." unique_id=633963970]
 z_index = -3
-offset_left = -656.0
-offset_top = -144.0
-offset_right = 551.11804
-offset_bottom = 850.444
+offset_left = -648.0
+offset_top = -136.0
+offset_right = 559.11804
+offset_bottom = 858.444
 scale = Vector2(1, 0.7)
 stream = ExtResource("1_utrjk")
 autoplay = true
 expand = true
 loop = true
-
-[node name="Wall Borders" type="StaticBody2D" parent="." unique_id=330644693]
-position = Vector2(24, 192)
-
-[node name="Attic" type="CollisionPolygon2D" parent="Wall Borders" unique_id=136110629]
-build_mode = 1
-polygon = PackedVector2Array(440, 144, -136, 144, -136, 0, -320, 0, -320, 144, -624, 144, -624, 48, -496, 48, -496, -88, -312, -88, -312, -56, -136, -56, -136, -80, 368, -80, 368, 96, 440, 96)
-
-[node name="Entrance Block" type="CollisionShape2D" parent="Wall Borders" unique_id=1222997295]
-position = Vector2(376, 104)
-shape = SubResource("SegmentShape2D_xk60p")
-disabled = true
 
 [node name="cabin Design" type="Node2D" parent="." unique_id=1941871013]
 y_sort_enabled = true
@@ -370,7 +1361,7 @@ tile_set = SubResource("TileSet_0xm2m")
 
 [node name="Furniture" type="TileMapLayer" parent="cabin Design" unique_id=269252582]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD9//r/AQALACoAAAAVAAMAAQBFABkAABAIAAYAAQAyABwAAAAHAAIAAQA4AAwAAAAUAPj/AgAiACMAAADi////AQAtAAkAAADl//z/AQAPAAgAAADm//j/AQAoABAAAAA=")
+tile_map_data = PackedByteArray("AAD9//r/AQALACoAAAAVAAMAAQBFABkAABAIAAYAAQAyABwAAAAHAAIAAQA4AAwAAADi////AQAtAAkAAADl//z/AQAPAAgAAADm//j/AQAoABAAAAAUAPj/AgAiACMAAAA=")
 tile_set = SubResource("TileSet_ig7tw")
 
 [node name="Furniture 2" type="TileMapLayer" parent="cabin Design" unique_id=1919299763]
@@ -379,6 +1370,7 @@ tile_map_data = PackedByteArray("AAD8/wYAAAAjABwAAAADAPf/AgAxACEAAAAIAPr/AAAgADE
 tile_set = SubResource("TileSet_kek77")
 
 [node name="Free Cryptid" type="TileMapLayer" parent="cabin Design/Furniture 2" unique_id=1857774867]
+visible = false
 z_index = 2
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD7/wUAAAAAAAAAAAA=")
@@ -386,10 +1378,11 @@ tile_set = SubResource("TileSet_fw5fr")
 
 [node name="Furniture 3" type="TileMapLayer" parent="cabin Design" unique_id=221676487]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAASAAcAAAA+ACoAAAAIAP//AAA1AC8AAAAWAP//AABJACoAAADq//v/AQAdACAAAAA=")
+tile_map_data = PackedByteArray("AAAIAP//AAA1AC8AAAAWAP//AABJACoAAADq//v/AQAdACAAAAA=")
 tile_set = SubResource("TileSet_dg77c")
 
 [node name="Hidden Entrance" type="TileMapLayer" parent="cabin Design" unique_id=1173796851]
+visible = false
 z_index = -2
 tile_map_data = PackedByteArray("AAAaAAcAAABHABsAAAAbAAUAAABLAA8AAAA=")
 tile_set = SubResource("TileSet_utrjk")
@@ -400,12 +1393,29 @@ z_index = 3
 tile_map_data = PackedByteArray("AAAIAPX/AAAHABEAAAA=")
 tile_set = SubResource("TileSet_w48qg")
 
+[node name="Book2" type="Sprite2D" parent="cabin Design" unique_id=925939483]
+modulate = Color(2.910947, 2.910947, 2.910947, 1)
+position = Vector2(176, -16)
+scale = Vector2(1.04, 0.855)
+texture = ExtResource("13_i80aj")
+
+[node name="Book" type="Sprite2D" parent="cabin Design" unique_id=1338107755]
+modulate = Color(1, 0.9220181, 0.8945755, 1)
+material = SubResource("CanvasItemMaterial_rh0qw")
+position = Vector2(176, -16)
+texture = ExtResource("13_i80aj")
+
+[node name="Door" type="TileMapLayer" parent="cabin Design" unique_id=892342125]
+y_sort_enabled = true
+position = Vector2(248, 8)
+tile_map_data = PackedByteArray("AAAFAPj/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_k4nyp")
+
 [node name="Transitions" type="Node2D" parent="." unique_id=106291619]
 position = Vector2(24, 192)
 
 [node name="Void" parent="Transitions" unique_id=1833128993 instance=ExtResource("2_lf08p")]
-position = Vector2(-272, -24)
-scale = Vector2(1, 5.3999996)
+position = Vector2(-264, -24)
 level_path = "uid://dxopohk4wki5u"
 target_transition = "Cabin"
 required_interactions = 5
@@ -420,10 +1430,8 @@ target_transition_Area = "LvlTransition1"
 size = 1
 side = 1
 
-[node name="PlayerSpawn" parent="." unique_id=1158695474 instance=ExtResource("8_pr8sj")]
-position = Vector2(-344, 232)
-
 [node name="Dialogue" type="Node2D" parent="." unique_id=1821626009]
+script = ExtResource("11_si1gx")
 
 [node name="Toilet Paper" parent="Dialogue" unique_id=1341398698 instance=ExtResource("10_lf08p")]
 position = Vector2(-400, 136)
@@ -436,16 +1444,16 @@ debug_color = Color(0.9706678, 0, 0.45637387, 0.41960785)
 
 [node name="Toilet" parent="Dialogue" unique_id=805643900 instance=ExtResource("10_lf08p")]
 position = Vector2(-456, 169)
-dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_le31t")])
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_le31t"), SubResource("Resource_fq274"), SubResource("Resource_64hs1"), SubResource("Resource_b4w2p"), SubResource("Resource_xjo36"), SubResource("Resource_qkplt")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Toilet" unique_id=1591208371]
-position = Vector2(28, -25.5)
+position = Vector2(16, -25.5)
 shape = SubResource("RectangleShape2D_k4nyp")
 debug_color = Color(0.9680801, 0, 0.4732206, 0.41960785)
 
 [node name="Bathub" parent="Dialogue" unique_id=1780306778 instance=ExtResource("10_lf08p")]
 position = Vector2(-552, 288)
-dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_w0c03")])
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_w0c03"), SubResource("Resource_pnyl4"), SubResource("Resource_bqxvc")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Bathub" unique_id=115669955]
 position = Vector2(8, 0)
@@ -464,7 +1472,7 @@ debug_color = Color(0.95911974, 0, 0.5260599, 0.41960785)
 
 [node name="Bed" parent="Dialogue" unique_id=1127465204 instance=ExtResource("10_lf08p")]
 position = Vector2(-48, 120)
-dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_e7d1b"), SubResource("Resource_liwaf")])
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_e7d1b"), SubResource("Resource_si1gx"), SubResource("Resource_liwaf"), SubResource("Resource_fto8x")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Bed" unique_id=1550620937]
 position = Vector2(32, -4)
@@ -473,30 +1481,12 @@ debug_color = Color(0.79395527, 0, 0.39710686, 0.41960785)
 
 [node name="Couch" parent="Dialogue" unique_id=1021238952 instance=ExtResource("10_lf08p")]
 position = Vector2(160, 104)
-dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_8kra7")])
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_8kra7"), SubResource("Resource_owy3o"), SubResource("Resource_dnkbn"), SubResource("Resource_cekop")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Couch" unique_id=907033702]
 position = Vector2(8, 11)
 shape = SubResource("RectangleShape2D_le31t")
 debug_color = Color(0.970818, 0, 0.45537156, 0.41960785)
-
-[node name="Door" parent="Dialogue" unique_id=803420092 instance=ExtResource("10_lf08p")]
-position = Vector2(344, 88)
-dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_n6ck4")])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Door" unique_id=290428491]
-position = Vector2(4, 11)
-shape = SubResource("RectangleShape2D_e7d1b")
-debug_color = Color(0.9685599, 0, 0.47015977, 0.41960785)
-
-[node name="Closet" parent="Dialogue" unique_id=1155058533 instance=ExtResource("10_lf08p")]
-position = Vector2(360, 256)
-dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_w2hp4")])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Closet" unique_id=749133063]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_liwaf")
-debug_color = Color(0.977701, 0, 0.40575173, 0.41960785)
 
 [node name="Table" parent="Dialogue" unique_id=1096610251 instance=ExtResource("10_lf08p")]
 position = Vector2(152, 176)
@@ -504,49 +1494,210 @@ dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_g21rv")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Table" unique_id=132802406]
 z_index = 1
-position = Vector2(8, 4)
+position = Vector2(-32, 0)
 shape = SubResource("RectangleShape2D_8kra7")
 debug_color = Color(0.9654935, 8.663535e-07, 0.48928422, 0.41960785)
 
-[node name="Rug" parent="Dialogue" unique_id=1495792241 instance=ExtResource("10_lf08p")]
-dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_8r51t")])
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Dialogue/Table" unique_id=1803262814]
+z_index = 1
+position = Vector2(40, -15)
+shape = SubResource("RectangleShape2D_w2hp4")
+debug_color = Color(0.9697797, 0, 0.46224964, 0.41960785)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Rug" unique_id=1747289529]
-position = Vector2(147, 232)
-shape = SubResource("RectangleShape2D_n6ck4")
-debug_color = Color(0.647252, 0.33450124, 1, 0.41960785)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Dialogue/Table" unique_id=47045451]
+z_index = 1
+position = Vector2(76, 5)
+shape = SubResource("RectangleShape2D_8r51t")
+debug_color = Color(0.6980064, 0, 0.33669463, 0.41960785)
 
 [node name="Thing" parent="Dialogue" unique_id=1958825193 instance=ExtResource("10_lf08p")]
 position = Vector2(-48, 280)
-dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_1okm0")])
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_1okm0"), SubResource("Resource_2cxaj"), SubResource("Resource_ohnk5")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Thing" unique_id=1237672286]
-position = Vector2(16, 12)
+position = Vector2(16, 32)
 shape = SubResource("CapsuleShape2D_g21rv")
 debug_color = Color(0.99766856, 0, 0.1709544, 0.41960785)
 
 [node name="Kitchen" parent="Dialogue" unique_id=332018782 instance=ExtResource("10_lf08p")]
 position = Vector2(128, 280)
-dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_8lscb")])
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_8lscb"), SubResource("Resource_q0qq5")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Kitchen" unique_id=1160342552]
-position = Vector2(36, 24)
-shape = SubResource("RectangleShape2D_g21rv")
+position = Vector2(34, 24)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_7p5k0")
 debug_color = Color(0.96368104, 9.62615e-08, 0.50012404, 0.41960785)
 
 [node name="Light" parent="Dialogue" unique_id=1905154535 instance=ExtResource("10_lf08p")]
 position = Vector2(-456, 192)
-dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_i80aj")])
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_i80aj"), SubResource("Resource_cu3wp")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Light" unique_id=469549859]
 position = Vector2(0, 8)
-shape = SubResource("CircleShape2D_k4nyp")
+shape = SubResource("CapsuleShape2D_bqxvc")
 debug_color = Color(0.96561843, 0, 0.4885252, 0.41960785)
 
 [node name="Post" parent="Dialogue" unique_id=1345234407 instance=ExtResource("10_lf08p")]
-dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_bqxvc")])
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_i6fta"), SubResource("Resource_1keje")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Post" unique_id=768021404]
 position = Vector2(272, 112)
 shape = SubResource("RectangleShape2D_1okm0")
 debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
+
+[node name="Book" parent="Dialogue" unique_id=1193723762 instance=ExtResource("10_lf08p")]
+z_index = 2
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_rh0qw"), SubResource("Resource_nafg8"), SubResource("Resource_tq43o"), SubResource("Resource_bqus1"), SubResource("Resource_n41jw"), SubResource("Resource_8g1tt"), SubResource("Resource_xoudl"), SubResource("Resource_ouexn"), SubResource("Resource_njdlv"), SubResource("Resource_p0is2")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Book" unique_id=68997483]
+position = Vector2(193, 191)
+shape = SubResource("RectangleShape2D_w0c03")
+
+[node name="Closet Dialogue" parent="Dialogue" unique_id=1155058533 instance=ExtResource("10_lf08p")]
+position = Vector2(360, 256)
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_w2hp4"), SubResource("Resource_xo8y8"), SubResource("Resource_t1d54"), SubResource("Resource_3iehx")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Closet Dialogue" unique_id=749133063]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_liwaf")
+debug_color = Color(0.977701, 0, 0.40575173, 0.41960785)
+
+[node name="Door" parent="Dialogue" unique_id=100610006 instance=ExtResource("10_lf08p")]
+position = Vector2(352, 112)
+required_player_look_dir = "up"
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_cy35e"), SubResource("Resource_u6dqm")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Door" unique_id=1857465068]
+position = Vector2(-8, -5)
+shape = SubResource("RectangleShape2D_wdnty")
+
+[node name="Interactions" type="Node" parent="." unique_id=1654755931]
+
+[node name="Closet" type="Area2D" parent="Interactions" unique_id=729350340]
+script = ExtResource("17_rh0qw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Closet" unique_id=1082354056]
+position = Vector2(365.5, 264)
+shape = SubResource("RectangleShape2D_n6ck4")
+
+[node name="Monsters" type="Node2D" parent="." unique_id=889899279]
+
+[node name="MothMenM" parent="Monsters" unique_id=440688849 instance=ExtResource("18_pnyl4")]
+self_modulate = Color(1, 1, 1, 0.035808742)
+position = Vector2(376, 256)
+wall_min_slide_angle = 0.0
+
+[node name="AnimationPlayer" parent="Monsters/MothMenM" index="2" unique_id=1624629930]
+autoplay = &"RESET"
+
+[node name="MothMenUL" parent="Monsters" unique_id=1562901998 instance=ExtResource("18_pnyl4")]
+position = Vector2(376, 253.065)
+active_animation = "Moth_Diag"
+flip_horizontal = true
+
+[node name="MothMenUR" parent="Monsters" unique_id=2145286040 instance=ExtResource("18_pnyl4")]
+position = Vector2(376, 253.065)
+active_animation = "Moth_Diag"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Monsters/MothMenUR" unique_id=1807685059]
+libraries/ = SubResource("AnimationLibrary_pnyl4")
+
+[node name="MothMenL" parent="Monsters" unique_id=153474521 instance=ExtResource("18_pnyl4")]
+position = Vector2(376, 253.065)
+active_animation = "Moth_Side"
+flip_horizontal = true
+
+[node name="MothMenR" parent="Monsters" unique_id=124409759 instance=ExtResource("18_pnyl4")]
+position = Vector2(376, 253.065)
+active_animation = "Moth_Side"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=918266349]
+libraries/ = SubResource("AnimationLibrary_t1d54")
+
+[node name="Wall Borders" type="StaticBody2D" parent="." unique_id=330644693]
+position = Vector2(24, 192)
+
+[node name="Attic" type="CollisionPolygon2D" parent="Wall Borders" unique_id=136110629]
+build_mode = 1
+polygon = PackedVector2Array(440, 144, -136, 144, -136, 0, -320, 0, -320, 144, -624, 144, -624, 48, -496, 48, -496, -88, -312, -88, -312, -56, -136, -56, -136, -80, 288, -80, 288, -168, 368, -168, 368, -80, 368, 96, 440, 96)
+
+[node name="Entrance Block" type="CollisionShape2D" parent="Wall Borders" unique_id=1222997295]
+position = Vector2(376, 104)
+shape = SubResource("SegmentShape2D_xk60p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall Borders" unique_id=593510880]
+position = Vector2(-248, 24)
+shape = SubResource("RectangleShape2D_1lcsu")
+
+[node name="Attic" parent="." unique_id=628127795 instance=ExtResource("19_i6fta")]
+position = Vector2(416, 312)
+persistence_key = "attic_dialogue_completed"
+dialogue_sequence = Array[ExtResource("11_i80aj")]([SubResource("Resource_sp7in")])
+
+[node name="The fight" parent="." unique_id=563493206 instance=ExtResource("19_i6fta")]
+position = Vector2(-48, -56)
+dialogue_sequence = Array[ExtResource("11_i80aj")]([SubResource("Resource_bmlny")])
+
+[node name="Void" parent="." unique_id=1868899752 instance=ExtResource("19_i6fta")]
+position = Vector2(-328, 184)
+persistence_key = "void_dialogue_completed"
+dialogue_sequence = Array[ExtResource("11_i80aj")]([SubResource("Resource_hralk"), SubResource("Resource_8utmu")])
+
+[node name="Freed Souls" parent="." unique_id=1839722761 instance=ExtResource("10_lf08p")]
+z_index = 4
+monitoring = false
+monitorable = false
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_wdnty")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Freed Souls" unique_id=705747048]
+position = Vector2(-544, 288)
+shape = SubResource("RectangleShape2D_g21rv")
+debug_color = Color(0.61026704, 0.464781, 0, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Freed Souls" unique_id=626536953]
+position = Vector2(-440, 144)
+shape = SubResource("RectangleShape2D_8lscb")
+debug_color = Color(0.6595135, 0.51533836, 0, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Freed Souls" unique_id=704570869]
+position = Vector2(-32, 304)
+shape = SubResource("RectangleShape2D_c0eky")
+debug_color = Color(0.60018307, 0.4998473, 5.7756904e-07, 0.41960785)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Freed Souls" unique_id=839796592]
+position = Vector2(360, 271)
+shape = SubResource("RectangleShape2D_t46t3")
+debug_color = Color(0.5716447, 0.4599865, 0, 0.41960785)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Freed Souls" unique_id=1625274218]
+position = Vector2(352, 271)
+shape = SubResource("RectangleShape2D_egoo8")
+
+[node name="Book" parent="." unique_id=923406783 instance=ExtResource("10_lf08p")]
+position = Vector2(192, 192)
+required_player_look_dir = "up"
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_k4nyp"), SubResource("Resource_ryc2j"), SubResource("Resource_fbp7y")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Book" unique_id=5854602]
+shape = SubResource("RectangleShape2D_cby1c")
+
+[node name="Last Woof" parent="." unique_id=1403069685 instance=ExtResource("19_i6fta")]
+position = Vector2(-16, 128)
+monitoring = false
+monitorable = false
+persistence_key = "The key"
+dialogue_sequence = Array[ExtResource("11_i80aj")]([SubResource("Resource_2byap"), SubResource("Resource_66fw2"), SubResource("Resource_trjo8"), SubResource("Resource_8r51t"), SubResource("Resource_2b3pb"), SubResource("Resource_1lcsu"), SubResource("Resource_pcbgb"), SubResource("Resource_v0vdr")])
+
+[node name="PlayerSpawn" parent="." unique_id=1158695474 instance=ExtResource("8_pr8sj")]
+y_sort_enabled = true
+position = Vector2(336, 272)
+
+[node name="Freedom" parent="." unique_id=663343909 instance=ExtResource("10_tjy0m")]
+z_index = 5
+position = Vector2(352, 88)
+scale = Vector2(1, 0.13)
+level = "uid://d1chtv1kasu0x"
+side = 2
+
+[editable path="Monsters/MothMenM"]

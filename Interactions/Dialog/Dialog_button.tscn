@@ -1,8 +1,24 @@
 [gd_scene format=3 uid="uid://ddy3eos0rnchg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h2ry"]
+bg_color = Color(0.24313726, 0, 0, 0.84705883)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [node name="DialogueButton" type="Button" unique_id=1124934116]
+offset_right = 8.0
+offset_bottom = 8.0
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.9439606, 0.90076125, 0, 1)
-theme_override_colors/font_focus_color = Color(0.8890973, 1, 0.6923154, 1)
-theme_override_colors/font_pressed_color = Color(0.8901961, 1, 0.69411767, 1)
-theme_override_colors/font_hover_color = Color(0.8901961, 1, 0.69411767, 1)
+theme_override_colors/font_color = Color(1, 0.7922837, 0.6395605, 1)
+theme_override_colors/font_focus_color = Color(0.63990533, 0, 0.31325245, 1)
+theme_override_colors/font_pressed_color = Color(0.22352941, 0.08235294, 0, 0.7019608)
+theme_override_colors/font_hover_color = Color(0.9490196, 0, 0.9490196, 1)
+theme_override_colors/icon_hover_color = Color(0.30349952, 0.18696171, 0.006066376, 1)
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_5h2ry")

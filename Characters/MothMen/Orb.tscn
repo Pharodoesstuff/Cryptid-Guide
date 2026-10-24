@@ -5,7 +5,7 @@
 
 [sub_resource type="Gradient" id="Gradient_2wdb0"]
 offsets = PackedFloat32Array(0.18421052, 0.28195488, 0.4699248, 0.7556391)
-colors = PackedColorArray(0.9870458, 6.160736e-06, 0.6273456, 1, 0.9255532, 0, 0.37251112, 1, 0.5686275, 0.23921569, 0.9764706, 1, 0.08950663, 4.9574674e-06, 0.424995, 0)
+colors = PackedColorArray(0.3777659, 7.821247e-07, 0.22838086, 1, 0.28961125, 7.1835148e-06, 0.21894586, 1, 0.3125802, 0.00045497998, 0.42277637, 1, 0.08950663, 4.9574674e-06, 0.424995, 0)
 metadata/_snap_count = 16
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_pawe5"]
@@ -18,7 +18,8 @@ fill_from = Vector2(0.5140845, 0.49530515)
 [sub_resource type="CircleShape2D" id="CircleShape2D_xboq1"]
 radius = 24.0
 
-[node name="Orb" type="Node2D" unique_id=1802872320]
+[node name="Orb" type="Area2D" unique_id=1322567663]
+collision_layer = 0
 script = ExtResource("1_m733d")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242591382]
@@ -28,6 +29,11 @@ texture = SubResource("GradientTexture2D_pawe5")
 [node name="Hurtbox" parent="." unique_id=715303479 instance=ExtResource("2_m733d")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=506975541]
+scale = Vector2(0.35, 0.35)
+shape = SubResource("CircleShape2D_xboq1")
+debug_color = Color(0, 0.6, 0.69803923, 0.30588236)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1525935113]
 scale = Vector2(0.35, 0.35)
 shape = SubResource("CircleShape2D_xboq1")
 debug_color = Color(0, 0.6, 0.69803923, 0.30588236)

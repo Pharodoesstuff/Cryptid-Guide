@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b123rf1rdpyxf" path="res://Code/Player/player.gd" id="1_gea4v"]
 [ext_resource type="Texture2D" uid="uid://blj4el15od3j0" path="res://Characters/Main Character/MC Movement.png" id="2_88u02"]
+[ext_resource type="PackedScene" uid="uid://cu71mqvnyanf5" path="res://Characters/Main Character/player_death(s).tscn" id="2_hwwhe"]
 [ext_resource type="Texture2D" uid="uid://bciddynybredy" path="res://Characters/Main Character/Shadow.png" id="2_o60yy"]
 [ext_resource type="Script" uid="uid://c57ohcp6ivyd6" path="res://Code/Player/player_state_machine.gd" id="4_k4pqc"]
 [ext_resource type="Script" uid="uid://dfii1u67vkk1j" path="res://Code/Player/PlayerCamera.gd" id="4_mv30e"]
@@ -10,13 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dsj7j502hfeoa" path="res://Characters/Main Character/hitbox/hitbox.tscn" id="8_06c34"]
 [ext_resource type="Script" uid="uid://dx0te4kwgdunb" path="res://Code/Player/state_stun.gd" id="8_tf45h"]
 [ext_resource type="PackedScene" uid="uid://dx5em3nipa3dl" path="res://00_GUI/Light/VoidLight.tscn" id="10_p4s3c"]
-
-[sub_resource type="Gradient" id="Gradient_p4s3c"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_k4nyp"]
-gradient = SubResource("Gradient_p4s3c")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_88u02"]
 radius = 9.000204
@@ -273,17 +267,11 @@ _data = {
 &"default": SubResource("Animation_p3iov")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1999503061]
+[node name="Player" type="CharacterBody2D" unique_id=1999503061 groups=["player"]]
 y_sort_enabled = true
 collision_mask = 3
 script = ExtResource("1_gea4v")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1549936040]
-visible = false
-modulate = Color(1, 0.25490198, 1, 1)
-z_index = -2
-scale = Vector2(4.73, 6.335)
-texture = SubResource("GradientTexture2D_k4nyp")
+death_scene = ExtResource("2_hwwhe")
 
 [node name="Player collision" type="CollisionShape2D" parent="." unique_id=222089415]
 modulate = Color(1, 1, 1, 0.39607844)
@@ -345,4 +333,5 @@ debug_color = Color(0.9767868, 0, 0.4127997, 0.41960785)
 libraries/ = SubResource("AnimationLibrary_2311a")
 
 [node name="VoidLight" parent="." unique_id=143977007 instance=ExtResource("10_p4s3c")]
+visible = false
 position = Vector2(16, -20)

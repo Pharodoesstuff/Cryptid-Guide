@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cxrwp6l6vnn8t" path="res://Background Assets/Back Burner/Forest/Nature/tree_leaves.tscn" id="9_t8k7e"]
 [ext_resource type="Texture2D" uid="uid://bcw0nwmatjw71" path="res://Background Assets/Back Burner/Forest/Nature/Plant Life.png" id="10_e2jgm"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gr1co"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vckax"]
 texture = ExtResource("1_eqc7w")
 0:0/0 = 0
 0:1/0 = 0
@@ -8017,7 +8017,7 @@ texture = ExtResource("1_eqc7w")
 
 [sub_resource type="TileSet" id="TileSet_mhfmy"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_gr1co")
+sources/1 = SubResource("TileSetAtlasSource_vckax")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e2jgm"]
 shader = ExtResource("3_2gl3i")

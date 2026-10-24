@@ -1,13 +1,34 @@
 [gd_scene format=3 uid="uid://bu58ue4vnm8ui"]
 
+[ext_resource type="Script" uid="uid://cqtciywaqwttu" path="res://Code/Enemies/Jersey_Devil/jersey_devil.gd" id="1_b5t7s"]
 [ext_resource type="Texture2D" uid="uid://xj7e5vo0tn1r" path="res://Characters/Jersey Devil/Jersey Devil.png" id="1_m3dfy"]
 [ext_resource type="Texture2D" uid="uid://bciddynybredy" path="res://Characters/Main Character/Shadow.png" id="1_qfshh"]
+[ext_resource type="Script" uid="uid://bhnox7nlul20h" path="res://Characters/Main Character/hurtbox/hurtbox.gd" id="3_vdhgf"]
+[ext_resource type="Script" uid="uid://jmbep5dkxnpi" path="res://Code/Enemies/Jersey_Devil/enemy_state_machine.gd" id="5_rb4il"]
+[ext_resource type="Script" uid="uid://db6karp8f4f4o" path="res://Code/Enemies/Jersey_Devil/enemy_state_chase.gd" id="6_6vib4"]
+[ext_resource type="Script" uid="uid://t41k0mckryuv" path="res://Code/Enemies/Jersey_Devil/enemy_state_chill.gd" id="7_c4btb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qfshh"]
 radius = 20.09975
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vdhgf"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jupsr"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e6pgl"]
+light_mode = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k4nyp"]
+radius = 30.413813
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w2hp4"]
+radius = 35.128338
+
 [sub_resource type="Animation" id="Animation_vdhgf"]
 resource_name = "Idol"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30,7 +51,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [2]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -42,7 +63,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [5]
 }
 
 [sub_resource type="Animation" id="Animation_hl334"]
@@ -59,7 +80,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [7]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -74,9 +95,73 @@ tracks/1/keys = {
 "values": [4]
 }
 
-[sub_resource type="Animation" id="Animation_jupsr"]
-length = 0.36666667
-loop_mode = 2
+[sub_resource type="Animation" id="Animation_x1ky2"]
+resource_name = "Devil_Idol"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("JerseyDevil:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("JerseyDevil:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JerseyDevil:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("JerseyDevil:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shadow2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b5t7s"]
+resource_name = "Devil_Side_Idol"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -96,35 +181,7 @@ tracks/1/path = NodePath("JerseyDevil:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.23333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_x1ky2"]
-length = 0.26666668
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("JerseyDevil:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.001),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("JerseyDevil:vframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.0009999999),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
@@ -132,30 +189,225 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("JerseyDevil:frame")
+tracks/2/path = NodePath("JerseyDevil:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.001, 0.23333333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6vib4"]
+resource_name = "Devil_Side_Walk"
+length = 1.7333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("JerseyDevil:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.46666667, 0.7, 0.96666664, 1.1666667, 1.3666667, 1.6333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [2, 3]
+"values": [1, 2, 3, 1, 2, 3, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.19999999),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JerseyDevil:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("JerseyDevil:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("JerseyDevil:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_jupsr"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("JerseyDevil:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.3, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666665, 0.46666664),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [5, 6, 7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("JerseyDevil:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("JerseyDevil:hframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_rb4il"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shadow2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("JerseyDevil:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shadow2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("JerseyDevil:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("JerseyDevil:vframes")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b5t7s"]
 _data = {
-&"Devil": SubResource("Animation_vdhgf"),
-&"Devil_Side": SubResource("Animation_hl334"),
-&"Devil_Side_Walk": SubResource("Animation_jupsr"),
-&"RESET": SubResource("Animation_x1ky2")
+&"DDevil_idol": SubResource("Animation_vdhgf"),
+&"DDevil_side": SubResource("Animation_hl334"),
+&"Devil_Idol": SubResource("Animation_x1ky2"),
+&"Devil_Side_Idol": SubResource("Animation_b5t7s"),
+&"Devil_Side_Walk": SubResource("Animation_6vib4"),
+&"Devil_walk_intro_side": SubResource("Animation_jupsr"),
+&"RESET": SubResource("Animation_rb4il")
 }
 
 [node name="Jersey Devil" type="CharacterBody2D" unique_id=432524728]
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("1_b5t7s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1519232094]
 position = Vector2(1, 9)
 shape = SubResource("CircleShape2D_qfshh")
-disabled = true
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=476169893]
 modulate = Color(0.12156863, 0.03137255, 0.1882353, 0.49411765)
@@ -164,10 +416,55 @@ scale = Vector2(1.1999991, 1)
 texture = ExtResource("1_qfshh")
 
 [node name="JerseyDevil" type="Sprite2D" parent="." unique_id=1561917180]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+material = SubResource("CanvasItemMaterial_vdhgf")
+scale = Vector2(1e-05, 1)
+texture = ExtResource("1_m3dfy")
+hframes = 5
+vframes = 2
+frame = 1
+
+[node name="Shadow2" type="Sprite2D" parent="." unique_id=496460478]
+material = SubResource("CanvasItemMaterial_jupsr")
 texture = ExtResource("1_m3dfy")
 hframes = 4
-frame = 1
+vframes = 2
+frame = 4
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1956332107]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("3_vdhgf")
+damage = 1000
+metadata/_custom_type_script = "uid://bhnox7nlul20h"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1346212649]
+material = SubResource("CanvasItemMaterial_e6pgl")
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_k4nyp")
+
+[node name="Transformation" type="Area2D" parent="." unique_id=1288515155]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transformation" unique_id=142848295]
+shape = SubResource("CircleShape2D_w2hp4")
+debug_color = Color(0.94187206, 1.1166334e-05, 0.6108723, 0.41960785)
+
+[node name="EnemyStateMachine" type="Node" parent="." unique_id=447229533]
+script = ExtResource("5_rb4il")
+
+[node name="Chill" type="Node" parent="EnemyStateMachine" unique_id=249714912 node_paths=PackedStringArray("chase_state")]
+script = ExtResource("7_c4btb")
+chase_state = NodePath("../Chase")
+wait_time = 26.0
+override_final_position = true
+final_dialogue_position = Vector2(315, 580)
+
+[node name="Chase" type="Node" parent="EnemyStateMachine" unique_id=297385536]
+script = ExtResource("6_6vib4")
+anim_name = "DDevil"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=370360543]
 libraries/ = SubResource("AnimationLibrary_b5t7s")
-autoplay = &"Devil_Side"
