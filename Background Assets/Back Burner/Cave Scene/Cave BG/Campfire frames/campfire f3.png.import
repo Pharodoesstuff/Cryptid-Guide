@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfgp3qagofn5s"
-path="res://.godot/imported/campfire f3.png-9889e40fbfd0ca1fcfdfa3388fd67a06.ctex"
+path="res://.godot/imported/campfire f3.png-3c8cbcd5c20cec15a6531256d15fa94a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Assets/Cave Scene/Cave BG/Campfire frames/campfire f3.png"
-dest_files=["res://.godot/imported/campfire f3.png-9889e40fbfd0ca1fcfdfa3388fd67a06.ctex"]
+source_file="res://Background Assets/Back Burner/Cave Scene/Cave BG/Campfire frames/campfire f3.png"
+dest_files=["res://.godot/imported/campfire f3.png-3c8cbcd5c20cec15a6531256d15fa94a.ctex"]
 
 [params]
 

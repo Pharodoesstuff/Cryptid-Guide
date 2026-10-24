@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh2jttvm1mftp"
-path="res://.godot/imported/doorswindowsstairs_LRK.png-619d19175b3da22c33526d2d4bd76ec3.ctex"
+path="res://.godot/imported/doorswindowsstairs_LRK.png-c949b38fd02647d1e0746e06a89296f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Assets/Cave Scene/Cave BG/pixelinterior_LRK_v1.1/doorswindowsstairs_LRK.png"
-dest_files=["res://.godot/imported/doorswindowsstairs_LRK.png-619d19175b3da22c33526d2d4bd76ec3.ctex"]
+source_file="res://Background Assets/Back Burner/Cave Scene/Cave BG/pixelinterior_LRK_v1.1/doorswindowsstairs_LRK.png"
+dest_files=["res://.godot/imported/doorswindowsstairs_LRK.png-c949b38fd02647d1e0746e06a89296f4.ctex"]
 
 [params]
 

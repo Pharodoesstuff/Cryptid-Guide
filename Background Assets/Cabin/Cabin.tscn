@@ -1691,7 +1691,7 @@ dialogue_sequence = Array[ExtResource("11_i80aj")]([SubResource("Resource_2byap"
 
 [node name="PlayerSpawn" parent="." unique_id=1158695474 instance=ExtResource("8_pr8sj")]
 y_sort_enabled = true
-position = Vector2(336, 272)
+position = Vector2(8, 176)
 
 [node name="Freedom" parent="." unique_id=663343909 instance=ExtResource("10_tjy0m")]
 z_index = 5

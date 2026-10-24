@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0wjgtyvfq5ee"
-path="res://.godot/imported/kitchen_LRK.png-734f0471bdfb45a062f0ccc3341b2493.ctex"
+path="res://.godot/imported/kitchen_LRK.png-3e150ce06218634d7292688fd61ddb29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Assets/Cave Scene/Cave BG/pixelinterior_LRK_v1.1/kitchen_LRK.png"
-dest_files=["res://.godot/imported/kitchen_LRK.png-734f0471bdfb45a062f0ccc3341b2493.ctex"]
+source_file="res://Background Assets/Back Burner/Cave Scene/Cave BG/pixelinterior_LRK_v1.1/kitchen_LRK.png"
+dest_files=["res://.godot/imported/kitchen_LRK.png-3e150ce06218634d7292688fd61ddb29.ctex"]
 
 [params]
 

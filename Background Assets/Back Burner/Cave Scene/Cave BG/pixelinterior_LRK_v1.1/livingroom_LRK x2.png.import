@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://colu30n3a7tp5"
-path="res://.godot/imported/livingroom_LRK x2.png-9ced4af9a9f2ad4636899473acec96de.ctex"
+path="res://.godot/imported/livingroom_LRK x2.png-7e8206f14e5235fe67aaac0eb75ffe22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background Assets/Cave Scene/Cave BG/pixelinterior_LRK_v1.1/livingroom_LRK x2.png"
-dest_files=["res://.godot/imported/livingroom_LRK x2.png-9ced4af9a9f2ad4636899473acec96de.ctex"]
+source_file="res://Background Assets/Back Burner/Cave Scene/Cave BG/pixelinterior_LRK_v1.1/livingroom_LRK x2.png"
+dest_files=["res://.godot/imported/livingroom_LRK x2.png-7e8206f14e5235fe67aaac0eb75ffe22.ctex"]
 
 [params]
 
