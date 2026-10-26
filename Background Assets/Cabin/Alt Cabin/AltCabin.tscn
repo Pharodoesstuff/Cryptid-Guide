@@ -11,9 +11,11 @@
 [ext_resource type="Script" uid="uid://d27xfxagxwibs" path="res://Code/Dialog/DialogueExportResource.gd" id="9_cnqwe"]
 [ext_resource type="Script" uid="uid://cug1l4ymh31cf" path="res://Code/Dialog/DialogueTextResource.gd" id="10_y6502"]
 [ext_resource type="PackedScene" uid="uid://dcsc5xj77t1kv" path="res://Interactions/Dialog/forced_dialogue.tscn" id="11_m52n2"]
+[ext_resource type="Texture2D" uid="uid://bd1tqohn84n3i" path="res://Characters/souls.png" id="11_qqepl"]
 [ext_resource type="Script" uid="uid://blsntwbwnpc4p" path="res://Code/Dialog/DialogueFunctionResource.gd" id="12_y6502"]
 [ext_resource type="Script" uid="uid://cw476sbwig11y" path="res://Code/Dialog/DialogueChoiceResource.gd" id="13_gbmbn"]
 [ext_resource type="PackedScene" uid="uid://d3cuqej3okgm1" path="res://Interactions/player_spawn.tscn" id="14_gbmbn"]
+[ext_resource type="Texture2D" uid="uid://c4rir6kauwnpe" path="res://Characters/ialogue image/badend.png" id="15_fcoyr"]
 
 [sub_resource type="Gradient" id="Gradient_u1i4r"]
 offsets = PackedFloat32Array(0, 0.55509645, 0.8002755, 1)
@@ -360,35 +362,42 @@ _data = {
 
 [sub_resource type="Resource" id="Resource_w2hp4"]
 script = ExtResource("10_y6502")
-text = "[color=pink]!"
+speaker_img = ExtResource("11_qqepl")
+text = "[center][color=pink]!"
+camera_position = Vector2(-408, -24)
 auto_advance = true
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_flt8o"]
 script = ExtResource("10_y6502")
-text = "[color=pink] WHY DID YOU RUN! WHY DID YOU RUN!"
+speaker_img = ExtResource("11_qqepl")
+text = "[center][color=pink] WHY DID YOU RUN! WHY DID YOU RUN!"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_cfikp"]
 script = ExtResource("10_y6502")
-text = "[color=pink] THAT'S HOW IT GOT US THINKING WE'VE WON "
+speaker_img = ExtResource("11_qqepl")
+text = "[center][color=pink] THAT'S HOW IT GOT US THINKING WE'VE WON "
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_k4nyp"]
 script = ExtResource("10_y6502")
-text = "[color=pink]  THE BEAST DOES NOT CARE, HE KNOWS YOU'RE HERE"
+speaker_img = ExtResource("11_qqepl")
+text = "[center][color=pink]  THE BEAST DOES NOT CARE, HE KNOWS YOU'RE HERE"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_bbo3a"]
 script = ExtResource("10_y6502")
-text = "[color=pink] IT'S TRAPPED IN WATER, SO IT LURES IT'S BAIT"
-auto_advance = true
+speaker_img = ExtResource("11_qqepl")
+text = "[center][color=pink] IT'S TRAPPED IN WATER, SO IT LURES IT'S BAIT"
 auto_advance_delay = 0.4
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_gbmbn"]
 script = ExtResource("10_y6502")
-text = "[color=pink] THE [rainbow]BEAST OF BUSCO[/rainbow] HAS SEALED OUR FAI-"
+speaker_img = ExtResource("11_qqepl")
+text = "[center][color=pink] THE [rainbow]BEAST OF BUSCO[/rainbow] HAS SEALED OUR FAI-"
+text_speed = 15.0
 auto_advance = true
 auto_advance_delay = 2.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
@@ -405,15 +414,22 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 [sub_resource type="Resource" id="Resource_xqrce"]
 script = ExtResource("10_y6502")
 text = "....no more response...."
+reset_camera_to_player = true
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4nyp"]
-size = Vector2(20, 42)
+size = Vector2(50, 69)
 
 [sub_resource type="Resource" id="Resource_fvn5l"]
 script = ExtResource("10_y6502")
 text = "..."
 text_speed = 5.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_fcoyr"]
+script = ExtResource("10_y6502")
+text = "you hear a voice in your head..."
+text_speed = 23.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_m52n2"]
@@ -426,8 +442,8 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_cnqwe"]
 script = ExtResource("10_y6502")
-text = "[rainbow][shake]LOVE YOU"
-text_speed = 5.0
+text = "[center][rainbow][shake]LOVE YOU"
+text_speed = 18.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2hp4"]
@@ -501,7 +517,7 @@ auto_advance = true
 auto_advance_delay = 0.7
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
-[sub_resource type="Resource" id="Resource_fcoyr"]
+[sub_resource type="Resource" id="Resource_juilv"]
 script = ExtResource("10_y6502")
 text = "
 [center][rainbow]I LOVE YOU[/rainbow]"
@@ -565,7 +581,8 @@ metadata/_custom_type_script = "uid://blsntwbwnpc4p"
 
 [sub_resource type="Resource" id="Resource_hk7qk"]
 script = ExtResource("13_gbmbn")
-text = "[rainbow][shake] DO YOU LOVE, ME? "
+speaker_img = ExtResource("15_fcoyr")
+text = "[center][rainbow][shake] DO YOU LOVE, ME? "
 choice_text = Array[String](["I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU I LOVE YOU "])
 choice_function_call = Array[ExtResource("12_y6502")]([SubResource("Resource_cp8rl")])
 metadata/_custom_type_script = "uid://cw476sbwig11y"
@@ -658,7 +675,7 @@ only_activate_once = true
 dialogue = Array[ExtResource("9_cnqwe")]([SubResource("Resource_w2hp4"), SubResource("Resource_flt8o"), SubResource("Resource_cfikp"), SubResource("Resource_k4nyp"), SubResource("Resource_bbo3a"), SubResource("Resource_gbmbn"), SubResource("Resource_x6pfj"), SubResource("Resource_y5ug8"), SubResource("Resource_xqrce")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Toilet" unique_id=1165238222]
-position = Vector2(-411, -41)
+position = Vector2(-335, -10.5)
 shape = SubResource("RectangleShape2D_k4nyp")
 
 [node name="ForcedDialogue" parent="." unique_id=628127795 instance=ExtResource("11_m52n2")]
@@ -669,7 +686,7 @@ dialogue_sequence = Array[ExtResource("9_cnqwe")]([SubResource("Resource_fvn5l")
 z_index = 1
 y_sort_enabled = true
 activate_instant = true
-dialogue = Array[ExtResource("9_cnqwe")]([SubResource("Resource_m52n2"), SubResource("Resource_cnqwe")])
+dialogue = Array[ExtResource("9_cnqwe")]([SubResource("Resource_fcoyr"), SubResource("Resource_m52n2"), SubResource("Resource_cnqwe")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="I love you" unique_id=317851280]
 position = Vector2(200, -72)
@@ -699,7 +716,7 @@ shape = SubResource("CapsuleShape2D_qqepl")
 
 [node name="Bath" parent="." unique_id=1778955692 instance=ExtResource("8_m52n2")]
 required_player_look_dir = "down"
-dialogue = Array[ExtResource("9_cnqwe")]([SubResource("Resource_y6502"), SubResource("Resource_qqepl"), SubResource("Resource_4tyn7"), SubResource("Resource_e6uly"), SubResource("Resource_dtjbm"), SubResource("Resource_bliby"), SubResource("Resource_hjaqm"), SubResource("Resource_q38rw"), SubResource("Resource_fcoyr"), SubResource("Resource_yca4f"), SubResource("Resource_h4khj"), SubResource("Resource_bv0ch"), SubResource("Resource_0nwb3"), SubResource("Resource_o736u"), SubResource("Resource_o736u"), SubResource("Resource_o736u"), SubResource("Resource_o736u"), SubResource("Resource_o736u"), SubResource("Resource_hkt8j"), SubResource("Resource_hk7qk"), SubResource("Resource_2wggt")])
+dialogue = Array[ExtResource("9_cnqwe")]([SubResource("Resource_y6502"), SubResource("Resource_qqepl"), SubResource("Resource_4tyn7"), SubResource("Resource_e6uly"), SubResource("Resource_dtjbm"), SubResource("Resource_bliby"), SubResource("Resource_hjaqm"), SubResource("Resource_q38rw"), SubResource("Resource_juilv"), SubResource("Resource_yca4f"), SubResource("Resource_h4khj"), SubResource("Resource_bv0ch"), SubResource("Resource_0nwb3"), SubResource("Resource_o736u"), SubResource("Resource_o736u"), SubResource("Resource_o736u"), SubResource("Resource_o736u"), SubResource("Resource_o736u"), SubResource("Resource_hkt8j"), SubResource("Resource_hk7qk"), SubResource("Resource_2wggt")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bath" unique_id=1728329893]
 position = Vector2(-563, 87)
@@ -708,4 +725,4 @@ shape = SubResource("CapsuleShape2D_flt8o")
 
 [node name="PlayerSpawn" parent="." unique_id=1158695474 instance=ExtResource("14_gbmbn")]
 y_sort_enabled = true
-position = Vector2(-72, 88)
+position = Vector2(-416, 96)

@@ -1,8 +1,10 @@
 extends CanvasLayer
 
 const DialogueButtonPreload = preload("res://Interactions/Dialog/Dialog_button.tscn")
-
+#DialogueLabel
+#SpeakerSprite
 @onready var DialogueLabel: RichTextLabel = $DialogueContainer/HBoxContainer/VBoxContainer/RichTextLabel
+
 @onready var SpeakerSprite: Sprite2D = $DialogueContainer/HBoxContainer/SpeakerParent/Sprite2D if has_node("DialogueContainer/HBoxContainer/SpeakerParent/Sprite2D") else null
 
 @export_category("Position Override")

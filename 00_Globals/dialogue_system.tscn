@@ -64,6 +64,7 @@ layout_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueContainer/HBoxContainer/SpeakerParent" unique_id=1026708002]
 position = Vector2(56, 56)
+offset = Vector2(-8, 0)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DialogueContainer/HBoxContainer" unique_id=2135709728]
 layout_mode = 2
@@ -86,7 +87,6 @@ scroll_active = false
 visible_characters_behavior = 1
 
 [node name="button_container" type="HBoxContainer" parent="DialogueContainer/HBoxContainer/VBoxContainer" unique_id=36446871]
-visible = false
 layout_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1410893129]

@@ -1,5 +1,5 @@
 # res://Code/Player/player_death(s).gd
-extends CharacterBody2D
+class_name player_death extends CharacterBody2D
 
 @export var menu_options_scene: PackedScene
 

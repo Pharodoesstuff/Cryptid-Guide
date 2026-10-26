@@ -39,6 +39,6 @@ func _position_player() -> void:
 func _the_end() -> void:
 	if is_instance_valid(PlayerManager.player) and not PlayerManager.player.is_dead:
 		# 1. Trigger default death sequence
-		PlayerManager.player.die("default")
+		PlayerManager.PLAYER_DEATH_S.animation_player.play("alt_death_side")
 		
 		# 2. Wait for the death animation/scene to play before switching scenes

@@ -1,6 +1,7 @@
 extends Node
 
 const PLAYER = preload("res://Characters/Main Character/Main Character.tscn")
+const PLAYER_DEATH_S_ = preload("res://Characters/Main Character/player_death(s).tscn")
 
 var player : Player
 var player_spawned : bool = false

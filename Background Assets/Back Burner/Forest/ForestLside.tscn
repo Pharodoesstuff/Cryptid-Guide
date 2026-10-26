@@ -16,7 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://dcsc5xj77t1kv" path="res://Interactions/Dialog/forced_dialogue.tscn" id="14_k0s84"]
 [ext_resource type="Script" uid="uid://d27xfxagxwibs" path="res://Code/Dialog/DialogueExportResource.gd" id="15_lr8rt"]
 [ext_resource type="Script" uid="uid://cug1l4ymh31cf" path="res://Code/Dialog/DialogueTextResource.gd" id="16_3hpyq"]
+[ext_resource type="Texture2D" uid="uid://b6f6dn1tuejo" path="res://Characters/ialogue image/playertalk.png" id="17_1yvpn"]
 [ext_resource type="Script" uid="uid://blsntwbwnpc4p" path="res://Code/Dialog/DialogueFunctionResource.gd" id="17_lr8rt"]
+[ext_resource type="Texture2D" uid="uid://cepk4mdpld1r8" path="res://Characters/ialogue image/bigfoot.png" id="18_p0vs8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uv6kw"]
 texture = ExtResource("1_ndcrg")
@@ -8825,6 +8827,7 @@ sources/2 = SubResource("TileSetAtlasSource_kli57")
 
 [sub_resource type="Resource" id="Resource_f4yjn"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("17_1yvpn")
 text = "
 [center][font_size=60]..."
 text_speed = 5.0
@@ -8832,6 +8835,7 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_k0s84"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
 [center][font_size=60]Interesting..."
 text_speed = 10.0
@@ -8839,6 +8843,7 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_lr8rt"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
 [center][font_size=60]My human vessel..."
 text_speed = 20.0
@@ -8846,6 +8851,7 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_3hpyq"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
 [center][font_size=60]It's alive."
 text_speed = 20.0
@@ -8853,6 +8859,7 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_1yvpn"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
 [center][font_size=60]Perhaps?"
 text_speed = 20.0
@@ -8860,13 +8867,15 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_p0vs8"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
-[center][font_size=60]Remnants of my soul?"
+[center][font_size=60] My soul remnants?"
 text_speed = 20.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_v0vcd"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
 [center][font_size=60] Or simply you were-"
 text_speed = 20.0
@@ -8874,6 +8883,7 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_1e0pm"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
 [center][font_size=60]Contaminated"
 text_speed = 14.0
@@ -8881,6 +8891,7 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_8plrv"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
 [center][font_size=60]..."
 text_speed = 5.0
@@ -8888,6 +8899,7 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_4puw0"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
 [center][font_size=60] No matter-"
 text_speed = 20.0
@@ -8895,6 +8907,7 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_k6ynl"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
 [center][font_size=60] Unnaceptable"
 text_speed = 15.0
@@ -8902,6 +8915,7 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_ae7uy"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
 [center][font_size=60]You freed them"
 text_speed = 15.0
@@ -8909,13 +8923,22 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_bp1se"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
-[center][font_size=60]As ignorant as you are-"
+[center][font_size=60] Ignorant fool-"
 text_speed = 18.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_j8n42"]
+script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
+text = "
+[center][font_size=60] are you ready?"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_i402f"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
 [center][font_size=60]No one can leave-"
 text_speed = 15.0
@@ -8924,6 +8947,7 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_a1unj"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "
 [center][font_size=60]Disrespecing me"
 text_speed = 20.0
@@ -8931,7 +8955,16 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_gjsey"]
 script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("18_p0vs8")
 text = "[shake][center][font_size=60]BIGFOOT"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_fcoyr"]
+script = ExtResource("16_3hpyq")
+speaker_img = ExtResource("17_1yvpn")
+text = "[center] WAIT NO-"
+auto_advance = true
+auto_advance_delay = 0.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_hv6s2"]
@@ -8940,6 +8973,10 @@ target_path = NodePath("..")
 function_name = "_the_end"
 hide_dialogue_box = true
 metadata/_custom_type_script = "uid://blsntwbwnpc4p"
+
+[sub_resource type="Resource" id="Resource_dwpr0"]
+script = ExtResource("16_3hpyq")
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [node name="ForestLside" type="Node2D" unique_id=1132000186]
 y_sort_enabled = true
@@ -9046,4 +9083,4 @@ position = Vector2(-560, 56)
 position = Vector2(-584, 80)
 scale = Vector2(3.635, 3.635)
 persistence_key = "Vessel"
-dialogue_sequence = Array[ExtResource("15_lr8rt")]([SubResource("Resource_f4yjn"), SubResource("Resource_k0s84"), SubResource("Resource_lr8rt"), SubResource("Resource_3hpyq"), SubResource("Resource_1yvpn"), SubResource("Resource_p0vs8"), SubResource("Resource_v0vcd"), SubResource("Resource_1e0pm"), SubResource("Resource_8plrv"), SubResource("Resource_4puw0"), SubResource("Resource_k6ynl"), SubResource("Resource_ae7uy"), SubResource("Resource_bp1se"), SubResource("Resource_i402f"), SubResource("Resource_a1unj"), SubResource("Resource_gjsey"), SubResource("Resource_hv6s2")])
+dialogue_sequence = Array[ExtResource("15_lr8rt")]([SubResource("Resource_f4yjn"), SubResource("Resource_k0s84"), SubResource("Resource_lr8rt"), SubResource("Resource_3hpyq"), SubResource("Resource_1yvpn"), SubResource("Resource_p0vs8"), SubResource("Resource_v0vcd"), SubResource("Resource_1e0pm"), SubResource("Resource_8plrv"), SubResource("Resource_4puw0"), SubResource("Resource_k6ynl"), SubResource("Resource_ae7uy"), SubResource("Resource_bp1se"), SubResource("Resource_j8n42"), SubResource("Resource_i402f"), SubResource("Resource_a1unj"), SubResource("Resource_gjsey"), SubResource("Resource_fcoyr"), SubResource("Resource_hv6s2"), SubResource("Resource_dwpr0")])

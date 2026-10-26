@@ -17,9 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://c4tv21tgby4mr" path="res://Background Assets/Cabin/Cabin Assets/Book.png" id="13_i80aj"]
 [ext_resource type="Script" uid="uid://blsntwbwnpc4p" path="res://Code/Dialog/DialogueFunctionResource.gd" id="14_bqxvc"]
 [ext_resource type="Script" uid="uid://cw476sbwig11y" path="res://Code/Dialog/DialogueChoiceResource.gd" id="15_si1gx"]
+[ext_resource type="Texture2D" uid="uid://bd1tqohn84n3i" path="res://Characters/souls.png" id="17_owy3o"]
 [ext_resource type="Script" uid="uid://bfr8db4yujeph" path="res://Code/Progress/closet.gd" id="17_rh0qw"]
+[ext_resource type="Texture2D" uid="uid://bqmhevfvd035f" path="res://Background Assets/Cabin/freebear.png" id="18_dnkbn"]
 [ext_resource type="PackedScene" uid="uid://dyvwwv68a3yvy" path="res://Characters/MothMen/Moth_Men.tscn" id="18_pnyl4"]
 [ext_resource type="PackedScene" uid="uid://dcsc5xj77t1kv" path="res://Interactions/Dialog/forced_dialogue.tscn" id="19_i6fta"]
+[ext_resource type="Texture2D" uid="uid://b6f6dn1tuejo" path="res://Characters/ialogue image/playertalk.png" id="21_cekop"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_utrjk"]
 texture = ExtResource("2_xk60p")
@@ -244,22 +247,27 @@ metadata/_custom_type_script = "uid://cw476sbwig11y"
 
 [sub_resource type="Resource" id="Resource_64hs1"]
 script = ExtResource("12_w0c03")
-text = "[color=pink]...He loves intruders"
+speaker_img = ExtResource("17_owy3o")
+text = "    [color=pink]...He loves intruders"
+text_speed = 20.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_b4w2p"]
 script = ExtResource("12_w0c03")
-text = "[color=pink]He loves to chase..."
+speaker_img = ExtResource("17_owy3o")
+text = "   [color=pink]He loves to chase..."
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_xjo36"]
 script = ExtResource("12_w0c03")
-text = "[color=pink]Don't run from him, as this is now our faith..."
+speaker_img = ExtResource("17_owy3o")
+text = "[center][color=pink]Don't run from him, as this is now our faith..."
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_qkplt"]
 script = ExtResource("12_w0c03")
-text = "[color=pink]muttering..."
+speaker_img = ExtResource("17_owy3o")
+text = "   [color=pink]muttering..."
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4nyp"]
@@ -433,6 +441,16 @@ choice_text = Array[String](["Yes", "No"])
 choice_function_call = Array[ExtResource("14_bqxvc")]([null, SubResource("Resource_w82hs")])
 metadata/_custom_type_script = "uid://cw476sbwig11y"
 
+[sub_resource type="Resource" id="Resource_nnyur"]
+script = ExtResource("12_w0c03")
+text = "\"The switch to free the prisons exists in the attic\""
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_1l6yo"]
+script = ExtResource("12_w0c03")
+text = "\"Answer all these questions right, to procede...\""
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
 [sub_resource type="Resource" id="Resource_0f7ee"]
 script = ExtResource("14_bqxvc")
 target_path = NodePath("..")
@@ -447,7 +465,7 @@ metadata/_custom_type_script = "uid://blsntwbwnpc4p"
 
 [sub_resource type="Resource" id="Resource_tq43o"]
 script = ExtResource("15_si1gx")
-text = "The Souls that take baths love to make a ____ sound"
+text = "\"The souls in the bathtub make a __ sound\""
 choice_text = Array[String](["Gurggling", "Whimper"])
 choice_function_call = Array[ExtResource("14_bqxvc")]([SubResource("Resource_0f7ee"), SubResource("Resource_1i7c8")])
 metadata/_custom_type_script = "uid://cw476sbwig11y"
@@ -478,8 +496,8 @@ metadata/_custom_type_script = "uid://blsntwbwnpc4p"
 
 [sub_resource type="Resource" id="Resource_8g1tt"]
 script = ExtResource("15_si1gx")
-text = "His soul curses its cage and screams  _____"
-choice_text = Array[String](["Woof! Woof!", "Meow"])
+text = "\"The soul trapped in the bear bellows out____\""
+choice_text = Array[String](["Woof! Woof!", "GRRRR!!! ARRGHHH"])
 choice_function_call = Array[ExtResource("14_bqxvc")]([SubResource("Resource_6420t"), SubResource("Resource_u23md")])
 metadata/_custom_type_script = "uid://cw476sbwig11y"
 
@@ -503,7 +521,7 @@ metadata/_custom_type_script = "uid://blsntwbwnpc4p"
 
 [sub_resource type="Resource" id="Resource_ouexn"]
 script = ExtResource("15_si1gx")
-text = "You should listen one more time... maybe you'll hear..."
+text = "\"The Mothmen are trapped with__\""
 choice_text = Array[String](["Silence", "CLOSETCLOSETCLOSETCLOSETCLOSET"])
 choice_function_call = Array[ExtResource("14_bqxvc")]([SubResource("Resource_diowh"), SubResource("Resource_jnbtu")])
 metadata/_custom_type_script = "uid://cw476sbwig11y"
@@ -1225,6 +1243,7 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_bmlny"]
 script = ExtResource("12_w0c03")
+speaker_img = ExtResource("21_cekop")
 text = "Wha-"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
@@ -1327,6 +1346,9 @@ text = "
 reset_camera_to_player = true
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnkbn"]
+size = Vector2(144, 34)
+
 [node name="Cabin" type="Node2D" unique_id=415258001]
 y_sort_enabled = true
 texture_filter = 1
@@ -1418,7 +1440,7 @@ position = Vector2(24, 192)
 position = Vector2(-264, -24)
 level_path = "uid://dxopohk4wki5u"
 target_transition = "Cabin"
-required_interactions = 5
+required_interactions = 4
 timer_delay = 0.0
 is_one_shot = true
 transition_id = "Cabin"
@@ -1548,7 +1570,8 @@ debug_color = Color(0.96168846, 1.540184e-06, 0.51167804, 0.41960785)
 
 [node name="Book" parent="Dialogue" unique_id=1193723762 instance=ExtResource("10_lf08p")]
 z_index = 2
-dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_rh0qw"), SubResource("Resource_nafg8"), SubResource("Resource_tq43o"), SubResource("Resource_bqus1"), SubResource("Resource_n41jw"), SubResource("Resource_8g1tt"), SubResource("Resource_xoudl"), SubResource("Resource_ouexn"), SubResource("Resource_njdlv"), SubResource("Resource_p0is2")])
+position = Vector2(1, 1)
+dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_rh0qw"), SubResource("Resource_nafg8"), SubResource("Resource_nnyur"), SubResource("Resource_1l6yo"), SubResource("Resource_tq43o"), SubResource("Resource_bqus1"), SubResource("Resource_n41jw"), SubResource("Resource_8g1tt"), SubResource("Resource_xoudl"), SubResource("Resource_ouexn"), SubResource("Resource_njdlv"), SubResource("Resource_p0is2")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue/Book" unique_id=68997483]
 position = Vector2(193, 191)
@@ -1636,7 +1659,8 @@ persistence_key = "attic_dialogue_completed"
 dialogue_sequence = Array[ExtResource("11_i80aj")]([SubResource("Resource_sp7in")])
 
 [node name="The fight" parent="." unique_id=563493206 instance=ExtResource("19_i6fta")]
-position = Vector2(-48, -56)
+position = Vector2(352, 272)
+persistence_key = "WHACLOSET"
 dialogue_sequence = Array[ExtResource("11_i80aj")]([SubResource("Resource_bmlny")])
 
 [node name="Void" parent="." unique_id=1868899752 instance=ExtResource("19_i6fta")]
@@ -1683,15 +1707,20 @@ dialogue = Array[ExtResource("11_i80aj")]([SubResource("Resource_k4nyp"), SubRes
 shape = SubResource("RectangleShape2D_cby1c")
 
 [node name="Last Woof" parent="." unique_id=1403069685 instance=ExtResource("19_i6fta")]
+unique_name_in_owner = true
 position = Vector2(-16, 128)
 monitoring = false
 monitorable = false
 persistence_key = "The key"
 dialogue_sequence = Array[ExtResource("11_i80aj")]([SubResource("Resource_2byap"), SubResource("Resource_66fw2"), SubResource("Resource_trjo8"), SubResource("Resource_8r51t"), SubResource("Resource_2b3pb"), SubResource("Resource_1lcsu"), SubResource("Resource_pcbgb"), SubResource("Resource_v0vdr")])
 
+[node name="CollisionShape2D" parent="Last Woof" index="0" unique_id=1471014124]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_dnkbn")
+
 [node name="PlayerSpawn" parent="." unique_id=1158695474 instance=ExtResource("8_pr8sj")]
 y_sort_enabled = true
-position = Vector2(8, 176)
+position = Vector2(-416, 200)
 
 [node name="Freedom" parent="." unique_id=663343909 instance=ExtResource("10_tjy0m")]
 z_index = 5
@@ -1700,4 +1729,9 @@ scale = Vector2(1, 0.13)
 level = "uid://d1chtv1kasu0x"
 side = 2
 
+[node name="Freebear" type="Sprite2D" parent="." unique_id=148401391]
+position = Vector2(-16, 104)
+texture = ExtResource("18_dnkbn")
+
 [editable path="Monsters/MothMenM"]
+[editable path="Last Woof"]

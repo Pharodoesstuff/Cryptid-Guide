@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cmvsuypp04q10" path="res://00_GUI/Menu/Main Menu Code/Main_Menu.gd" id="1_s0emd"]
 [ext_resource type="Texture2D" uid="uid://c0nordrevmvo5" path="res://00_GUI/Menu/Images/bookmarkback.png" id="1_vdbn4"]
 [ext_resource type="Texture2D" uid="uid://dljlk3rnb0du6" path="res://00_GUI/Menu/Images/BookCover.png" id="2_e6bfo"]
+[ext_resource type="Texture2D" uid="uid://c4kqkgdi7jqk5" path="res://00_GUI/Menu/Images/buttonbookmark.png" id="4_s0emd"]
 
 [sub_resource type="Gradient" id="Gradient_wnkk6"]
 offsets = PackedFloat32Array(0, 0.9661654)
@@ -15,6 +16,15 @@ height = 128
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.80046946, 0.17605634)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0emd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnkk6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4m5xd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Main Menu" type="Node2D" unique_id=964772325]
 process_mode = 3
@@ -64,13 +74,23 @@ scale = Vector2(2.0520847, 2.0276039)
 texture = ExtResource("2_e6bfo")
 
 [node name="Start" type="Button" parent="CanvasLayer" unique_id=653538351]
-modulate = Color(1, 1, 1, 0)
-offset_left = 569.984
-offset_top = 430.656
-offset_right = 649.984
-offset_bottom = 509.656
+anchors_preset = -1
+anchor_left = -0.00625
+anchor_right = -0.016300868
+anchor_bottom = 0.030744553
+offset_left = 584.0
+offset_top = 432.0
+offset_right = 703.51373
+offset_bottom = 511.00003
 scale = Vector2(0.9250028, 0.6328109)
-text = "Start"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 0)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_s0emd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wnkk6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4m5xd")
+icon = ExtResource("4_s0emd")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_start_pressed"]

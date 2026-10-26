@@ -12,6 +12,7 @@ extends "res://Code/Level Code/level.gd" # or 'extends Level' if level.gd uses c
 @onready var door: TileMapLayer = $"cabin Design/Door"
 @onready var last_woof: Area2D = $"Last Woof"
 @onready var booky: DialogueArea2d = $Dialogue/Book
+@onready var freebear: Sprite2D = $Freebear
 
 
 
@@ -46,6 +47,9 @@ func _ready() -> void:
 		book.monitorable = true
 		book.monitoring = true
 		
+		freebear.visible = true
+		freebear.visible = true
+		
 		last_woof.monitorable = true
 		last_woof.monitoring = true
 		
@@ -65,6 +69,9 @@ func _ready() -> void:
 		
 		last_woof.monitorable = false
 		last_woof.monitoring = false
+		
+		freebear.visible = false
+		freebear.visible = false
 # Export dialogue resources so you can assign new post-cleared text in the Inspector
 	if closet:
 		closet.ambush_completed.connect(_on_ambush_completed)

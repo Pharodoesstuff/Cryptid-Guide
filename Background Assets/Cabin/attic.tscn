@@ -11,6 +11,10 @@
 [ext_resource type="Script" uid="uid://d27xfxagxwibs" path="res://Code/Dialog/DialogueExportResource.gd" id="9_fwq2b"]
 [ext_resource type="Script" uid="uid://cug1l4ymh31cf" path="res://Code/Dialog/DialogueTextResource.gd" id="10_f32od"]
 [ext_resource type="Texture2D" uid="uid://cw2qfutmbuo1d" path="res://Characters/DoverDemon.png" id="11_f32od"]
+[ext_resource type="Texture2D" uid="uid://d2qty8nyrtcro" path="res://Characters/ialogue image/Dovvy.png" id="11_sues4"]
+[ext_resource type="Texture2D" uid="uid://dpuk3uflq5g0h" path="res://Characters/ialogue image/wakydavvy.png" id="12_m5lt1"]
+[ext_resource type="Texture2D" uid="uid://b5ofb6niplugd" path="res://Characters/ialogue image/awakedovvy.png" id="13_aobyb"]
+[ext_resource type="Texture2D" uid="uid://cpfrk0ngjhcwi" path="res://Characters/ialogue image/evildovvy.png" id="14_m5lt1"]
 
 [sub_resource type="Gradient" id="Gradient_6vfcr"]
 offsets = PackedFloat32Array(0)
@@ -6903,43 +6907,70 @@ _data = {
 
 [sub_resource type="Resource" id="Resource_gbmbn"]
 script = ExtResource("10_f32od")
-text = "[color=red] Master?"
+speaker_img = ExtResource("11_sues4")
+text = "[center][color=red] Master?"
 text_speed = 25.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_0qua3"]
 script = ExtResource("10_f32od")
-text = "[color=red] Is that You? "
+speaker_img = ExtResource("11_sues4")
+text = "[center][color=red] Is that You? "
 text_speed = 20.0
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_nf6be"]
+script = ExtResource("10_f32od")
+speaker_img = ExtResource("12_m5lt1")
+text = "[center][color=red]   I've been protecting the gate"
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_meafg"]
+script = ExtResource("10_f32od")
+speaker_img = ExtResource("12_m5lt1")
+text = "[center][color=red] Anything I see that moves have died for you "
+metadata/_custom_type_script = "uid://cug1l4ymh31cf"
+
+[sub_resource type="Resource" id="Resource_8hp28"]
+script = ExtResource("10_f32od")
+text = "[center][color=red]  ..."
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_qqepl"]
 script = ExtResource("10_f32od")
-text = "[color=red] no...these footsteps..."
+speaker_img = ExtResource("12_m5lt1")
+text = "[color=red][color=red]  no...these footsteps..."
+text_speed = 15.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_fcoyr"]
 script = ExtResource("10_f32od")
-text = "[color=red] They're not as great as [shake]his[/shake]..."
+speaker_img = ExtResource("13_aobyb")
+text = "[center][color=red]  They're not as great as [shake]his[/shake]..."
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_4tyn7"]
 script = ExtResource("10_f32od")
-text = "[color=red]Whatever you are I'm warning you!"
+speaker_img = ExtResource("13_aobyb")
+text = "[center][color=red]   Whatever you are I'm warning you!"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_hjaqm"]
 script = ExtResource("10_f32od")
-text = "[color=red] Move and you DIE"
+speaker_img = ExtResource("13_aobyb")
+text = "[color=red][center]  My lasers will [shake]kill[/shake] you
+ if you move!"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_fwq2b"]
 script = ExtResource("10_f32od")
-text = "[color=red] For I am [shake]HIS[/shake] greatest guardian"
+speaker_img = ExtResource("13_aobyb")
+text = "[center][color=red] For I am [shake]HIS[/shake] greatest guardian"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_f32od"]
 script = ExtResource("10_f32od")
+speaker_img = ExtResource("14_m5lt1")
 text = "
 [center][color=red][shake] DOVER DEMON [/shake]"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
@@ -6976,6 +7007,7 @@ script = ExtResource("1_hfhvk")
 [node name="Wallslygon2D" type="CollisionPolygon2D" parent="Borders" unique_id=648332980]
 build_mode = 1
 polygon = PackedVector2Array(-248, 8, -248, 136, -247.99998, 148.873, -248, 216, 248, 216, 248, 320, 328, 320, 328, 168, 248, 168, 248, 8)
+disabled = true
 
 [node name="1" type="CollisionPolygon2D" parent="Borders" unique_id=1769578198]
 polygon = PackedVector2Array(120, 96, 104, 152, 120, 192, -192, 192, -192, 120, -176, 120, -112, 144, -176, 136, -176, 176, 104, 176, 104, 88, 240, 88, 240, 96)
@@ -7091,7 +7123,7 @@ dialogue_sequence = Array[ExtResource("9_fwq2b")]([SubResource("Resource_gbmbn")
 [node name="ForcedDialogue2" parent="DoverDemon" unique_id=1423075083 instance=ExtResource("8_l5j3m")]
 position = Vector2(-40, 152)
 persistence_key = "Done2"
-dialogue_sequence = Array[ExtResource("9_fwq2b")]([SubResource("Resource_qqepl"), SubResource("Resource_fcoyr")])
+dialogue_sequence = Array[ExtResource("9_fwq2b")]([SubResource("Resource_nf6be"), SubResource("Resource_meafg"), SubResource("Resource_8hp28"), SubResource("Resource_qqepl"), SubResource("Resource_fcoyr")])
 
 [node name="ForcedDialogue3" parent="DoverDemon" unique_id=332240590 instance=ExtResource("8_l5j3m")]
 position = Vector2(32, 24)

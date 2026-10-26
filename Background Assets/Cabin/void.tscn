@@ -7,41 +7,50 @@
 [ext_resource type="PackedScene" uid="uid://bu58ue4vnm8ui" path="res://Characters/Jersey Devil/Jersey_Devil.tscn" id="4_6hydc"]
 [ext_resource type="Script" uid="uid://dpmkvwn7mgc3b" path="res://Code/Dialog/timed_dialogue.gd" id="4_7p5k0"]
 [ext_resource type="PackedScene" uid="uid://bns4o274efft6" path="res://Interactions/lvl_trans2.tscn" id="4_fqd2h"]
+[ext_resource type="Texture2D" uid="uid://b6f6dn1tuejo" path="res://Characters/ialogue image/playertalk.png" id="5_pks37"]
+[ext_resource type="Texture2D" uid="uid://dqkhjbktxr4fp" path="res://Characters/ialogue image/The Devil.png" id="6_1el52"]
 [ext_resource type="Script" uid="uid://cug1l4ymh31cf" path="res://Code/Dialog/DialogueTextResource.gd" id="7_7p5k0"]
+[ext_resource type="Texture2D" uid="uid://ba4uq5gveqj3g" path="res://Characters/ialogue image/devil2.png" id="7_nf6be"]
 [ext_resource type="PackedScene" uid="uid://d3cuqej3okgm1" path="res://Interactions/player_spawn.tscn" id="9_awdq2"]
+[ext_resource type="Texture2D" uid="uid://dk1wq2cexht5i" path="res://Characters/ialogue image/weirddevil.png" id="9_nf6be"]
 [ext_resource type="Script" uid="uid://r0fkh10u1pnp" path="res://Background Assets/Cabin/point_light_2d.gd" id="9_pqvi1"]
 
 [sub_resource type="Resource" id="Resource_k4nyp"]
 script = ExtResource("7_7p5k0")
-text = "[font_size=60]?!?"
-text_speed = 5.3
+speaker_img = ExtResource("5_pks37")
+text = "[center][font_size=60]?!?"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_t46nd"]
 script = ExtResource("7_7p5k0")
-text = "[color=black] Oh how queer! HOW QUEER!"
+speaker_img = ExtResource("6_1el52")
+text = "[center][color=black]  Oh how queer! HOW QUEER!"
 text_speed = 25.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_cdv3i"]
 script = ExtResource("7_7p5k0")
-text = "[color=black]A human being sent too me?  "
+speaker_img = ExtResource("6_1el52")
+text = "[center][color=black]  A human sent too me?  "
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_muyvn"]
 script = ExtResource("7_7p5k0")
-text = "[color=black] But you're not truly human[shake] ARE [/shake]you? "
+speaker_img = ExtResource("6_1el52")
+text = "[center][color=black]  But you're not truly human[shake] ARE [/shake]you? "
 text_speed = 20.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_7p5k0"]
 script = ExtResource("7_7p5k0")
-text = "[color=black] Where are my manners, I know better to treat a guest!"
+speaker_img = ExtResource("7_nf6be")
+text = "[center][color=black]  Where are my manners,   I know to treat a guest!"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_6kav8"]
 script = ExtResource("7_7p5k0")
-text = "[color=black]Just come my way..."
+speaker_img = ExtResource("7_nf6be")
+text = "[color=black]  Just come my way..."
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_pqvi1"]
@@ -58,38 +67,44 @@ metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_cqy0m"]
 script = ExtResource("7_7p5k0")
-text = "[color=black]Cmon, I have to enjoy myself yknow? "
+speaker_img = ExtResource("9_nf6be")
+text = "[center][color=black]  Cmon, I have to enjoy myself yknow? "
 auto_advance = true
 auto_advance_delay = 0.7
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_awdq2"]
 script = ExtResource("7_7p5k0")
-text = "[color=black]He puts me here to guard for intruders-"
+speaker_img = ExtResource("9_nf6be")
+text = "[center][color=black]  He puts me here to guard for intruders-"
 auto_advance = true
 auto_advance_delay = 0.5
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_3a5pd"]
 script = ExtResource("7_7p5k0")
-text = "[color=black]BUT WHO WOULD INVADE HIM?!! "
+speaker_img = ExtResource("9_nf6be")
+text = "[center][color=black]  BUT WHO WOULD INVADE HIM?!! "
 auto_advance = true
 auto_advance_delay = 1.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_pks37"]
 script = ExtResource("7_7p5k0")
-text = "[color=black]Something must be wrong in you to invade but not run from me"
+speaker_img = ExtResource("9_nf6be")
+text = "[center][color=black]and here I was hoping to cure my boredom"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_nafg8"]
 script = ExtResource("7_7p5k0")
-text = "[color=black] Disperse! You're so BORING for an intruder"
+speaker_img = ExtResource("6_1el52")
+text = "[center][color=black] Disperse! You're boring"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_sp7in"]
 script = ExtResource("7_7p5k0")
-text = "[color=black] uhmm"
+speaker_img = ExtResource("9_nf6be")
+text = "[center][color=black] uhmm"
 auto_advance = true
 auto_advance_delay = 4.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
@@ -104,7 +119,8 @@ metadata/_custom_type_script = "uid://dpmkvwn7mgc3b"
 
 [sub_resource type="Resource" id="Resource_8as6h"]
 script = ExtResource("7_7p5k0")
-text = "[color=black] You know I want to eat you right? "
+speaker_img = ExtResource("9_nf6be")
+text = "[center][color=black] You know I want to eat you right? "
 auto_advance = true
 auto_advance_delay = 5.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
@@ -119,7 +135,8 @@ metadata/_custom_type_script = "uid://dpmkvwn7mgc3b"
 
 [sub_resource type="Resource" id="Resource_0f40o"]
 script = ExtResource("7_7p5k0")
-text = "[color=black]I'M GOING TO RIP OUT YOUR STOMACH AND-"
+speaker_img = ExtResource("6_1el52")
+text = "[center][color=black]I'M GOING TO RIP OUT YOUR STOMACH AND-"
 auto_advance = true
 auto_advance_delay = 2.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
@@ -134,7 +151,8 @@ metadata/_custom_type_script = "uid://dpmkvwn7mgc3b"
 
 [sub_resource type="Resource" id="Resource_0mmm7"]
 script = ExtResource("7_7p5k0")
-text = "[color=black]..."
+speaker_img = ExtResource("9_nf6be")
+text = "[center][color=black]..."
 auto_advance = true
 auto_advance_delay = 4.0
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
@@ -149,7 +167,8 @@ metadata/_custom_type_script = "uid://dpmkvwn7mgc3b"
 
 [sub_resource type="Resource" id="Resource_ka4qd"]
 script = ExtResource("7_7p5k0")
-text = "[color=black]I'M THE EVIL JERSEY DEVIL! FEAR ME!!!"
+speaker_img = ExtResource("6_1el52")
+text = "[center][color=black]   I'M THE EVIL JERSEY DEVIL! FEAR ME!!!"
 metadata/_custom_type_script = "uid://cug1l4ymh31cf"
 
 [sub_resource type="Resource" id="Resource_v7mgk"]
@@ -200,6 +219,7 @@ timer_dialogues = Array[ExtResource("4_7p5k0")]([SubResource("Resource_bmlny"), 
 challenge_duration = 24.0
 teleport_delay = 0.0
 stalk_speed = 60.0
+void_light_stopping_distance = 130.0
 
 [node name="BG" type="Node2D" parent="." unique_id=1984691462]
 
@@ -324,7 +344,7 @@ level_path = "uid://dpxmw1emc12l1"
 target_transition = "Void"
 
 [node name="Jersey Devil" parent="." unique_id=432524728 instance=ExtResource("4_6hydc")]
-position = Vector2(616, -48)
+position = Vector2(553, -55)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1423267426]
 visible = false
@@ -339,4 +359,4 @@ script = ExtResource("9_pqvi1")
 libraries/ = SubResource("AnimationLibrary_awdq2")
 
 [node name="PlayerSpawn" parent="." unique_id=1158695474 instance=ExtResource("9_awdq2")]
-position = Vector2(-5736, -48)
+position = Vector2(8, -26)
